@@ -20,6 +20,7 @@ const authRoutes = require('./routes/authRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const demoPaymentRoutes = require('./routes/demoPaymentRoutes');
 const esewaRoutes = require('./routes/esewaRoutes');
+const blockchainPaymentRoutes = require('./routes/blockchainPaymentRoutes');
 
 // Initialize Express app
 const app = express();
@@ -54,6 +55,7 @@ app.use('/api/reviews', reviewRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/demo-payment', demoPaymentRoutes);
 app.use('/api/esewa', esewaRoutes);
+app.use('/api/blockchain', blockchainPaymentRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
