@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUYSEWA Blockchain Integration Map</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #667eea;
+        }
+        
+        .card.blockchain {
+            border-left-color: #667eea;
+        }
+        
+        .card.backend {
+            border-left-color: #f5576c;
+        }
+        
+        .card.frontend {
+            border-left-color: #00f2fe;
+        }
+        
+        .card.smart-contract {
+            border-left-color: #ffa502;
+        }
+        
+        .card h2 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card .icon {
+            font-size: 24px;
+        }
+        
+        .card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .file-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .file-list li {
+            padding: 8px;
+            margin: 5px 0;
+            background: #f5f5f5;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #333;
+        }
+        
+        .card.backend .file-list li {
+            border-left-color: #f5576c;
+        }
+        
+        .card.frontend .file-list li {
+            border-left-color: #00f2fe;
+        }
+        
+        .card.smart-contract .file-list li {
+            border-left-color: #ffa502;
+        }
+        
+        .diagram-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .diagram-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .flow-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flow-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .step-content h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .step-content p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .feature strong {
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .feature span {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔗 BUYSEWA Blockchain Integration Map</h1>
+            <p class="subtitle">Complete guide to all blockchain components and files</p>
+        </header>
+        
+        <!-- Component Overview -->
+        <div class="grid">
+            <div class="card smart-contract">
+                <h2><span class="icon">📝</span> Smart Contract</h2>
+                <p>Solidity smart contract deployed on blockchain for review verification</p>
+                <ul class="file-list">
+                    <li>contracts/ReviewAuth.sol</li>
+                    <li>scripts/deploy.js</li>
+                    <li>hardhat.config.js</li>
+                </ul>
+                <p style="margin-top: 10px; background: #fff3f0; padding: 10px; border-radius: 4px;">
+                    <strong>Size:</strong> 298 lines | <strong>Language:</strong> Solidity ^0.8.19
+                </p>
+            </div>
+            
+            <div class="card backend">
+                <h2><span class="icon">⚙️</span> Backend Integration</h2>
+                <p>Node.js/Express API endpoints for blockchain operations</p>
+                <ul class="file-list">
+                    <li>review-backend/routes/sdcRoutes.js</li>
+                    <li>review-backend/routes/reviewRoutes.js</li>
+                    <li>review-backend/models/Sdc.js</li>
+                    <li>review-backend/models/Review.js</li>
+                </ul>
+                <p style="margin-top: 10px; background: #ffe0e0; padding: 10px; border-radius: 4px;">
+                    <strong>Library:</strong> ethers.js v6.7.1
+                </p>
+            </div>
+            
+            <div class="card frontend">
+                <h2><span class="icon">🎨</span> Frontend Integration</h2>
+                <p>React components for blockchain interaction</p>
+                <ul class="file-list">
+                    <li>src/components/WalletConnect.tsx</li>
+                    <li>src/components/BlockchainReview.tsx</li>
+                    <li>src/components/ReviewSubmission.tsx</li>
+                    <li>src/services/blockchainReal.ts</li>
+                </ul>
+                <p style="margin-top: 10px; background: #e0f8ff; padding: 10px; border-radius: 4px;">
+                    <strong>Framework:</strong> React + TypeScript
+                </p>
+            </div>
+            
+            <div class="card blockchain">
+                <h2><span class="icon">🌐</span> Configuration</h2>
+                <p>Network and environment configuration files</p>
+                <ul class="file-list">
+                    <li>.env (Backend)</li>
+                    <li>.env (Frontend)</li>
+                    <li>hardhat.config.js</li>
+                </ul>
+                <p style="margin-top: 10px; background: #e7f3ff; padding: 10px; border-radius: 4px;">
+                    <strong>Networks:</strong> Local, Mumbai, Polygon
+                </p>
+            </div>
+        </div>
+        
+        <!-- Architecture Diagram -->
+        <div class="diagram-section">
+            <h2>🏗️ System Architecture</h2>
+            <div class="mermaid">
+graph TB
+    subgraph Client["Frontend (React)"]
+        WC["WalletConnect<br/>MetaMask"]
+        RCP["ReviewComponent"]
+        CR["CartReview"]
+    end
+    
+    subgraph Server["Backend Server<br/>Node.js/Express"]
+        SRoute["SDC Routes"]
+        RRoute["Review Routes"]
+        SDCModel["SDC Model"]
+        RevModel["Review Model"]
+    end
+    
+    subgraph Chain["Blockchain Layer"]
+        SC["ReviewAuth Contract<br/>Solidity"]
+        Events["Events Log"]
+    end
+    
+    subgraph Storage["Storage"]
+        Mongo["MongoDB<br/>Database"]
+        IPFS["IPFS<br/>Content"]
+    end
+    
+    WC -->|Connect| Server
+    RCP -->|Submit Review| Server
+    CR -->|Verify SDC| Server
+    
+    SRoute -->|Register| SC
+    RRoute -->|Submit| SC
+    SRoute -->|Query| Mongo
+    RRoute -->|Query| Mongo
+    
+    SC -->|Emit| Events
+    SC -->|Log| Events
+    
+    SDCModel -->|Store| Mongo
+    RevModel -->|Store| Mongo
+    RRoute -->|Store Hash| IPFS
+    
+    SC -.->|Read| Mongo
+            </div>
+        </div>
+        
+        <!-- Data Flow -->
+        <div class="flow-section">
+            <h2>📊 Order to Review Data Flow</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>User Places Order</h3>
+                    <p>User creates order → Saved to MongoDB</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Generate SDC Code</h3>
+                    <p>System generates unique Secure Digital Code per item</p>
+                    <div class="code-block">sdcCode = generateRandomCode()
+hashedSDC = keccak256(sdcCode)</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Save to Database</h3>
+                    <p>SDC stored in MongoDB with order reference</p>
+                    <div class="code-block">db.sdcs.insert({
+  sdcCode, hashedSDC, userId, 
+  orderId, productId, isUsed: false
+})</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Deliver Order</h3>
+                    <p>Order marked as delivered, user receives SDC</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Register SDC on Blockchain</h3>
+                    <p>Backend calls smart contract to register SDC</p>
+                    <div class="code-block">contract.registerSDC(
+  hashedSDC, userAddress, 
+  productId, orderId
+)</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h3>User Submits Review</h3>
+                    <p>User writes review with SDC code verification</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <h3>Generate IPFS Hash</h3>
+                    <p>Review content stored on IPFS, hash returned</p>
+                    <div class="code-block">ipfsHash = uploadToIPFS({
+  rating, comment, images, timestamp
+})</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <h3>Submit to Blockchain</h3>
+                    <p>Backend submits review to smart contract</p>
+                    <div class="code-block">contract.submitReview(
+  hashedSDC, productId, 
+  ipfsHash, rating
+)</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">9</div>
+                <div class="step-content">
+                    <h3>Save Transaction Hash</h3>
+                    <p>Store blockchain transaction hash in database</p>
+                    <div class="code-block">db.reviews.insert({
+  blockchainTxHash,
+  blockchainReviewId,
+  verified: true
+})</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">10</div>
+                <div class="step-content">
+                    <h3>Display Verified Review</h3>
+                    <p>Show review with blockchain verification badge</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Smart Contract Details -->
+        <div class="diagram-section">
+            <h2>📝 Smart Contract Functions</h2>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                    <thead style="background: #667eea; color: white;">
+                        <tr>
+                            <th style="padding: 12px; text-align: left;">Function</th>
+                            <th style="padding: 12px; text-align: left;">Purpose</th>
+                            <th style="padding: 12px; text-align: left;">Called By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #ddd;">
+                            <td style="padding: 12px;"><code>registerSDC()</code></td>
+                            <td style="padding: 12px;">Register purchase code on blockchain</td>
+                            <td style="padding: 12px;">Backend Admin</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #ddd;">
+                            <td style="padding: 12px;"><code>verifySDC()</code></td>
+                            <td style="padding: 12px;">Check SDC validity and usage</td>
+                            <td style="padding: 12px;">Backend/Frontend</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #ddd;">
+                            <td style="padding: 12px;"><code>submitReview()</code></td>
+                            <td style="padding: 12px;">Submit review to blockchain</td>
+                            <td style="padding: 12px;">Backend Admin</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #ddd;">
+                            <td style="padding: 12px;"><code>getReview()</code></td>
+                            <td style="padding: 12px;">Retrieve review data from blockchain</td>
+                            <td style="padding: 12px;">Frontend/Backend</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #ddd;">
+                            <td style="padding: 12px;"><code>getProductReviewIds()</code></td>
+                            <td style="padding: 12px;">Get all reviews for a product</td>
+                            <td style="padding: 12px;">Frontend/Backend</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+            <h2 style="color: #667eea; margin-bottom: 20px; border-bottom: 3px solid #667eea; padding-bottom: 10px;">✨ Blockchain Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <strong>🔒 Immutability</strong>
+                    <span>Reviews cannot be edited after submission</span>
+                </div>
+                <div class="feature">
+                    <strong>✅ Verification</strong>
+                    <span>SDC proves genuine purchase</span>
+                </div>
+                <div class="feature">
+                    <strong>🌐 Transparency</strong>
+                    <span>All reviews publicly verifiable</span>
+                </div>
+                <div class="feature">
+                    <strong>📝 Audit Trail</strong>
+                    <span>Complete transaction history</span>
+                </div>
+                <div class="feature">
+                    <strong>💾 Distributed</strong>
+                    <span>IPFS + Blockchain redundancy</span>
+                </div>
+                <div class="feature">
+                    <strong>🚀 Performance</strong>
+                    <span>Polygon for speed & low cost</span>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>BUYSEWA Blockchain Integration Map | December 2025</p>
+            <p>Complete blockchain setup and configuration guide</p>
+        </footer>
+    </div>
+    
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+        mermaid.contentLoaded();
+    </script>
+</body>
+</html>

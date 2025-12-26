@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUYSEWA - Class Diagrams Index</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .diagrams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .diagram-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .diagram-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-header {
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+        }
+        
+        .card-header.user {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-header.admin {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .card-header.seller {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .card-description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .entities {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #333;
+        }
+        
+        .entities strong {
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .entities ul {
+            list-style: none;
+            margin-left: 10px;
+        }
+        
+        .entities li {
+            margin: 4px 0;
+            color: #666;
+        }
+        
+        .entities li:before {
+            content: "▸ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-header.admin ~ .card-content .btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .card-header.seller ~ .card-content .btn {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .info-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .info-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .info-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .feature-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        
+        .feature-item strong {
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .feature-item span {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .diagrams-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏪 BUYSEWA E-commerce Platform</h1>
+            <p>Domain Class Diagrams & System Architecture</p>
+        </div>
+        
+        <div class="diagrams-grid">
+            <!-- User Domain Card -->
+            <div class="diagram-card">
+                <div class="card-header user">
+                    <div class="card-icon">👥</div>
+                    User Domain
+                </div>
+                <div class="card-content">
+                    <p class="card-description">
+                        Manages all user-related entities including customer accounts, orders, reviews, and wallet functionality.
+                    </p>
+                    <div class="entities">
+                        <strong>Key Entities:</strong>
+                        <ul>
+                            <li>User Account & Authentication</li>
+                            <li>User Profile & Preferences</li>
+                            <li>Shopping Cart Management</li>
+                            <li>Order Processing</li>
+                            <li>Product Reviews & Ratings</li>
+                            <li>Digital Wallet</li>
+                            <li>SDC (Secure Digital Code)</li>
+                        </ul>
+                    </div>
+                    <a href="01-user-domain-class-diagram.html" class="btn">View Diagram →</a>
+                </div>
+            </div>
+            
+            <!-- Admin Domain Card -->
+            <div class="diagram-card">
+                <div class="card-header admin">
+                    <div class="card-icon">⚙️</div>
+                    Admin Domain
+                </div>
+                <div class="card-content">
+                    <p class="card-description">
+                        Handles administrative functions including system management, analytics, reporting, and content moderation.
+                    </p>
+                    <div class="entities">
+                        <strong>Key Entities:</strong>
+                        <ul>
+                            <li>Admin Accounts & Permissions</li>
+                            <li>Admin Dashboard</li>
+                            <li>Analytics & Metrics</li>
+                            <li>Reports & Exports</li>
+                            <li>System Notifications</li>
+                            <li>Audit Logging</li>
+                            <li>User Management</li>
+                            <li>Content Moderation</li>
+                        </ul>
+                    </div>
+                    <a href="02-admin-domain-class-diagram.html" class="btn">View Diagram →</a>
+                </div>
+            </div>
+            
+            <!-- Seller Domain Card -->
+            <div class="diagram-card">
+                <div class="card-header seller">
+                    <div class="card-icon">🏪</div>
+                    Seller Domain
+                </div>
+                <div class="card-content">
+                    <p class="card-description">
+                        Manages seller accounts, product catalogs, inventory, sales tracking, and performance metrics.
+                    </p>
+                    <div class="entities">
+                        <strong>Key Entities:</strong>
+                        <ul>
+                            <li>Seller Accounts</li>
+                            <li>Online Shops</li>
+                            <li>Product Catalog</li>
+                            <li>Inventory Management</li>
+                            <li>Sales Records</li>
+                            <li>Payment Payouts</li>
+                            <li>Seller Dashboard</li>
+                            <li>Performance Tracking</li>
+                        </ul>
+                    </div>
+                    <a href="03-seller-domain-class-diagram.html" class="btn">View Diagram →</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Information Section -->
+        <div class="info-section">
+            <h2>📚 About These Diagrams</h2>
+            <p>
+                These class diagrams represent the three main domains of the BUYSEWA e-commerce platform using UML notation. 
+                Each diagram shows the entities (classes) within that domain, their attributes (properties), methods (operations), 
+                and relationships with other entities.
+            </p>
+            <p>
+                <strong>Key Features:</strong>
+            </p>
+            <div class="features-list">
+                <div class="feature-item">
+                    <strong>📊 Comprehensive</strong>
+                    <span>Complete entity modeling for each domain</span>
+                </div>
+                <div class="feature-item">
+                    <strong>🔗 Relational</strong>
+                    <span>Shows relationships between entities</span>
+                </div>
+                <div class="feature-item">
+                    <strong>📱 Responsive</strong>
+                    <span>Optimized for all screen sizes</span>
+                </div>
+                <div class="feature-item">
+                    <strong>🎨 Visual</strong>
+                    <span>Mermaid JS for clean diagrams</span>
+                </div>
+                <div class="feature-item">
+                    <strong>💾 Data-Driven</strong>
+                    <span>Reflects actual MongoDB schema</span>
+                </div>
+                <div class="feature-item">
+                    <strong>🔐 Security-Focused</strong>
+                    <span>Includes auth and permission models</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2>🔄 Domain Interactions</h2>
+            <p>
+                The three domains interact with each other as follows:
+            </p>
+            <div class="features-list">
+                <div class="feature-item">
+                    <strong>User → Seller</strong>
+                    <span>Users browse and purchase from seller shops</span>
+                </div>
+                <div class="feature-item">
+                    <strong>User → Admin</strong>
+                    <span>Admins manage user accounts and resolve issues</span>
+                </div>
+                <div class="feature-item">
+                    <strong>Seller → Admin</strong>
+                    <span>Admins monitor seller performance and handle disputes</span>
+                </div>
+                <div class="feature-item">
+                    <strong>All → Blockchain</strong>
+                    <span>All domains use blockchain for reviews and verification</span>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>BUYSEWA E-commerce Platform | Architecture Documentation</p>
+            <p>Generated with Mermaid JS | Last Updated: December 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
