@@ -14,6 +14,13 @@ A complete e-commerce platform with blockchain-based secure digital codes (SDC),
 - **[Complete System Guide](docs/COMPLETE_SYSTEM.md)** - Comprehensive system documentation
 - **[Production Readiness](docs/PRODUCTION_READY.md)** - Checklist and requirements for production
 
+### Payment Gateway Integration
+- **[eSewa Quick Start](docs/ESEWA_QUICK_START.md)** - Quick overview and setup guide
+- **[eSewa Quick Pay Guide](docs/ESEWA_QUICK_PAY_GUIDE.md)** - Complete API reference and integration
+- **[eSewa Implementation Details](docs/ESEWA_IMPLEMENTATION_DETAILS.md)** - Technical architecture and flow
+- **[eSewa Setup Guide](docs/ESEWA_INTEGRATION_SETUP.md)** - Production deployment instructions
+- **[eSewa Summary](docs/ESEWA_SUMMARY.md)** - Implementation summary and quick reference
+
 ### Blockchain Integration
 - **[Blockchain Payment Setup](docs/blockchain/BLOCKCHAIN_PAYMENT_SETUP.md)** - Complete integration guide
 - **[Blockchain Quick Start](docs/blockchain/BLOCKCHAIN_QUICK_START.md)** - Quick reference for blockchain features
@@ -24,7 +31,7 @@ A complete e-commerce platform with blockchain-based secure digital codes (SDC),
 ### Database & Backend
 - **[Database Setup](docs/database/DATABASE_SETUP.md)** - MongoDB configuration and initialization
 - **[Backend Documentation](docs/README_BACKEND.md)** - Express.js API documentation
-- **[eSewa Integration](docs/ESEWA_INTEGRATION_FIX.md)** - Payment gateway setup
+- **[eSewa Integration (Legacy)](docs/ESEWA_INTEGRATION_FIX.md)** - Legacy payment gateway setup
 
 ### Deployment
 - **[Deployment Guide](docs/deployment/01-Deployment-Guide.md)** - Production deployment instructions
@@ -61,10 +68,19 @@ A complete e-commerce platform with blockchain-based secure digital codes (SDC),
 
 ## Key Features
 
+### eSewa Quick Pay (NEW)
+- **One-Click Product Purchase** - Buy directly from product pages without adding to cart
+- **Instant Checkout** - Quick purchase dialog with automatic amount calculations
+- **Secure Payments** - HMAC-SHA256 signature verification for payment authenticity
+- **Smart Calculations** - Automatic 10% tax and free delivery for orders over NPR 10,000
+- **Order Integration** - Orders created automatically before payment
+- **Success/Failure Handling** - Proper redirect flows after payment completion
+
+### E-Commerce Features
 - Secure Digital Code (SDC) generation with blockchain verification
 - Smart contract-based review authentication
 - Role-based access control (Admin, Seller, Buyer)
-- Multiple payment methods (eSewa, Blockchain, Demo)
+- Multiple payment methods (eSewa Quick Pay, eSewa Cart, Blockchain, Demo)
 - MongoDB database with Mongoose ORM
 - JWT authentication
 - Rate limiting and input validation
