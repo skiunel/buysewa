@@ -134,7 +134,7 @@ const CONTRACT_BYTECODE = '0x608060405234801561001057600080fd5b50336000806101000
 
 async function deployContract() {
   try {
-    console.log('\n🚀 Starting Smart Contract Deployment...\n');
+    console.log('\n Starting Smart Contract Deployment...\n');
 
     // Connect to blockchain network
     const rpcUrl = process.env.BLOCKCHAIN_RPC_URL || 'http://localhost:8545';
@@ -143,32 +143,32 @@ async function deployContract() {
     // Get signer (account that will deploy)
     const privateKey = process.env.BLOCKCHAIN_PRIVATE_KEY;
     if (!privateKey || privateKey === 'your_blockchain_private_key_keep_secret') {
-      throw new Error('⚠️  BLOCKCHAIN_PRIVATE_KEY not configured in .env file');
+      throw new Error('  BLOCKCHAIN_PRIVATE_KEY not configured in .env file');
     }
 
     const signer = new ethers.Wallet(privateKey, provider);
 
-    console.log(`📍 Deployment Network: ${rpcUrl}`);
-    console.log(`🔐 Deployer Address: ${signer.address}`);
+    console.log(` Deployment Network: ${rpcUrl}`);
+    console.log(` Deployer Address: ${signer.address}`);
 
     // Get network info
     const network = await provider.getNetwork();
-    console.log(`🌐 Chain ID: ${network.chainId}`);
-    console.log(`📊 Chain Name: ${network.name}`);
+    console.log(` Chain ID: ${network.chainId}`);
+    console.log(` Chain Name: ${network.name}`);
 
     // Check balance
     const balance = await provider.getBalance(signer.address);
     const ethBalance = ethers.formatEther(balance);
-    console.log(`💰 Deployer Balance: ${ethBalance} ETH\n`);
+    console.log(` Deployer Balance: ${ethBalance} ETH\n`);
 
     if (ethBalance === '0.0') {
-      console.warn('⚠️  Warning: Deployer has no balance. Deployment may fail.');
+      console.warn('  Warning: Deployer has no balance. Deployment may fail.');
     }
 
     // Create contract factory
     const contractFactory = new ethers.ContractFactory(CONTRACT_ABI, CONTRACT_BYTECODE, signer);
 
-    console.log('📦 Deploying ReviewAuth contract...');
+    console.log(' Deploying ReviewAuth contract...');
     const contract = await contractFactory.deploy();
 
     console.log(`⏳ Waiting for deployment transaction...\n`);
@@ -176,29 +176,29 @@ async function deployContract() {
 
     const deployedAddress = await contract.getAddress();
 
-    console.log('\n✅ Smart Contract Deployed Successfully!\n');
-    console.log('📋 Deployment Details:');
+    console.log('\n Smart Contract Deployed Successfully!\n');
+    console.log(' Deployment Details:');
     console.log(`   Contract Address: ${deployedAddress}`);
     console.log(`   Deployer: ${signer.address}`);
     console.log(`   Network: ${network.name}`);
     console.log(`   Chain ID: ${network.chainId}`);
 
     // Verify contract is accessible
-    console.log('\n🔍 Verifying contract...');
+    console.log('\n Verifying contract...');
     const stats = await contract.getStats();
     console.log(`   Total Reviews: ${stats[0]}`);
     console.log(`   Total SDCs: ${stats[1]}`);
 
     // Output configuration
-    console.log('\n📝 Update your .env file:');
+    console.log('\n Update your .env file:');
     console.log(`\nREVIEW_AUTH_CONTRACT_ADDRESS=${deployedAddress}`);
     console.log(`BLOCKCHAIN_RPC_URL=${rpcUrl}\n`);
 
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('✅ DEPLOYMENT COMPLETE\n');
+    console.log('');
+    console.log(' DEPLOYMENT COMPLETE\n');
 
   } catch (error) {
-    console.error('❌ Deployment Error:');
+    console.error(' Deployment Error:');
     console.error(error.message);
     process.exit(1);
   }

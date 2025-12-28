@@ -22,19 +22,19 @@ const initializeDatabase = async () => {
       socketTimeoutMS: 45000,
     });
 
-    console.log(`\n✅ MongoDB Connected: ${conn.connection.host}`);
-    console.log(`📊 Database: ${conn.connection.name}\n`);
+    console.log(`\n MongoDB Connected: ${conn.connection.host}`);
+    console.log(` Database: ${conn.connection.name}\n`);
     
-    console.log('🌱 Starting database initialization...\n');
+    console.log(' Starting database initialization...\n');
 
     // Clear existing data
-    console.log('🗑️  Clearing existing collections...');
+    console.log('  Clearing existing collections...');
     await User.deleteMany({});
     await Product.deleteMany({});
-    console.log('✅ Collections cleared\n');
+    console.log(' Collections cleared\n');
 
     // Seed test users
-    console.log('👥 Seeding users...');
+    console.log(' Seeding users...');
     const usersData = [
       {
         name: 'Admin User',
@@ -71,10 +71,10 @@ const initializeDatabase = async () => {
     ];
 
     const users = await User.insertMany(usersData);
-    console.log(`✅ Created ${users.length} users\n`);
+    console.log(` Created ${users.length} users\n`);
 
     // Seed products
-    console.log('📦 Seeding products...');
+    console.log(' Seeding products...');
     const productsData = [
       {
         name: 'Wireless Headphones',
@@ -139,29 +139,29 @@ const initializeDatabase = async () => {
     ];
 
     const products = await Product.insertMany(productsData);
-    console.log(`✅ Created ${products.length} products\n`);
+    console.log(` Created ${products.length} products\n`);
 
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('✅ DATABASE INITIALIZATION COMPLETE!\n');
-    console.log('📊 Summary:');
+    console.log('');
+    console.log(' DATABASE INITIALIZATION COMPLETE!\n');
+    console.log(' Summary:');
     console.log(`   • Users: ${users.length}`);
     console.log(`   • Products: ${products.length}`);
-    console.log('\n🔐 Test Credentials:');
+    console.log('\n Test Credentials:');
     console.log('   Admin:  admin@buysewa.com / Admin@123');
     console.log('   Seller: seller1@buysewa.com / Seller@123');
     console.log('   Buyer:  buyer1@buysewa.com / Buyer@123');
     console.log('   Buyer2: buyer2@buysewa.com / Buyer@123');
-    console.log('\n📝 Database Connection:');
+    console.log('\n Database Connection:');
     console.log(`   MongoDB URI: ${process.env.MONGODB_URI}`);
     console.log(`   Database: ${conn.connection.name}`);
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+    console.log('\n');
 
     process.exit(0);
   } catch (error) {
-    console.error('❌ Database Initialization Error:');
+    console.error(' Database Initialization Error:');
     console.error(error.message);
     if (error.message.includes('MONGODB_URI')) {
-      console.error('\n   📝 Please ensure MONGODB_URI is set in .env file');
+      console.error('\n    Please ensure MONGODB_URI is set in .env file');
     }
     process.exit(1);
   }

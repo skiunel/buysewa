@@ -1,9 +1,9 @@
 # Test Plan
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
-**Date:** 2024  
-**Test Manager:** TBD  
+**Version:** 1.0
+**Date:** 2024
+**Test Manager:** TBD
 **Test Environment:** Development/Staging
 
 ---
@@ -108,8 +108,8 @@ Testing covers:
 ### 4.1 Authentication Test Cases
 
 #### TC-AUTH-001: User Registration - Valid Data
-**Priority:** High  
-**Preconditions:** User is not logged in  
+**Priority:** High
+**Preconditions:** User is not logged in
 **Steps:**
 1. Navigate to registration page
 2. Enter valid name, email, password (4+ chars), role
@@ -120,8 +120,8 @@ Testing covers:
 ---
 
 #### TC-AUTH-002: User Registration - Invalid Email
-**Priority:** High  
-**Preconditions:** User is not logged in  
+**Priority:** High
+**Preconditions:** User is not logged in
 **Steps:**
 1. Navigate to registration page
 2. Enter invalid email format (e.g., "invalid-email")
@@ -132,8 +132,8 @@ Testing covers:
 ---
 
 #### TC-AUTH-003: User Registration - Duplicate Email
-**Priority:** High  
-**Preconditions:** User with email "test@example.com" exists  
+**Priority:** High
+**Preconditions:** User with email "test@example.com" exists
 **Steps:**
 1. Navigate to registration page
 2. Enter email "test@example.com"
@@ -145,8 +145,8 @@ Testing covers:
 ---
 
 #### TC-AUTH-004: User Login - Valid Credentials
-**Priority:** High  
-**Preconditions:** User account exists  
+**Priority:** High
+**Preconditions:** User account exists
 **Steps:**
 1. Navigate to login page
 2. Enter valid email and password
@@ -157,8 +157,8 @@ Testing covers:
 ---
 
 #### TC-AUTH-005: User Login - Invalid Credentials
-**Priority:** High  
-**Preconditions:** User account exists  
+**Priority:** High
+**Preconditions:** User account exists
 **Steps:**
 1. Navigate to login page
 2. Enter invalid email or password
@@ -171,8 +171,8 @@ Testing covers:
 ### 4.2 Product Management Test Cases
 
 #### TC-PROD-001: Browse Products
-**Priority:** High  
-**Preconditions:** Products exist in database  
+**Priority:** High
+**Preconditions:** Products exist in database
 **Steps:**
 1. Navigate to product listing page
 2. View products
@@ -182,8 +182,8 @@ Testing covers:
 ---
 
 #### TC-PROD-002: Filter Products by Category
-**Priority:** Medium  
-**Preconditions:** Products in multiple categories exist  
+**Priority:** Medium
+**Preconditions:** Products in multiple categories exist
 **Steps:**
 1. Navigate to product listing page
 2. Select a category filter
@@ -194,8 +194,8 @@ Testing covers:
 ---
 
 #### TC-PROD-003: Search Products
-**Priority:** Medium  
-**Preconditions:** Products exist  
+**Priority:** Medium
+**Preconditions:** Products exist
 **Steps:**
 1. Navigate to product listing page
 2. Enter search query
@@ -206,8 +206,8 @@ Testing covers:
 ---
 
 #### TC-PROD-004: View Product Details
-**Priority:** High  
-**Preconditions:** Product exists  
+**Priority:** High
+**Preconditions:** Product exists
 **Steps:**
 1. Navigate to product listing
 2. Click on a product
@@ -218,8 +218,8 @@ Testing covers:
 ---
 
 #### TC-PROD-005: Create Product (Seller)
-**Priority:** High  
-**Preconditions:** Seller is logged in  
+**Priority:** High
+**Preconditions:** Seller is logged in
 **Steps:**
 1. Navigate to seller dashboard
 2. Click "Add Product"
@@ -233,8 +233,8 @@ Testing covers:
 ### 4.3 Shopping Cart Test Cases
 
 #### TC-CART-001: Add Product to Cart
-**Priority:** High  
-**Preconditions:** User is logged in, product exists  
+**Priority:** High
+**Preconditions:** User is logged in, product exists
 **Steps:**
 1. View a product
 2. Click "Add to Cart"
@@ -245,8 +245,8 @@ Testing covers:
 ---
 
 #### TC-CART-002: Update Cart Quantity
-**Priority:** Medium  
-**Preconditions:** Product in cart  
+**Priority:** Medium
+**Preconditions:** Product in cart
 **Steps:**
 1. View cart
 2. Change quantity
@@ -257,8 +257,8 @@ Testing covers:
 ---
 
 #### TC-CART-003: Remove Item from Cart
-**Priority:** Medium  
-**Preconditions:** Multiple items in cart  
+**Priority:** Medium
+**Preconditions:** Multiple items in cart
 **Steps:**
 1. View cart
 2. Click "Remove" on an item
@@ -271,8 +271,8 @@ Testing covers:
 ### 4.4 Checkout Test Cases
 
 #### TC-CHECKOUT-001: Checkout with Valid Address
-**Priority:** High  
-**Preconditions:** Items in cart, user logged in  
+**Priority:** High
+**Preconditions:** Items in cart, user logged in
 **Steps:**
 1. Click "Checkout"
 2. Enter shipping address
@@ -284,8 +284,8 @@ Testing covers:
 ---
 
 #### TC-CHECKOUT-002: Checkout with Empty Cart
-**Priority:** High  
-**Preconditions:** Cart is empty  
+**Priority:** High
+**Preconditions:** Cart is empty
 **Steps:**
 1. Navigate to checkout page
 
@@ -294,8 +294,8 @@ Testing covers:
 ---
 
 #### TC-CHECKOUT-003: Checkout Address Validation
-**Priority:** High  
-**Preconditions:** Items in cart  
+**Priority:** High
+**Preconditions:** Items in cart
 **Steps:**
 1. Click "Checkout"
 2. Leave required fields empty
@@ -308,8 +308,8 @@ Testing covers:
 ### 4.5 Payment Test Cases
 
 #### TC-PAY-001: eSewa Payment Initiation
-**Priority:** High  
-**Preconditions:** Order created  
+**Priority:** High
+**Preconditions:** Order created
 **Steps:**
 1. Complete checkout
 2. Select eSewa payment
@@ -320,8 +320,8 @@ Testing covers:
 ---
 
 #### TC-PAY-002: Payment Success Flow
-**Priority:** High  
-**Preconditions:** Order created, payment initiated  
+**Priority:** High
+**Preconditions:** Order created, payment initiated
 **Steps:**
 1. Complete payment on eSewa
 2. Receive callback
@@ -333,8 +333,8 @@ Testing covers:
 ---
 
 #### TC-PAY-003: Payment Failure Flow
-**Priority:** High  
-**Preconditions:** Order created, payment initiated  
+**Priority:** High
+**Preconditions:** Order created, payment initiated
 **Steps:**
 1. Payment fails on eSewa
 2. Receive failure callback
@@ -347,8 +347,8 @@ Testing covers:
 ### 4.6 Order Management Test Cases
 
 #### TC-ORDER-001: View Order History
-**Priority:** Medium  
-**Preconditions:** User has orders  
+**Priority:** Medium
+**Preconditions:** User has orders
 **Steps:**
 1. Navigate to buyer dashboard
 2. Click "My Orders"
@@ -359,8 +359,8 @@ Testing covers:
 ---
 
 #### TC-ORDER-002: Update Order Status (Admin)
-**Priority:** High  
-**Preconditions:** Order exists, admin logged in  
+**Priority:** High
+**Preconditions:** Order exists, admin logged in
 **Steps:**
 1. Navigate to admin dashboard
 2. View orders
@@ -373,8 +373,8 @@ Testing covers:
 ### 4.7 Blockchain Review Test Cases
 
 #### TC-REVIEW-001: SDC Generation
-**Priority:** High  
-**Preconditions:** Order status changed to "delivered"  
+**Priority:** High
+**Preconditions:** Order status changed to "delivered"
 **Steps:**
 1. Admin updates order status
 2. System generates SDC codes
@@ -385,8 +385,8 @@ Testing covers:
 ---
 
 #### TC-REVIEW-002: SDC Verification
-**Priority:** High  
-**Preconditions:** SDC code exists  
+**Priority:** High
+**Preconditions:** SDC code exists
 **Steps:**
 1. Enter SDC code in review form
 2. System verifies SDC
@@ -397,8 +397,8 @@ Testing covers:
 ---
 
 #### TC-REVIEW-003: Submit Verified Review
-**Priority:** High  
-**Preconditions:** Valid SDC code, wallet connected  
+**Priority:** High
+**Preconditions:** Valid SDC code, wallet connected
 **Steps:**
 1. Enter SDC code
 2. Enter rating and comment
@@ -410,8 +410,8 @@ Testing covers:
 ---
 
 #### TC-REVIEW-004: Duplicate SDC Usage
-**Priority:** High  
-**Preconditions:** SDC code already used  
+**Priority:** High
+**Preconditions:** SDC code already used
 **Steps:**
 1. Enter used SDC code
 2. Attempt to submit review
@@ -423,8 +423,8 @@ Testing covers:
 ### 4.8 Admin Dashboard Test Cases
 
 #### TC-ADMIN-001: Approve Product
-**Priority:** High  
-**Preconditions:** Pending product exists, admin logged in  
+**Priority:** High
+**Preconditions:** Pending product exists, admin logged in
 **Steps:**
 1. Navigate to admin dashboard
 2. View pending products
@@ -435,8 +435,8 @@ Testing covers:
 ---
 
 #### TC-ADMIN-002: View Analytics
-**Priority:** Medium  
-**Preconditions:** Admin logged in, data exists  
+**Priority:** Medium
+**Preconditions:** Admin logged in, data exists
 **Steps:**
 1. Navigate to admin dashboard
 2. View analytics tab
@@ -449,8 +449,8 @@ Testing covers:
 ### 4.9 Security Test Cases
 
 #### TC-SEC-001: Unauthorized Access
-**Priority:** High  
-**Preconditions:** User not logged in  
+**Priority:** High
+**Preconditions:** User not logged in
 **Steps:**
 1. Attempt to access protected route
 2. View response
@@ -460,8 +460,8 @@ Testing covers:
 ---
 
 #### TC-SEC-002: JWT Token Expiry
-**Priority:** Medium  
-**Preconditions:** User logged in, token expired  
+**Priority:** Medium
+**Preconditions:** User logged in, token expired
 **Steps:**
 1. Wait for token expiry
 2. Attempt API call
@@ -472,8 +472,8 @@ Testing covers:
 ---
 
 #### TC-SEC-003: Password Hashing
-**Priority:** High  
-**Preconditions:** User registered  
+**Priority:** High
+**Preconditions:** User registered
 **Steps:**
 1. Check database
 2. View password field
@@ -486,11 +486,11 @@ Testing covers:
 
 | Phase | Duration | Test Cases | Status |
 |-------|----------|------------|--------|
-| Unit Testing | Week 1 | TC-UNIT-001 to TC-UNIT-050 | ⏳ Pending |
-| Integration Testing | Week 2 | TC-INT-001 to TC-INT-030 | ⏳ Pending |
-| System Testing | Week 3 | TC-SYS-001 to TC-SYS-040 | ⏳ Pending |
-| UAT | Week 4 | TC-UAT-001 to TC-UAT-020 | ⏳ Pending |
-| Regression Testing | Week 5 | All critical test cases | ⏳ Pending |
+| Unit Testing | Week 1 | TC-UNIT-001 to TC-UNIT-050 |  Pending |
+| Integration Testing | Week 2 | TC-INT-001 to TC-INT-030 |  Pending |
+| System Testing | Week 3 | TC-SYS-001 to TC-SYS-040 |  Pending |
+| UAT | Week 4 | TC-UAT-001 to TC-UAT-020 |  Pending |
+| Regression Testing | Week 5 | All critical test cases |  Pending |
 
 ---
 
@@ -534,7 +534,7 @@ Testing covers:
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial Test Plan
 

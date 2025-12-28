@@ -2,7 +2,7 @@
 
 This guide will help you set up the complete full-stack blockchain-based e-commerce platform locally on your machine.
 
-## 📋 Prerequisites
+##  Prerequisites
 
 Before starting, ensure you have the following installed:
 
@@ -11,23 +11,23 @@ Before starting, ensure you have the following installed:
 - **Git** - [Download](https://git-scm.com/)
 - **Code Editor** (VS Code recommended)
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 BUYSEWA E-commerce Platform Design/
-├── contracts/              # Solidity smart contracts
-│   └── ReviewAuth.sol
-├── scripts/                # Hardhat deployment scripts
-│   └── deploy.js
-├── review-backend/         # Express.js backend
-│   ├── models/            # MongoDB models
-│   ├── routes/            # API routes
-│   └── server.js
-├── src/                   # React frontend (already exists)
-└── hardhat.config.js     # Hardhat configuration
+ contracts/              # Solidity smart contracts
+    ReviewAuth.sol
+ scripts/                # Hardhat deployment scripts
+    deploy.js
+ review-backend/         # Express.js backend
+    models/            # MongoDB models
+    routes/            # API routes
+    server.js
+ src/                   # React frontend (already exists)
+ hardhat.config.js     # Hardhat configuration
 ```
 
-## 🚀 Step-by-Step Setup
+##  Step-by-Step Setup
 
 ### Step 1: Install Frontend Dependencies
 
@@ -73,7 +73,7 @@ npm install
    ```bash
    # Windows
    net start MongoDB
-   
+
    # macOS/Linux
    sudo systemctl start mongod
    # OR
@@ -190,10 +190,10 @@ npm run dev
 
 **Expected output:**
 ```
-✅ Connected to MongoDB
-🚀 Server running on http://localhost:5000
-📝 API Health: http://localhost:5000/api/health
-🔗 Blockchain Contract: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+ Connected to MongoDB
+ Server running on http://localhost:5000
+ API Health: http://localhost:5000/api/health
+ Blockchain Contract: 0x5FbDB2315678afecb367f032d93F642f64180aa3
 ```
 
 ### Step 8: Start the Frontend
@@ -212,8 +212,8 @@ npm run dev
 ```
 VITE v6.3.5  ready in 500 ms
 
-➜  Local:   http://localhost:5173/
-➜  Network: use --host to expose
+  Local:   http://localhost:5173/
+  Network: use --host to expose
 ```
 
 ### Step 9: Verify Everything is Running
@@ -231,7 +231,7 @@ You should now have **4 terminals running**:
 - **Backend API**: Open http://localhost:5000/api/health
 - **Hardhat Node**: Should show "Started HTTP and WebSocket JSON-RPC server"
 
-## 🧪 Testing the Full Flow
+##  Testing the Full Flow
 
 ### 1. Create a User Account
 
@@ -296,7 +296,7 @@ db.orders.findOne()
    - Submitted to blockchain
    - Stored with IPFS hash (simulated)
 
-## 📝 API Endpoints Reference
+##  API Endpoints Reference
 
 ### Authentication
 - `POST /api/auth/register` - Register new user
@@ -327,7 +327,7 @@ db.orders.findOne()
 - `GET /api/reviews/user/:userId` - Get user reviews
 - `GET /api/reviews/:id` - Get review by ID
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### MongoDB Connection Error
 
@@ -376,14 +376,14 @@ db.orders.findOne()
 - Check MongoDB: `db.sdcs.find()` should show SDC records
 - Verify SDC code format: `SDC-BUY-2024-XXXXXX`
 
-## 📚 Additional Resources
+##  Additional Resources
 
 - **Hardhat Documentation**: https://hardhat.org/docs
 - **Ethers.js Documentation**: https://docs.ethers.org/
 - **MongoDB Documentation**: https://docs.mongodb.com/
 - **Express.js Documentation**: https://expressjs.com/
 
-## 🎓 For Your FYP Presentation
+##  For Your FYP Presentation
 
 ### Key Features to Demonstrate:
 
@@ -405,7 +405,7 @@ db.orders.findOne()
 6. Submit review using SDC code
 7. Show review on product page with blockchain hash
 
-## ✅ Checklist
+##  Checklist
 
 - [ ] Node.js installed
 - [ ] MongoDB installed and running
@@ -423,9 +423,9 @@ db.orders.findOne()
 - [ ] Tested SDC generation
 - [ ] Tested review submission
 
-## 🎉 You're All Set!
+##  You're All Set!
 
-Your full-stack blockchain-based e-commerce platform is now running locally. Good luck with your FYP! 🚀
+Your full-stack blockchain-based e-commerce platform is now running locally. Good luck with your FYP!
 
 For questions or issues, check the troubleshooting section above or review the code comments.
 

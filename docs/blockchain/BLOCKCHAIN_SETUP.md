@@ -1,8 +1,8 @@
-# 🔗 Blockchain Integration Setup Guide
+#  Blockchain Integration Setup Guide
 
 This guide will help you set up the complete blockchain integration for BUYSEWA's review verification system.
 
-## 📋 Table of Contents
+##  Table of Contents
 
 1. [Overview](#overview)
 2. [Prerequisites](#prerequisites)
@@ -12,7 +12,7 @@ This guide will help you set up the complete blockchain integration for BUYSEWA'
 6. [Testing](#testing)
 7. [Production Deployment](#production-deployment)
 
-## 🎯 Overview
+##  Overview
 
 The blockchain integration enables:
 - **SDC (Secure Digital Code) Registration**: Register delivery codes on blockchain
@@ -20,7 +20,7 @@ The blockchain integration enables:
 - **Immutable Records**: All reviews stored on blockchain with IPFS
 - **MetaMask Integration**: Users connect wallets to submit reviews
 
-## 📦 Prerequisites
+##  Prerequisites
 
 ### Required Software
 
@@ -35,7 +35,7 @@ The blockchain integration enables:
 - **IPFS Service** (Pinata, Infura, or self-hosted)
 - **Block Explorer API** (optional, for transaction verification)
 
-## 🚀 Smart Contract Deployment
+##  Smart Contract Deployment
 
 ### Step 1: Install Dependencies
 
@@ -77,7 +77,7 @@ npx hardhat run scripts/deploy.js --network mumbai
 
 #### Mainnet (Production)
 
-⚠️ **Only deploy to mainnet after thorough testing!**
+ **Only deploy to mainnet after thorough testing!**
 
 ```bash
 npx hardhat run scripts/deploy.js --network polygon
@@ -91,7 +91,7 @@ After deployment, save the contract address:
 REVIEW_AUTH_CONTRACT_ADDRESS=0x...
 ```
 
-## ⚙️ Backend Configuration
+##  Backend Configuration
 
 ### Step 1: Install Dependencies
 
@@ -132,10 +132,10 @@ node server.js
 
 You should see:
 ```
-✅ Blockchain connection initialized
+ Blockchain connection initialized
 ```
 
-## 🎨 Frontend Configuration
+##  Frontend Configuration
 
 ### Step 1: Install Ethers.js
 
@@ -172,13 +172,13 @@ Add the `WalletConnect` component to your pages:
 import { WalletConnect } from './components/WalletConnect';
 
 // In your component
-<WalletConnect 
+<WalletConnect
   onConnect={(address) => console.log('Connected:', address)}
   onDisconnect={() => console.log('Disconnected')}
 />
 ```
 
-## 🧪 Testing
+##  Testing
 
 ### Test 1: Local Blockchain
 
@@ -214,7 +214,7 @@ npx hardhat node
 
 5. Test with real testnet
 
-## 📱 User Flow
+##  User Flow
 
 ### For Buyers:
 
@@ -231,7 +231,7 @@ npx hardhat node
 2. **Verify SDCs** → Check SDC registration status
 3. **Monitor Reviews** → View blockchain-verified reviews
 
-## 🔒 Security Considerations
+##  Security Considerations
 
 1. **Private Keys**: Never commit private keys to git
 2. **Contract Owner**: Use a secure wallet for contract owner
@@ -239,7 +239,7 @@ npx hardhat node
 4. **Access Control**: Contract owner functions are protected
 5. **Input Validation**: All inputs validated before blockchain calls
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### MetaMask Not Connecting
 
@@ -265,7 +265,7 @@ npx hardhat node
 - Check private key format (no 0x prefix)
 - Ensure contract address matches deployment
 
-## 📊 Monitoring
+##  Monitoring
 
 ### View Transactions
 
@@ -280,7 +280,7 @@ Monitor these events:
 - `ReviewSubmitted`: When review is submitted
 - `SDCVerified`: When SDC is verified
 
-## 🚀 Production Deployment
+##  Production Deployment
 
 ### Checklist
 
@@ -301,14 +301,14 @@ Monitor these events:
 - **Monitoring**: Tenderly or OpenZeppelin Defender
 - **Explorer**: Polygonscan API
 
-## 📚 Additional Resources
+##  Additional Resources
 
 - [Hardhat Documentation](https://hardhat.org/docs)
 - [Ethers.js Documentation](https://docs.ethers.org/)
 - [Polygon Documentation](https://docs.polygon.technology/)
 - [MetaMask Documentation](https://docs.metamask.io/)
 
-## 🆘 Support
+##  Support
 
 If you encounter issues:
 

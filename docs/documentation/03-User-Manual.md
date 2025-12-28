@@ -1,7 +1,7 @@
 # User Manual
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -292,7 +292,7 @@
 
 ### Login Issues
 
-**Problem:** Cannot log in  
+**Problem:** Cannot log in
 **Solutions:**
 - Check email and password are correct
 - Ensure account exists
@@ -301,7 +301,7 @@
 
 ### Payment Issues
 
-**Problem:** Payment not processing  
+**Problem:** Payment not processing
 **Solutions:**
 - Check internet connection
 - Verify eSewa account has sufficient balance
@@ -310,7 +310,7 @@
 
 ### Review Submission Issues
 
-**Problem:** Cannot submit review  
+**Problem:** Cannot submit review
 **Solutions:**
 - Verify SDC code is correct
 - Ensure order is delivered
@@ -320,7 +320,7 @@
 
 ### Cart Issues
 
-**Problem:** Items not adding to cart  
+**Problem:** Items not adding to cart
 **Solutions:**
 - Refresh the page
 - Clear browser cache
@@ -329,7 +329,7 @@
 
 ### Page Loading Issues
 
-**Problem:** Pages not loading  
+**Problem:** Pages not loading
 **Solutions:**
 - Check internet connection
 - Refresh the page
@@ -343,71 +343,71 @@
 
 ### General Questions
 
-**Q: How do I create an account?**  
+**Q: How do I create an account?**
 A: Click "Sign Up" on the homepage and fill in the registration form.
 
-**Q: What is the minimum password length?**  
+**Q: What is the minimum password length?**
 A: Passwords must be at least 4 characters.
 
-**Q: Can I change my password?**  
+**Q: Can I change my password?**
 A: Password reset functionality is planned for future releases.
 
-**Q: How do I contact customer support?**  
+**Q: How do I contact customer support?**
 A: Use the chat widget on the website or email support@buysewa.com.
 
 ### Product Questions
 
-**Q: How do I search for products?**  
+**Q: How do I search for products?**
 A: Use the search bar on the products page or use category filters.
 
-**Q: Can I see product reviews before buying?**  
+**Q: Can I see product reviews before buying?**
 A: Yes, product pages display verified reviews from other buyers.
 
-**Q: What if a product is out of stock?**  
+**Q: What if a product is out of stock?**
 A: Out-of-stock products will show "Out of Stock" and cannot be added to cart.
 
 ### Order Questions
 
-**Q: How do I track my order?**  
+**Q: How do I track my order?**
 A: Go to Dashboard → My Orders and click on your order to see status.
 
-**Q: Can I cancel an order?**  
+**Q: Can I cancel an order?**
 A: Contact support to cancel orders. Cancellation depends on order status.
 
-**Q: What payment methods are accepted?**  
+**Q: What payment methods are accepted?**
 A: Currently, eSewa payment gateway is supported. More methods coming soon.
 
 ### Review Questions
 
-**Q: What is an SDC code?**  
+**Q: What is an SDC code?**
 A: SDC (Secure Digital Code) is a unique code generated after order delivery, used to verify you purchased the product.
 
-**Q: Why do I need to connect MetaMask?**  
+**Q: Why do I need to connect MetaMask?**
 A: MetaMask is required to submit reviews to the blockchain for verification.
 
-**Q: Can I edit my review after submitting?**  
+**Q: Can I edit my review after submitting?**
 A: Reviews are stored on blockchain and cannot be edited. Contact support for assistance.
 
 ### Seller Questions
 
-**Q: How do I become a seller?**  
+**Q: How do I become a seller?**
 A: Register with role "Seller" and wait for admin approval.
 
-**Q: How long does product approval take?**  
+**Q: How long does product approval take?**
 A: Product approval typically takes 24-48 hours.
 
-**Q: Can I set my own prices?**  
+**Q: Can I set my own prices?**
 A: Yes, sellers set their own product prices.
 
 ### Technical Questions
 
-**Q: Which browsers are supported?**  
+**Q: Which browsers are supported?**
 A: Chrome, Firefox, Safari, and Edge (latest versions).
 
-**Q: Do I need to install any software?**  
+**Q: Do I need to install any software?**
 A: No, the platform works in your web browser. MetaMask extension is needed for blockchain features.
 
-**Q: Is my data secure?**  
+**Q: Is my data secure?**
 A: Yes, all data is encrypted and securely stored. Passwords are hashed and never stored in plain text.
 
 ---
@@ -421,7 +421,7 @@ For additional help:
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial User Manual
 

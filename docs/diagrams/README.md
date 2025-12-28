@@ -1,8 +1,8 @@
-# 📊 BUYSEWA Class Diagrams
+#  BUYSEWA Class Diagrams
 
 This directory contains comprehensive UML class diagrams for the BUYSEWA e-commerce platform, organized by domain.
 
-## 📁 Files
+##  Files
 
 ### Main Entry Point
 - **`index.html`** - Navigation hub with cards for all diagrams
@@ -12,7 +12,7 @@ This directory contains comprehensive UML class diagrams for the BUYSEWA e-comme
 2. **`02-admin-domain-class-diagram.html`** - Admin domain with 8 main entities
 3. **`03-seller-domain-class-diagram.html`** - Seller domain with 9 main entities
 
-## 👥 User Domain
+##  User Domain
 
 **Location:** `01-user-domain-class-diagram.html`
 
@@ -39,7 +39,7 @@ Order (1) → (many) SDC
 SDC (1) → (1) Review
 ```
 
-## ⚙️ Admin Domain
+##  Admin Domain
 
 **Location:** `02-admin-domain-class-diagram.html`
 
@@ -68,7 +68,7 @@ Admin (1) → (1) UserManagement
 Admin (1) → (many) ContentModeration
 ```
 
-## 🏪 Seller Domain
+##  Seller Domain
 
 **Location:** `03-seller-domain-class-diagram.html`
 
@@ -100,7 +100,7 @@ Product (1) → (1) Inventory
 Sale (1) → (1) Product
 ```
 
-## 🚀 How to View
+##  How to View
 
 ### Option 1: Open in Browser
 Simply open `index.html` in your web browser to see the navigation hub with all diagrams.
@@ -119,25 +119,25 @@ python -m http.server 8000
 # Then visit http://localhost:8000
 ```
 
-## 📖 How to Read
+##  How to Read
 
 ### UML Class Notation
 
 ```
-┌─────────────────────────┐
-│      ClassName          │
-├─────────────────────────┤
-│ - privateAttribute      │  ← Attributes (-)
-│ + publicMethod()        │  ← Methods (+)
-└─────────────────────────┘
+
+      ClassName          
+
+ - privateAttribute        ← Attributes (-)
+ + publicMethod()          ← Methods (+)
+
 ```
 
 ### Relationship Arrows
 
 - `→` (solid line) - Association
 - `--→` (dashed line) - Dependency
-- `◇--` (diamond) - Composition
-- `◇-|` (open diamond) - Aggregation
+- `--` (diamond) - Composition
+- `-|` (open diamond) - Aggregation
 
 ### Cardinality Notation
 
@@ -146,16 +146,16 @@ python -m http.server 8000
 - `1..*` - One or more
 - `0..1` - Zero or one
 
-## 🎨 Features
+##  Features
 
-✅ **Responsive Design** - Works on desktop, tablet, and mobile
-✅ **Interactive Legends** - Each diagram includes explanations
-✅ **Color-Coded Domains** - Different colors for each domain
-✅ **Mermaid JS** - Clean, maintainable diagram syntax
-✅ **Print-Friendly** - Can be printed or exported as PDF
-✅ **Dark/Light Support** - Adapts to system preferences
+ **Responsive Design** - Works on desktop, tablet, and mobile
+ **Interactive Legends** - Each diagram includes explanations
+ **Color-Coded Domains** - Different colors for each domain
+ **Mermaid JS** - Clean, maintainable diagram syntax
+ **Print-Friendly** - Can be printed or exported as PDF
+ **Dark/Light Support** - Adapts to system preferences
 
-## 📊 Database Schema Alignment
+##  Database Schema Alignment
 
 These diagrams directly reflect the MongoDB schema used in:
 - `/review-backend/models/` - Database models
@@ -170,7 +170,7 @@ File: review-backend/models/User.js
 Collection: users (MongoDB)
 ```
 
-## 🔄 Cross-Domain References
+##  Cross-Domain References
 
 While each domain is separate, they interact as follows:
 
@@ -198,14 +198,14 @@ While each domain is separate, they interact as follows:
 - Reviews stored on IPFS
 - Transactions tracked on-chain
 
-## 📝 Notes
+##  Notes
 
 - All diagrams use **UML 2.0** standard notation
 - Diagrams are **technology-agnostic** (not MongoDB-specific)
 - Cardinality follows **relational database** conventions
 - Methods shown are **representative** not exhaustive
 
-## 🔐 Security Entities
+##  Security Entities
 
 These classes are related to security:
 
@@ -223,7 +223,7 @@ These classes are related to security:
 - Performance (fraud detection)
 - Payout (financial security)
 
-## 🚀 Future Enhancements
+##  Future Enhancements
 
 - [ ] Add sequence diagrams
 - [ ] Add state machine diagrams
@@ -232,13 +232,13 @@ These classes are related to security:
 - [ ] Add deployment diagrams
 - [ ] Add component diagrams
 
-## 📚 Related Documentation
+##  Related Documentation
 
 - **Architecture Diagram** - `docs/design/01-Architecture-Diagram.md`
 - **Database Schema** - `docs/design/02-Database-Schema.md`
 - **API Design** - `docs/design/03-API-Design.md`
 
-## 👨‍💻 Maintenance
+##  Maintenance
 
 To update diagrams:
 
@@ -247,7 +247,7 @@ To update diagrams:
 3. Add/remove entities as the system evolves
 4. Update the legend descriptions
 
-## 📞 Support
+##  Support
 
 For questions about the diagrams:
 1. Check the legend on each diagram
@@ -257,6 +257,6 @@ For questions about the diagrams:
 
 ---
 
-**Last Updated:** December 26, 2025  
-**Version:** 1.0  
+**Last Updated:** December 26, 2025
+**Version:** 1.0
 **Status:** Production Ready

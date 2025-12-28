@@ -320,30 +320,30 @@ async function seedProducts() {
   try {
     // Connect to MongoDB
     await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/buysewa');
-    console.log('✅ Connected to MongoDB');
+    console.log(' Connected to MongoDB');
 
     // Clear existing products
     await Product.deleteMany({});
-    console.log('🗑️  Cleared existing products');
+    console.log('  Cleared existing products');
 
     // Insert products
     const insertedProducts = await Product.insertMany(products);
-    console.log(`✅ Inserted ${insertedProducts.length} products`);
+    console.log(` Inserted ${insertedProducts.length} products`);
 
     // Display summary
     const categories = await Product.aggregate([
       { $group: { _id: '$category', count: { $sum: 1 } } }
     ]);
 
-    console.log('\n📊 Products by Category:');
+    console.log('\n Products by Category:');
     categories.forEach(cat => {
       console.log(`   ${cat._id}: ${cat.count} products`);
     });
 
-    console.log('\n✅ Database seeding completed successfully!');
+    console.log('\n Database seeding completed successfully!');
     process.exit(0);
   } catch (error) {
-    console.error('❌ Error seeding database:', error);
+    console.error(' Error seeding database:', error);
     process.exit(1);
   }
 }

@@ -1,7 +1,7 @@
 # Architecture Diagrams
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -9,78 +9,78 @@
 ## System Architecture Overview
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                         CLIENT LAYER                             │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │              React Frontend (Port 5173)                   │  │
-│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  │  │
-│  │  │ Homepage │  │ Products │  │  Cart    │  │ Checkout │  │  │
-│  │  └──────────┘  └──────────┘  └──────────┘  └──────────┘  │  │
-│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  │  │
-│  │  │  Login   │  │ Dashboard│  │  Review  │  │  Payment │  │  │
-│  │  └──────────┘  └──────────┘  └──────────┘  └──────────┘  │  │
-│  └───────────────────────────────────────────────────────────┘  │
-│                          ↓ HTTP/HTTPS                            │
-└─────────────────────────────────────────────────────────────────┘
+
+                         CLIENT LAYER                             
+    
+                React Frontend (Port 5173)                     
+              
+     Homepage    Products     Cart       Checkout     
+              
+              
+      Login      Dashboard    Review      Payment     
+              
+    
+                          ↓ HTTP/HTTPS                            
+
                               ↓
-┌─────────────────────────────────────────────────────────────────┐
-│                      APPLICATION LAYER                          │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │         Express.js Backend API (Port 5000)                │  │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │  │
-│  │  │ Auth Routes  │  │ Product Routes│  │ Order Routes │  │  │
-│  │  └──────────────┘  └──────────────┘  └──────────────┘  │  │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │  │
-│  │  │ Review Routes│  │  SDC Routes  │  │Payment Routes│  │  │
-│  │  └──────────────┘  └──────────────┘  └──────────────┘  │  │
-│  │  ┌──────────────────────────────────────────────────┐  │  │
-│  │  │         Middleware (Auth, Validation)           │  │  │
-│  │  └──────────────────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────────────────────┘  │
-│                          ↓ API Calls                             │
-└─────────────────────────────────────────────────────────────────┘
+
+                      APPLICATION LAYER                          
+    
+           Express.js Backend API (Port 5000)                  
+            
+     Auth Routes     Product Routes   Order Routes     
+            
+            
+     Review Routes    SDC Routes    Payment Routes    
+            
+        
+             Middleware (Auth, Validation)               
+        
+    
+                          ↓ API Calls                             
+
                               ↓
-┌─────────────────────────────────────────────────────────────────┐
-│                        DATA LAYER                                │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │              MongoDB Database                             │  │
-│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  │  │
-│  │  │  Users   │  │ Products │  │  Orders  │  │ Reviews │  │  │
-│  │  └──────────┘  └──────────┘  └──────────┘  └──────────┘  │  │
-│  │  ┌──────────┐                                             │  │
-│  │  │   SDCs   │                                             │  │
-│  │  └──────────┘                                             │  │
-│  └───────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
+
+                        DATA LAYER                                
+    
+                MongoDB Database                               
+              
+      Users      Products     Orders     Reviews     
+              
+                                                   
+       SDCs                                                  
+                                                   
+    
+
                               ↓
-┌─────────────────────────────────────────────────────────────────┐
-│                    BLOCKCHAIN LAYER                             │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │         Hardhat + Ethereum Network                        │  │
-│  │  ┌──────────────────────────────────────────────────────┐ │  │
-│  │  │         ReviewAuth Smart Contract                    │ │  │
-│  │  │  • registerSDC()                                     │ │  │
-│  │  │  • verifySDC()                                        │ │  │
-│  │  │  • submitReview()                                    │ │  │
-│  │  │  • getReview()                                       │ │  │
-│  │  └──────────────────────────────────────────────────────┘ │  │
-│  │  ┌──────────────────────────────────────────────────────┐ │  │
-│  │  │              IPFS Network                             │ │  │
-│  │  │  • Store review content (rating, comment, images)    │ │  │
-│  │  │  • Return IPFS hash                                  │ │  │
-│  │  └──────────────────────────────────────────────────────┘ │  │
-│  └───────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
+
+                    BLOCKCHAIN LAYER                             
+    
+           Hardhat + Ethereum Network                          
+       
+             ReviewAuth Smart Contract                       
+      • registerSDC()                                        
+      • verifySDC()                                           
+      • submitReview()                                       
+      • getReview()                                          
+       
+       
+                  IPFS Network                                
+      • Store review content (rating, comment, images)       
+      • Return IPFS hash                                     
+       
+    
+
                               ↓
-┌─────────────────────────────────────────────────────────────────┐
-│                    EXTERNAL SERVICES                             │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │              eSewa Payment Gateway                        │  │
-│  │  • Payment initiation                                     │  │
-│  │  • Payment callback                                       │  │
-│  │  • HMAC signature verification                            │  │
-│  └───────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
+
+                    EXTERNAL SERVICES                             
+    
+                eSewa Payment Gateway                          
+    • Payment initiation                                       
+    • Payment callback                                         
+    • HMAC signature verification                              
+    
+
 ```
 
 ---
@@ -88,76 +88,76 @@
 ## Component Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    FRONTEND COMPONENTS                       │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐│
-│  │   App.tsx    │────▶│  Homepage    │────▶│ProductListing││
-│  └──────────────┘     └──────────────┘     └──────────────┘│
-│         │                    │                    │          │
-│         │                    │                    │          │
-│         ▼                    ▼                    ▼          │
-│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐│
-│  │AuthContext   │     │CartContext   │     │OrderContext ││
-│  └──────────────┘     └──────────────┘     └──────────────┘│
-│         │                    │                    │          │
-│         │                    │                    │          │
-│         └────────────────────┼────────────────────┘          │
-│                              │                                │
-│                              ▼                                │
-│                      ┌──────────────┐                        │
-│                      │  api.ts      │                        │
-│                      │  (API Client)│                        │
-│                      └──────────────┘                        │
-│                              │                                │
-└──────────────────────────────┼────────────────────────────────┘
-                               │ HTTP Requests
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    BACKEND COMPONENTS                       │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐│
-│  │  server.js   │────▶│ authRoutes   │────▶│ auth.js       ││
-│  └──────────────┘     └──────────────┘     │ (middleware)  ││
-│         │                    │              └──────────────┘│
-│         │                    │                             │
-│         │              ┌──────────────┐                    │
-│         │              │ productRoutes│                    │
-│         │              └──────────────┘                    │
-│         │                    │                             │
-│         │              ┌──────────────┐                    │
-│         │              │ orderRoutes  │                    │
-│         │              └──────────────┘                    │
-│         │                    │                             │
-│         │              ┌──────────────┐                    │
-│         │              │ reviewRoutes │                    │
-│         │              └──────────────┘                    │
-│         │                    │                             │
-│         │              ┌──────────────┐                    │
-│         │              │  sdcRoutes   │                    │
-│         │              └──────────────┘                    │
-│         │                    │                             │
-│         │              ┌──────────────┐                    │
-│         │              │ esewaRoutes  │                    │
-│         │              └──────────────┘                    │
-│         │                    │                             │
-│         └────────────────────┼─────────────────────────────┘
-│                              │                                │
-│                              ▼                                │
-│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐│
-│  │ User Model   │     │Product Model │     │ Order Model  ││
-│  └──────────────┘     └──────────────┘     └──────────────┘│
-│  ┌──────────────┐     ┌──────────────┐                      │
-│  │ Review Model │     │  SDC Model   │                      │
-│  └──────────────┘     └──────────────┘                      │
-│                              │                                │
-│                              ▼                                │
-│                      ┌──────────────┐                        │
-│                      │   MongoDB    │                        │
-│                      └──────────────┘                        │
-└─────────────────────────────────────────────────────────────┘
+
+                    FRONTEND COMPONENTS                       
+
+                                                              
+            
+     App.tsx      Homepage    ProductListing
+            
+                                                           
+                                                           
+                                                           
+            
+  AuthContext        CartContext        OrderContext 
+            
+                                                           
+                                                           
+                   
+                                                              
+                                                              
+                                              
+                        api.ts                              
+                        (API Client)                        
+                                              
+                                                              
+
+                                HTTP Requests
+                               
+
+                    BACKEND COMPONENTS                       
+
+                                                              
+            
+    server.js    authRoutes    auth.js       
+             (middleware)  
+                                           
+                                                          
+                                           
+                        productRoutes                    
+                                           
+                                                          
+                                           
+                        orderRoutes                      
+                                           
+                                                          
+                                           
+                        reviewRoutes                     
+                                           
+                                                          
+                                           
+                         sdcRoutes                       
+                                           
+                                                          
+                                           
+                        esewaRoutes                      
+                                           
+                                                          
+         
+                                                              
+                                                              
+            
+   User Model        Product Model       Order Model  
+            
+                             
+   Review Model        SDC Model                         
+                             
+                                                              
+                                                              
+                                              
+                         MongoDB                            
+                                              
+
 ```
 
 ---
@@ -278,49 +278,49 @@ Buyer ← Review Submitted ← Display on Product Page
 ## Deployment Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    PRODUCTION ENVIRONMENT                     │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌──────────────────────────────────────────────────────┐  │
-│  │              Load Balancer (Nginx)                     │  │
-│  └──────────────────────────────────────────────────────┘  │
-│                    │              │                         │
-│                    ▼              ▼                         │
-│  ┌──────────────────┐    ┌──────────────────┐            │
-│  │  Frontend Server │    │  Frontend Server  │            │
-│  │  (React Build)   │    │  (React Build)    │            │
-│  └──────────────────┘    └──────────────────┘            │
-│                    │              │                         │
-│                    └──────┬───────┘                         │
-│                           ▼                                 │
-│  ┌──────────────────────────────────────────────────────┐  │
-│  │              API Gateway (Express)                     │  │
-│  └──────────────────────────────────────────────────────┘  │
-│                    │              │                         │
-│                    ▼              ▼                         │
-│  ┌──────────────────┐    ┌──────────────────┐            │
-│  │  Backend Server  │    │  Backend Server  │            │
-│  │  (Node.js)       │    │  (Node.js)       │            │
-│  └──────────────────┘    └──────────────────┘            │
-│                    │              │                         │
-│                    └──────┬───────┘                         │
-│                           ▼                                 │
-│  ┌──────────────────────────────────────────────────────┐  │
-│  │         MongoDB Replica Set (Primary + Secondary)     │  │
-│  └──────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌──────────────────────────────────────────────────────┐  │
-│  │         Ethereum Network (Mainnet/Testnet)            │  │
-│  │         • ReviewAuth Smart Contract                    │  │
-│  │         • IPFS Network                                 │  │
-│  └──────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌──────────────────────────────────────────────────────┐  │
-│  │         External Services                             │  │
-│  │         • eSewa Payment Gateway                       │  │
-│  └──────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────┘
+
+                    PRODUCTION ENVIRONMENT                     
+
+                                                              
+    
+                Load Balancer (Nginx)                       
+    
+                                                           
+                                                           
+                  
+    Frontend Server       Frontend Server              
+    (React Build)         (React Build)                
+                  
+                                                           
+                                             
+                                                            
+    
+                API Gateway (Express)                       
+    
+                                                           
+                                                           
+                  
+    Backend Server        Backend Server              
+    (Node.js)             (Node.js)                   
+                  
+                                                           
+                                             
+                                                            
+    
+           MongoDB Replica Set (Primary + Secondary)       
+    
+                                                              
+    
+           Ethereum Network (Mainnet/Testnet)              
+           • ReviewAuth Smart Contract                      
+           • IPFS Network                                   
+    
+                                                              
+    
+           External Services                               
+           • eSewa Payment Gateway                         
+    
+
 ```
 
 ---
@@ -328,36 +328,36 @@ Buyer ← Review Submitted ← Display on Product Page
 ## Security Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    SECURITY LAYERS                            │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  Layer 1: Frontend Security                                  │
-│  • Input validation                                          │
-│  • XSS prevention                                            │
-│  • CSRF tokens                                               │
-│  • Secure token storage (localStorage)                       │
-│                                                              │
-│  Layer 2: API Security                                       │
-│  • JWT authentication                                        │
-│  • CORS configuration                                        │
-│  • Rate limiting                                             │
-│  • Input sanitization                                        │
-│  • HMAC signature verification (payments)                   │
-│                                                              │
-│  Layer 3: Data Security                                      │
-│  • Password hashing (bcrypt)                                 │
-│  • SDC hashing (SHA-256)                                     │
-│  • Database encryption                                        │
-│  • Secure database connections                               │
-│                                                              │
-│  Layer 4: Blockchain Security                                │
-│  • Smart contract access control                             │
-│  • SDC verification on-chain                                 │
-│  • Immutable review storage                                  │
-│  • IPFS content addressing                                   │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
+
+                    SECURITY LAYERS                            
+
+                                                              
+  Layer 1: Frontend Security                                  
+  • Input validation                                          
+  • XSS prevention                                            
+  • CSRF tokens                                               
+  • Secure token storage (localStorage)                       
+                                                              
+  Layer 2: API Security                                       
+  • JWT authentication                                        
+  • CORS configuration                                        
+  • Rate limiting                                             
+  • Input sanitization                                        
+  • HMAC signature verification (payments)                   
+                                                              
+  Layer 3: Data Security                                      
+  • Password hashing (bcrypt)                                 
+  • SDC hashing (SHA-256)                                     
+  • Database encryption                                        
+  • Secure database connections                               
+                                                              
+  Layer 4: Blockchain Security                                
+  • Smart contract access control                             
+  • SDC verification on-chain                                 
+  • Immutable review storage                                  
+  • IPFS content addressing                                   
+                                                              
+
 ```
 
 ---
@@ -384,7 +384,7 @@ Buyer ← Review Submitted ← Display on Product Page
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial Architecture Diagrams
 

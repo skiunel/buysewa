@@ -1,7 +1,7 @@
 # CI/CD Pipeline Configuration
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -33,29 +33,29 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Run linter
         run: npm run lint
-      
+
       - name: Run unit tests
         run: npm run test:unit
-      
+
       - name: Generate coverage report
         run: npm run test:coverage
-      
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
@@ -64,25 +64,25 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build application
         run: npm run build
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
-      
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -93,16 +93,16 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
           name: dist
-      
+
       - name: Deploy to production server
         uses: appleboy/scp-action@master
         with:
@@ -111,7 +111,7 @@ jobs:
           key: ${{ secrets.PROD_SSH_KEY }}
           source: "dist/*"
           target: "/var/www/buysewa-platform/dist"
-      
+
       - name: Restart Nginx
         uses: appleboy/ssh-action@master
         with:
@@ -140,7 +140,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     services:
       mongodb:
         image: mongo:6.0
@@ -151,39 +151,39 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
           cache-dependency-path: review-backend/package-lock.json
-      
+
       - name: Install dependencies
         working-directory: ./review-backend
         run: npm ci
-      
+
       - name: Run linter
         working-directory: ./review-backend
         run: npm run lint
-      
+
       - name: Run unit tests
         working-directory: ./review-backend
         run: npm run test:unit
         env:
           MONGODB_URI: mongodb://localhost:27017/buysewa_test
-      
+
       - name: Run integration tests
         working-directory: ./review-backend
         run: npm run test:integration
         env:
           MONGODB_URI: mongodb://localhost:27017/buysewa_test
           JWT_SECRET: test_secret
-      
+
       - name: Generate coverage report
         working-directory: ./review-backend
         run: npm run test:coverage
@@ -192,27 +192,27 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
           cache-dependency-path: review-backend/package-lock.json
-      
+
       - name: Install dependencies
         working-directory: ./review-backend
         run: npm ci --production
-      
+
       - name: Create deployment package
         run: |
           cd review-backend
           tar -czf ../backend-deploy.tar.gz .
-      
+
       - name: Deploy to production server
         uses: appleboy/scp-action@master
         with:
@@ -221,7 +221,7 @@ jobs:
           key: ${{ secrets.PROD_SSH_KEY }}
           source: "backend-deploy.tar.gz"
           target: "/tmp/"
-      
+
       - name: Extract and restart application
         uses: appleboy/ssh-action@master
         with:
@@ -264,32 +264,32 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Compile contracts
         run: npx hardhat compile
-      
+
       - name: Run tests
         run: npx hardhat test
-      
+
       - name: Deploy to network
         run: npx hardhat run scripts/deploy.js --network ${{ github.event.inputs.network || 'mainnet' }}
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           INFURA_API_KEY: ${{ secrets.INFURA_API_KEY }}
-      
+
       - name: Verify contract
         run: npx hardhat verify --network ${{ github.event.inputs.network || 'mainnet' }} ${{ env.CONTRACT_ADDRESS }}
         continue-on-error: true
@@ -356,7 +356,7 @@ services:
       - "80:80"
     depends_on:
       - backend
-  
+
   backend:
     build:
       context: .
@@ -369,7 +369,7 @@ services:
       - JWT_SECRET=${JWT_SECRET}
     depends_on:
       - mongo
-  
+
   mongo:
     image: mongo:6.0
     ports:
@@ -464,7 +464,7 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Check API health
         run: |
@@ -473,7 +473,7 @@ jobs:
             echo "Health check failed: $response"
             exit 1
           fi
-      
+
       - name: Check frontend
         run: |
           response=$(curl -s -o /dev/null -w "%{http_code}" https://yourdomain.com)
@@ -481,7 +481,7 @@ jobs:
             echo "Frontend check failed: $response"
             exit 1
           fi
-      
+
       - name: Send alert on failure
         if: failure()
         uses: 8398a7/action-slack@v3
@@ -518,7 +518,7 @@ jobs:
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial CI/CD Configuration
 

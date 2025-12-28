@@ -45,12 +45,12 @@ async function main() {
 // Execute deployment
 main()
   .then((address) => {
-    console.log("\n✅ Deployment successful!");
+    console.log("\n Deployment successful!");
     console.log(`Contract address: ${address}`);
     process.exit(0);
   })
   .catch((error) => {
-    console.error("\n❌ Deployment failed:");
+    console.error("\n Deployment failed:");
     console.error(error);
     process.exit(1);
   });

@@ -2,7 +2,7 @@
 
 Complete full-stack blockchain-based e-commerce platform with blockchain-verified review system.
 
-## 🎯 Project Overview
+##  Project Overview
 
 This is a complete Final Year Project (FYP) implementation featuring:
 
@@ -11,29 +11,29 @@ This is a complete Final Year Project (FYP) implementation featuring:
 - **Blockchain**: Hardhat (local Ethereum) + Solidity Smart Contracts
 - **Review System**: Blockchain-verified reviews using SDC (Secure Digital Code)
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 BUYSEWA E-commerce Platform Design/
-├── contracts/              # Solidity smart contracts
-│   └── ReviewAuth.sol      # Main review verification contract
-├── scripts/                # Hardhat deployment scripts
-│   └── deploy.js          # Contract deployment script
-├── review-backend/         # Express.js backend
-│   ├── models/            # MongoDB models (User, Product, Order, SDC, Review)
-│   ├── routes/            # API routes (auth, products, orders, sdc, reviews)
-│   ├── server.js          # Main server file
-│   └── package.json       # Backend dependencies
-├── src/                   # React frontend
-│   ├── components/        # React components
-│   ├── contexts/          # React contexts (Cart, Auth, Order)
-│   ├── services/          # API services
-│   └── ...
-├── hardhat.config.js      # Hardhat configuration
-└── SETUP_GUIDE.md         # Complete setup instructions
+ contracts/              # Solidity smart contracts
+    ReviewAuth.sol      # Main review verification contract
+ scripts/                # Hardhat deployment scripts
+    deploy.js          # Contract deployment script
+ review-backend/         # Express.js backend
+    models/            # MongoDB models (User, Product, Order, SDC, Review)
+    routes/            # API routes (auth, products, orders, sdc, reviews)
+    server.js          # Main server file
+    package.json       # Backend dependencies
+ src/                   # React frontend
+    components/        # React components
+    contexts/          # React contexts (Cart, Auth, Order)
+    services/          # API services
+    ...
+ hardhat.config.js      # Hardhat configuration
+ SETUP_GUIDE.md         # Complete setup instructions
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 See **SETUP_GUIDE.md** for detailed step-by-step instructions.
 
@@ -59,36 +59,36 @@ cd review-backend && npm start
 npm run dev
 ```
 
-## 🔑 Key Features
+##  Key Features
 
 ### 1. Normal E-commerce Features
-- ✅ Product listing and details
-- ✅ Shopping cart
-- ✅ Checkout and order creation
-- ✅ Order history
-- ✅ User accounts (login/register)
+-  Product listing and details
+-  Shopping cart
+-  Checkout and order creation
+-  Order history
+-  User accounts (login/register)
 
 ### 2. Blockchain Review System (ReviewAuth)
-- ✅ SDC (Secure Digital Code) generation after order delivery
-- ✅ SDC stored in MongoDB and registered on blockchain
-- ✅ Only verified buyers can submit reviews
-- ✅ Reviews stored on blockchain with IPFS hash
-- ✅ Review verification against blockchain
+-  SDC (Secure Digital Code) generation after order delivery
+-  SDC stored in MongoDB and registered on blockchain
+-  Only verified buyers can submit reviews
+-  Reviews stored on blockchain with IPFS hash
+-  Review verification against blockchain
 
 ### 3. Smart Contract Features
-- ✅ Register SDC codes on-chain
-- ✅ Verify SDC codes
-- ✅ Submit reviews with SDC verification
-- ✅ Prevent duplicate reviews
-- ✅ Query reviews by product/user
+-  Register SDC codes on-chain
+-  Verify SDC codes
+-  Submit reviews with SDC verification
+-  Prevent duplicate reviews
+-  Query reviews by product/user
 
-## 📚 Documentation
+##  Documentation
 
 - **SETUP_GUIDE.md** - Complete setup instructions
 - **review-backend/README.md** - Backend API documentation
 - Code comments throughout the codebase
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 ### Frontend
 - React 18
@@ -109,7 +109,7 @@ npm run dev
 - Solidity 0.8.19
 - Ethers.js v6
 
-## 🔐 Security Features
+##  Security Features
 
 - Password hashing (bcrypt)
 - JWT token authentication
@@ -117,13 +117,13 @@ npm run dev
 - Blockchain verification
 - Input validation
 
-## 📝 API Documentation
+##  API Documentation
 
 All API endpoints are documented in `review-backend/README.md`.
 
 Base URL: `http://localhost:5000/api`
 
-## 🧪 Testing Flow
+##  Testing Flow
 
 1. Register a user account
 2. Browse products
@@ -134,7 +134,7 @@ Base URL: `http://localhost:5000/api`
 7. Submit review with SDC
 8. View review on product page
 
-## 📦 Dependencies
+##  Dependencies
 
 ### Frontend
 See `package.json` in project root.
@@ -147,22 +147,22 @@ See `review-backend/package.json`.
 - @nomicfoundation/hardhat-toolbox
 - ethers
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 Common issues and solutions are documented in **SETUP_GUIDE.md**.
 
-## 📄 License
+##  License
 
 This project is for educational purposes (Final Year Project).
 
-## 👨‍💻 Development
+##  Development
 
 For development:
 - Backend: `cd review-backend && npm run dev` (uses nodemon)
 - Frontend: `npm run dev` (Vite hot reload)
 - Hardhat: Keep `npx hardhat node` running
 
-## 🎓 FYP Presentation Tips
+##  FYP Presentation Tips
 
 1. Demonstrate the complete flow: registration → order → SDC → review
 2. Show blockchain transaction hashes
@@ -170,7 +170,7 @@ For development:
 4. Show how reviews are stored on-chain
 5. Demonstrate review verification
 
-## 📞 Support
+##  Support
 
 For issues or questions:
 1. Check SETUP_GUIDE.md troubleshooting section
@@ -179,6 +179,6 @@ For issues or questions:
 
 ---
 
-**Good luck with your Final Year Project! 🚀**
+**Good luck with your Final Year Project! **
 
 

@@ -1,18 +1,18 @@
-# 🚀 NEXT STEPS: Push BUYSEWA to GitHub
+#  NEXT STEPS: Push BUYSEWA to GitHub
 
-## Your Current Status ✅
+## Your Current Status
 
 Everything is **ready to push to GitHub**:
 
-- ✅ Git repository initialized locally
-- ✅ All 160 files committed (hash: `ac9d0ca`)
-- ✅ MongoDB Atlas configured in `.env`
-- ✅ Security audit completed
-- ✅ Documentation complete
-- ✅ Diagrams created
-- ⏳ **Just need to push to GitHub**
+-  Git repository initialized locally
+-  All 160 files committed (hash: `ac9d0ca`)
+-  MongoDB Atlas configured in `.env`
+-  Security audit completed
+-  Documentation complete
+-  Diagrams created
+-  **Just need to push to GitHub**
 
-## 📝 Step-by-Step: Push to GitHub
+##  Step-by-Step: Push to GitHub
 
 ### Step 1: Create a GitHub Repository
 
@@ -52,20 +52,20 @@ git remote add origin https://github.com/YOUR_USERNAME/BUYSEWA.git
 git push -u origin master
 ```
 
-⚠️ **Replace `YOUR_USERNAME`** with your actual GitHub username!
+ **Replace `YOUR_USERNAME`** with your actual GitHub username!
 
 ### Step 4: Verify on GitHub
 
 After pushing, go to `https://github.com/YOUR_USERNAME/BUYSEWA` and verify:
 
-- ✅ All files are there
-- ✅ `.env` file is NOT visible (protected by .gitignore)
-- ✅ `node_modules/` is NOT there
-- ✅ Documentation files are visible
-- ✅ Diagrams are accessible
-- ✅ Commit message is: "Initial commit: BUYSEWA e-commerce platform..."
+-  All files are there
+-  `.env` file is NOT visible (protected by .gitignore)
+-  `node_modules/` is NOT there
+-  Documentation files are visible
+-  Diagrams are accessible
+-  Commit message is: "Initial commit: BUYSEWA e-commerce platform..."
 
-## 💡 Important Security Notes
+##  Important Security Notes
 
 ### Your MongoDB Credentials
 
@@ -86,17 +86,17 @@ Once your repository is created, go to **Settings**:
 
 1. **General**
    - Set visibility to **Private** (if you have sensitive data)
-   
+
 2. **Collaborators and teams** (if working with a team)
    - Add team members
    - Set appropriate permissions
-   
+
 3. **Branches** (Optional, but recommended)
    - Protect `master` branch
    - Require pull request reviews
    - Require status checks
 
-## 📚 Key Documentation Files
+##  Key Documentation Files
 
 After pushing, these files will help others understand your project:
 
@@ -109,17 +109,17 @@ After pushing, these files will help others understand your project:
 | `docs/diagrams/` | UML class diagrams |
 | `.env.example` | Template for configuration |
 
-## 🎯 What NOT to Commit (Already Protected)
+##  What NOT to Commit (Already Protected)
 
 These files are in `.gitignore` and will NOT be pushed:
 
-- `.env` - Your MongoDB credentials ✅
-- `node_modules/` - Too large ✅
-- `.hardhat/` - Build artifacts ✅
-- `*.log` - Log files ✅
-- `private_key.txt` - Blockchain private keys ✅
+- `.env` - Your MongoDB credentials
+- `node_modules/` - Too large
+- `.hardhat/` - Build artifacts
+- `*.log` - Log files
+- `private_key.txt` - Blockchain private keys
 
-## ⚡ Quick Reference
+##  Quick Reference
 
 ### Push your code:
 ```bash
@@ -146,7 +146,7 @@ npm start
 npm run dev
 ```
 
-## ✨ After Successfully Pushing
+##  After Successfully Pushing
 
 ### What you can do next:
 
@@ -168,7 +168,7 @@ npm run dev
    git push origin v1.0.0
    ```
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### "fatal: remote origin already exists"
 ```bash
@@ -190,13 +190,13 @@ git commit -m "Remove .env from tracking"
 git push
 ```
 
-## 📞 Need Help?
+##  Need Help?
 
 - **GitHub Docs**: https://docs.github.com
 - **Git Cheat Sheet**: https://github.com/joshnh/Git-Commands
 - **GITHUB_SETUP.md**: See your documentation file
 
-## ✅ Final Checklist Before Push
+##  Final Checklist Before Push
 
 - [ ] GitHub account created
 - [ ] GitHub repository created (BUYSEWA)
@@ -215,4 +215,4 @@ git remote add origin https://github.com/YOUR_USERNAME/BUYSEWA.git
 git push -u origin master
 ```
 
-Good luck! 🚀
+Good luck!

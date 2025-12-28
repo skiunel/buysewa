@@ -1,7 +1,7 @@
 # User Stories
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -9,8 +9,8 @@
 ## Epic 1: User Authentication
 
 ### US-001: User Registration
-**As a** new user  
-**I want to** create an account with my email and password  
+**As a** new user
+**I want to** create an account with my email and password
 **So that** I can access the platform and make purchases
 
 **Acceptance Criteria:**
@@ -20,14 +20,14 @@
 - User receives confirmation and JWT token
 - User is redirected to homepage after registration
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 3
 
 ---
 
 ### US-002: User Login
-**As a** registered user  
-**I want to** log in with my email and password  
+**As a** registered user
+**I want to** log in with my email and password
 **So that** I can access my account and dashboard
 
 **Acceptance Criteria:**
@@ -37,14 +37,14 @@
 - Session persists across page refreshes
 - User is redirected to appropriate dashboard based on role
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 2
 
 ---
 
 ### US-003: User Logout
-**As a** logged-in user  
-**I want to** log out  
+**As a** logged-in user
+**I want to** log out
 **So that** I can secure my account
 
 **Acceptance Criteria:**
@@ -53,7 +53,7 @@
 - User is redirected to homepage
 - User cannot access protected routes after logout
 
-**Priority:** Medium  
+**Priority:** Medium
 **Story Points:** 1
 
 ---
@@ -61,8 +61,8 @@
 ## Epic 2: Product Browsing
 
 ### US-004: Browse Products
-**As a** buyer  
-**I want to** browse products by category  
+**As a** buyer
+**I want to** browse products by category
 **So that** I can find items I'm interested in
 
 **Acceptance Criteria:**
@@ -73,14 +73,14 @@
 - User can filter by price range
 - Products are paginated (if many)
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 5
 
 ---
 
 ### US-005: View Product Details
-**As a** buyer  
-**I want to** view detailed product information  
+**As a** buyer
+**I want to** view detailed product information
 **So that** I can make an informed purchase decision
 
 **Acceptance Criteria:**
@@ -90,7 +90,7 @@
 - User can add product to cart
 - User can see seller information
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 3
 
 ---
@@ -98,8 +98,8 @@
 ## Epic 3: Shopping Cart
 
 ### US-006: Add to Cart
-**As a** buyer  
-**I want to** add products to my shopping cart  
+**As a** buyer
+**I want to** add products to my shopping cart
 **So that** I can purchase multiple items together
 
 **Acceptance Criteria:**
@@ -109,14 +109,14 @@
 - User can see cart items and quantities
 - User can update quantities in cart
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 3
 
 ---
 
 ### US-007: View Shopping Cart
-**As a** buyer  
-**I want to** view my shopping cart  
+**As a** buyer
+**I want to** view my shopping cart
 **So that** I can review items before checkout
 
 **Acceptance Criteria:**
@@ -127,7 +127,7 @@
 - User can update quantities
 - User can proceed to checkout
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 2
 
 ---
@@ -135,8 +135,8 @@
 ## Epic 4: Checkout and Orders
 
 ### US-008: Checkout Process
-**As a** buyer  
-**I want to** complete checkout with shipping address  
+**As a** buyer
+**I want to** complete checkout with shipping address
 **So that** I can place an order
 
 **Acceptance Criteria:**
@@ -146,14 +146,14 @@
 - System creates order with unique order number
 - User is redirected to payment gateway
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 5
 
 ---
 
 ### US-009: View Order History
-**As a** buyer  
-**I want to** view my order history  
+**As a** buyer
+**I want to** view my order history
 **So that** I can track my purchases
 
 **Acceptance Criteria:**
@@ -163,7 +163,7 @@
 - User can view order details
 - User can track order status
 
-**Priority:** Medium  
+**Priority:** Medium
 **Story Points:** 3
 
 ---
@@ -171,8 +171,8 @@
 ## Epic 5: Payment Integration
 
 ### US-010: eSewa Payment
-**As a** buyer  
-**I want to** pay using eSewa  
+**As a** buyer
+**I want to** pay using eSewa
 **So that** I can complete my purchase
 
 **Acceptance Criteria:**
@@ -182,14 +182,14 @@
 - After payment, user is redirected back
 - Payment status is updated in order
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 8
 
 ---
 
 ### US-011: Payment Verification
-**As an** admin  
-**I want to** verify payments  
+**As an** admin
+**I want to** verify payments
 **So that** I can confirm orders are paid
 
 **Acceptance Criteria:**
@@ -199,7 +199,7 @@
 - Order status updates after verification
 - User receives confirmation
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 5
 
 ---
@@ -207,8 +207,8 @@
 ## Epic 6: Blockchain Review System
 
 ### US-012: Receive SDC Code
-**As a** buyer  
-**I want to** receive SDC code after delivery  
+**As a** buyer
+**I want to** receive SDC code after delivery
 **So that** I can submit verified reviews
 
 **Acceptance Criteria:**
@@ -218,14 +218,14 @@
 - SDC code is displayed in buyer dashboard
 - SDC code can only be used once
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 8
 
 ---
 
 ### US-013: Submit Verified Review
-**As a** buyer  
-**I want to** submit a review using my SDC code  
+**As a** buyer
+**I want to** submit a review using my SDC code
 **So that** I can share my experience with verified purchase
 
 **Acceptance Criteria:**
@@ -237,14 +237,14 @@
 - Review is stored on blockchain with IPFS hash
 - Review shows "Verified Purchase" badge
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 13
 
 ---
 
 ### US-014: View Verified Reviews
-**As a** buyer  
-**I want to** see verified reviews on product pages  
+**As a** buyer
+**I want to** see verified reviews on product pages
 **So that** I can trust the reviews are from real buyers
 
 **Acceptance Criteria:**
@@ -254,7 +254,7 @@
 - Reviews show rating, comment, images
 - Reviews show helpful count
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 3
 
 ---
@@ -262,8 +262,8 @@
 ## Epic 7: Seller Dashboard
 
 ### US-015: Create Product
-**As a** seller  
-**I want to** add new products  
+**As a** seller
+**I want to** add new products
 **So that** I can sell my items
 
 **Acceptance Criteria:**
@@ -273,14 +273,14 @@
 - Product is created with "pending" status
 - Product requires admin approval
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 5
 
 ---
 
 ### US-016: Manage Products
-**As a** seller  
-**I want to** manage my products  
+**As a** seller
+**I want to** manage my products
 **So that** I can update inventory and details
 
 **Acceptance Criteria:**
@@ -290,14 +290,14 @@
 - Seller can deactivate products
 - Seller can see product status (pending/active)
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 5
 
 ---
 
 ### US-017: View Sales Analytics
-**As a** seller  
-**I want to** view sales statistics  
+**As a** seller
+**I want to** view sales statistics
 **So that** I can track my business performance
 
 **Acceptance Criteria:**
@@ -307,7 +307,7 @@
 - Seller can filter by date range
 - Charts display sales trends
 
-**Priority:** Medium  
+**Priority:** Medium
 **Story Points:** 5
 
 ---
@@ -315,8 +315,8 @@
 ## Epic 8: Admin Dashboard
 
 ### US-018: Approve Products
-**As an** admin  
-**I want to** approve or reject seller products  
+**As an** admin
+**I want to** approve or reject seller products
 **So that** I can maintain platform quality
 
 **Acceptance Criteria:**
@@ -326,14 +326,14 @@
 - Admin can reject products (status → inactive)
 - Seller is notified of decision
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 3
 
 ---
 
 ### US-019: Manage Orders
-**As an** admin  
-**I want to** view and manage all orders  
+**As an** admin
+**I want to** view and manage all orders
 **So that** I can track platform operations
 
 **Acceptance Criteria:**
@@ -343,14 +343,14 @@
 - Admin can view order details
 - Admin can see payment status
 
-**Priority:** High  
+**Priority:** High
 **Story Points:** 5
 
 ---
 
 ### US-020: View Platform Analytics
-**As an** admin  
-**I want to** view platform-wide analytics  
+**As an** admin
+**I want to** view platform-wide analytics
 **So that** I can understand business metrics
 
 **Acceptance Criteria:**
@@ -360,7 +360,7 @@
 - Admin can see order statistics
 - Charts display trends
 
-**Priority:** Medium  
+**Priority:** Medium
 **Story Points:** 5
 
 ---
@@ -368,8 +368,8 @@
 ## Epic 9: Customer Support
 
 ### US-021: Chat Support
-**As a** user  
-**I want to** chat with customer support  
+**As a** user
+**I want to** chat with customer support
 **So that** I can get help with issues
 
 **Acceptance Criteria:**
@@ -379,7 +379,7 @@
 - Chat history is maintained
 - User can close chat
 
-**Priority:** Low  
+**Priority:** Low
 **Story Points:** 5
 
 ---
@@ -401,7 +401,7 @@
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial User Stories
 

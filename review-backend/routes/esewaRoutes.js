@@ -107,7 +107,7 @@ router.get('/verify', (req, res) => {
         <html>
           <head><title>Payment Verification</title></head>
           <body style="font-family: Arial; text-align: center; padding: 50px;">
-            <h1 style="color: #e74c3c;">❌ Payment Verification Failed</h1>
+            <h1 style="color: #e74c3c;"> Payment Verification Failed</h1>
             <p>Missing payment data. Please contact support.</p>
             <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}" style="color: #3498db;">Return to Home</a>
           </body>
@@ -135,7 +135,7 @@ router.get('/verify', (req, res) => {
         <html>
           <head><title>Payment Verification</title></head>
           <body style="font-family: Arial; text-align: center; padding: 50px;">
-            <h1 style="color: #e74c3c;">❌ Invalid Payment Signature</h1>
+            <h1 style="color: #e74c3c;"> Invalid Payment Signature</h1>
             <p>Payment verification failed due to invalid signature.</p>
             <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}" style="color: #3498db;">Return to Home</a>
           </body>
@@ -148,7 +148,7 @@ router.get('/verify', (req, res) => {
       <html>
         <head><title>Payment Verification</title></head>
         <body style="font-family: Arial; text-align: center; padding: 50px;">
-          <h1 style="color: #e74c3c;">❌ Payment Verification Error</h1>
+          <h1 style="color: #e74c3c;"> Payment Verification Error</h1>
           <p>An error occurred during payment verification: ${error.message}</p>
           <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}" style="color: #3498db;">Return to Home</a>
         </body>

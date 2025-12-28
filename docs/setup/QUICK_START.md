@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-## 🚀 Fast Setup (5 Minutes)
+##  Fast Setup (5 Minutes)
 
 ### Prerequisites Check
 ```bash
@@ -60,7 +60,7 @@ npm run dev
 5. **Review**: Use SDC code to submit review
 6. **Verify**: Check review on product page
 
-## 📋 Environment Variables
+##  Environment Variables
 
 ### Backend (.env in review-backend/)
 ```env
@@ -77,7 +77,7 @@ BLOCKCHAIN_PRIVATE_KEY=0x... (from Hardhat node)
 VITE_API_BASE_URL=http://localhost:5000/api
 ```
 
-## 🔧 Common Commands
+##  Common Commands
 
 ```bash
 # Deploy contract
@@ -96,7 +96,7 @@ cd review-backend && npm run dev
 npm run dev
 ```
 
-## ✅ Verification Checklist
+##  Verification Checklist
 
 - [ ] Hardhat node running (port 8545)
 - [ ] Contract deployed
@@ -105,7 +105,7 @@ npm run dev
 - [ ] MongoDB running
 - [ ] .env files configured
 
-## 🆘 Quick Fixes
+##  Quick Fixes
 
 **MongoDB not running:**
 ```bash
@@ -126,7 +126,7 @@ lsof -ti:5000 | xargs kill
 - Check REVIEW_AUTH_CONTRACT_ADDRESS in .env
 - Redeploy contract and update .env
 
-## 📖 Full Documentation
+##  Full Documentation
 
 See **SETUP_GUIDE.md** for detailed instructions.
 

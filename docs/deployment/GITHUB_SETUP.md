@@ -1,14 +1,14 @@
 # GitHub Setup Instructions for BUYSEWA E-commerce Platform
 
-## Pre-Deployment Checklist ✓
+## Pre-Deployment Checklist 
 
-- ✅ Git repository initialized
-- ✅ .gitignore configured (excludes .env, node_modules, sensitive files)
-- ✅ MongoDB Atlas connection configured
-- ✅ Environment variables set up
-- ✅ Security audit completed
-- ✅ Blockchain integration documented
-- ✅ UML diagrams created
+-  Git repository initialized
+-  .gitignore configured (excludes .env, node_modules, sensitive files)
+-  MongoDB Atlas connection configured
+-  Environment variables set up
+-  Security audit completed
+-  Blockchain integration documented
+-  UML diagrams created
 
 ## Step 1: Create GitHub Repository
 
@@ -45,11 +45,11 @@ git push -u origin main
 ## Step 3: Verify Sensitive Files Are Excluded
 
 After pushing, verify on GitHub that:
-- ❌ `.env` file is NOT visible
-- ❌ `node_modules/` folder is NOT visible
-- ❌ Private keys are NOT visible
-- ✅ `.env.example` IS visible
-- ✅ Documentation files ARE visible
+-  `.env` file is NOT visible
+-  `node_modules/` folder is NOT visible
+-  Private keys are NOT visible
+-  `.env.example` IS visible
+-  Documentation files ARE visible
 
 ## Step 4: Configure GitHub Secrets (Optional)
 
@@ -78,7 +78,7 @@ The existing README.md should include:
 
 ## Important Security Notes
 
-⚠️ **CRITICAL**: Never commit `.env` files containing:
+ **CRITICAL**: Never commit `.env` files containing:
 - MongoDB credentials
 - Private keys
 - JWT secrets
@@ -101,39 +101,39 @@ Connection string is already in your `.env` file.
 
 ```
 BUYSEWA/
-├── .env (IGNORED - not pushed)
-├── .env.example (template for others)
-├── .gitignore (protection rules)
-├── README.md
-├── package.json
-├── vite.config.ts
-├── hardhat.config.js
-├── contracts/
-│   └── ReviewAuth.sol
-├── review-backend/
-│   ├── package.json
-│   ├── server.js
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── utils/
-│   └── scripts/
-├── src/
-│   ├── components/
-│   ├── contexts/
-│   ├── services/
-│   └── ...
-├── docs/
-│   ├── diagrams/ (UML class diagrams)
-│   ├── design/
-│   ├── documentation/
-│   └── requirements/
-└── scripts/
+ .env (IGNORED - not pushed)
+ .env.example (template for others)
+ .gitignore (protection rules)
+ README.md
+ package.json
+ vite.config.ts
+ hardhat.config.js
+ contracts/
+    ReviewAuth.sol
+ review-backend/
+    package.json
+    server.js
+    middleware/
+    models/
+    routes/
+    utils/
+    scripts/
+ src/
+    components/
+    contexts/
+    services/
+    ...
+ docs/
+    diagrams/ (UML class diagrams)
+    design/
+    documentation/
+    requirements/
+ scripts/
 ```
 
 ## Next Steps
 
-1. ✅ Push to GitHub
+1.  Push to GitHub
 2. Add collaborators in GitHub Settings
 3. Set up GitHub Pages for documentation (optional)
 4. Configure branch protection rules (recommended for main)

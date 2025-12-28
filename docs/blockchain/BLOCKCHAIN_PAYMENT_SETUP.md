@@ -7,31 +7,31 @@ This document covers the complete blockchain payment integration, including SDC 
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│         BUYSEWA Blockchain Payment System               │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│  Frontend (React)                                       │
-│  ├─ Wallet Connection (MetaMask, etc.)                │
-│  ├─ SDC Display & QR Code                             │
-│  └─ Review Submission                                 │
-│                     ↓                                   │
-│  Backend API (Express.js)                             │
-│  ├─ SDC Generation (/api/blockchain/generate-sdc)    │
-│  ├─ SDC Verification (/api/blockchain/verify-sdc)    │
-│  ├─ Blockchain Registration (/api/blockchain/register-sdc)
-│  └─ Review Submission (/api/blockchain/submit-review) │
-│                     ↓                                   │
-│  Smart Contract (Solidity - ReviewAuth)               │
-│  ├─ registerSDC()                                     │
-│  ├─ verifySDC()                                       │
-│  ├─ submitReview()                                    │
-│  └─ Query Functions                                   │
-│                     ↓                                   │
-│  Blockchain Network (Polygon/Ethereum)                │
-│  └─ Immutable Record Storage                          │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
+
+         BUYSEWA Blockchain Payment System               
+
+                                                         
+  Frontend (React)                                       
+   Wallet Connection (MetaMask, etc.)                
+   SDC Display & QR Code                             
+   Review Submission                                 
+                     ↓                                   
+  Backend API (Express.js)                             
+   SDC Generation (/api/blockchain/generate-sdc)    
+   SDC Verification (/api/blockchain/verify-sdc)    
+   Blockchain Registration (/api/blockchain/register-sdc)
+   Review Submission (/api/blockchain/submit-review) 
+                     ↓                                   
+  Smart Contract (Solidity - ReviewAuth)               
+   registerSDC()                                     
+   verifySDC()                                       
+   submitReview()                                    
+   Query Functions                                   
+                     ↓                                   
+  Blockchain Network (Polygon/Ethereum)                
+   Immutable Record Storage                          
+                                                         
+
 ```
 
 ## Components
@@ -161,7 +161,7 @@ function registerSDC(
 ) external onlyOwner
 
 // Verify SDC validity
-function verifySDC(bytes32 hashedSDC) 
+function verifySDC(bytes32 hashedSDC)
   external view returns (bool isValid, bool isUsed, uint256 productId, address userAddress)
 
 // Submit review using valid SDC
@@ -173,11 +173,11 @@ function submitReview(
 ) external
 
 // Get reviews for product
-function getProductReviewIds(uint256 productId) 
+function getProductReviewIds(uint256 productId)
   external view returns (uint256[] memory reviewIds)
 
 // Get review by ID
-function getReview(uint256 reviewId) 
+function getReview(uint256 reviewId)
   external view returns (Review memory review)
 ```
 

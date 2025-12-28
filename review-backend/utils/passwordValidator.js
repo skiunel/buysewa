@@ -99,7 +99,7 @@ function getPasswordStrengthLabel(score) {
     return { 
       label: 'Weak', 
       color: 'red',
-      indicator: '🔴',
+      indicator: '',
       message: 'Password is too weak. Add more variety and length.'
     };
   }
@@ -107,7 +107,7 @@ function getPasswordStrengthLabel(score) {
     return { 
       label: 'Fair', 
       color: 'orange',
-      indicator: '🟠',
+      indicator: '',
       message: 'Password is fair. Consider adding more special characters.'
     };
   }
@@ -115,14 +115,14 @@ function getPasswordStrengthLabel(score) {
     return { 
       label: 'Good', 
       color: 'yellow',
-      indicator: '🟡',
+      indicator: '',
       message: 'Password is good. Meets security requirements.'
     };
   }
   return { 
     label: 'Strong', 
     color: 'green',
-    indicator: '🟢',
+    indicator: '',
     message: 'Password is strong. Excellent choice!'
   };
 }

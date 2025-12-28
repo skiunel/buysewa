@@ -1,22 +1,22 @@
-# 🔗 Blockchain Integration - Complete Guide
+#  Blockchain Integration - Complete Guide
 
-**BUYSEWA E-commerce Platform**  
+**BUYSEWA E-commerce Platform**
 **Blockchain-Based Review Verification System**
 
 ---
 
-## 📍 Blockchain Files Location
+##  Blockchain Files Location
 
 ### Smart Contract (Solidity)
 ```
 contracts/
-└── ReviewAuth.sol          ← Main smart contract (298 lines)
+ ReviewAuth.sol          ← Main smart contract (298 lines)
 ```
 
 ### Deployment Scripts
 ```
 scripts/
-└── deploy.js               ← Hardhat deployment script (50 lines)
+ deploy.js               ← Hardhat deployment script (50 lines)
 ```
 
 ### Hardhat Configuration
@@ -28,52 +28,52 @@ hardhat.config.cjs          ← Legacy config (CJS format)
 ### Backend Integration
 ```
 review-backend/
-├── routes/
-│   ├── sdcRoutes.js        ← SDC registration & verification
-│   ├── reviewRoutes.js     ← Review submission with blockchain
-│   └── esewaRoutes.js      ← Payment integration
-├── models/
-│   ├── Sdc.js              ← SDC database model
-│   ├── Review.js           ← Review database model
-│   └── Order.js            ← Order model (generates SDC)
-├── middleware/
-│   └── security.js         ← Security middleware
-└── utils/
-    └── signature.js        ← eSewa signature utility
+ routes/
+    sdcRoutes.js        ← SDC registration & verification
+    reviewRoutes.js     ← Review submission with blockchain
+    esewaRoutes.js      ← Payment integration
+ models/
+    Sdc.js              ← SDC database model
+    Review.js           ← Review database model
+    Order.js            ← Order model (generates SDC)
+ middleware/
+    security.js         ← Security middleware
+ utils/
+     signature.js        ← eSewa signature utility
 ```
 
 ### Frontend Integration
 ```
 src/
-├── components/
-│   ├── BlockchainReview.tsx     ← Review blockchain display
-│   ├── WalletConnect.tsx        ← MetaMask wallet connection
-│   ├── ReviewSubmission.tsx     ← Review form with blockchain
-│   └── EsewaPaymentForm.tsx     ← Payment form
-├── services/
-│   ├── blockchain.ts           ← Mock blockchain service
-│   ├── blockchainReal.ts       ← Real blockchain integration
-│   └── esewaService.ts         ← Payment gateway service
-└── contexts/
-    ├── AuthContext.tsx         ← User authentication
-    └── CartContext.tsx         ← Cart management
+ components/
+    BlockchainReview.tsx     ← Review blockchain display
+    WalletConnect.tsx        ← MetaMask wallet connection
+    ReviewSubmission.tsx     ← Review form with blockchain
+    EsewaPaymentForm.tsx     ← Payment form
+ services/
+    blockchain.ts           ← Mock blockchain service
+    blockchainReal.ts       ← Real blockchain integration
+    esewaService.ts         ← Payment gateway service
+ contexts/
+     AuthContext.tsx         ← User authentication
+     CartContext.tsx         ← Cart management
 ```
 
 ### Documentation
 ```
 docs/
-├── BLOCKCHAIN_SETUP.md      ← Setup & deployment guide
-├── ESEWA_INTEGRATION_FIX.md ← Payment integration docs
-├── PROJECT_SUMMARY.md       ← Project overview
-└── diagrams/
-    ├── 01-user-domain-class-diagram.html    ← Shows SDC entity
-    ├── 02-admin-domain-class-diagram.html   ← Shows moderation
-    └── 03-seller-domain-class-diagram.html  ← Shows sales tracking
+ BLOCKCHAIN_SETUP.md      ← Setup & deployment guide
+ ESEWA_INTEGRATION_FIX.md ← Payment integration docs
+ PROJECT_SUMMARY.md       ← Project overview
+ diagrams/
+     01-user-domain-class-diagram.html    ← Shows SDC entity
+     02-admin-domain-class-diagram.html   ← Shows moderation
+     03-seller-domain-class-diagram.html  ← Shows sales tracking
 ```
 
 ---
 
-## 🔑 Key Blockchain Components
+##  Key Blockchain Components
 
 ### 1. Smart Contract (ReviewAuth.sol)
 
@@ -228,7 +228,7 @@ export const blockchainService = {
 
 ---
 
-## 🚀 Deployment Flow
+##  Deployment Flow
 
 ### Step 1: Deploy Smart Contract
 
@@ -261,8 +261,8 @@ npm install ethers      # Add blockchain library
 node server.js
 
 # Check logs:
-# ✅ Blockchain connection initialized
-# 🔗 Blockchain Contract: 0x5FbDB2315678afccb333F8a9ced29BaC559aff81
+#  Blockchain connection initialized
+#  Blockchain Contract: 0x5FbDB2315678afccb333F8a9ced29BaC559aff81
 ```
 
 ### Step 4: Test API Endpoints
@@ -292,7 +292,7 @@ curl -X POST http://localhost:5000/api/reviews/ \
 
 ---
 
-## 🔐 Security Features
+##  Security Features
 
 ### 1. SDC (Secure Digital Code) Verification
 - Unique code per purchase
@@ -328,7 +328,7 @@ modifier onlyOwner() {
 
 ---
 
-## 📊 Data Flow Diagram
+##  Data Flow Diagram
 
 ### Purchase to Review Flow
 
@@ -336,37 +336,37 @@ modifier onlyOwner() {
 1. User Places Order
    ↓
 2. Order Saved to MongoDB
-   └─→ Generates SDC code
-   └─→ Hashes SDC
+   → Generates SDC code
+   → Hashes SDC
    ↓
 3. Order Delivered
-   └─→ SDC visible to user
+   → SDC visible to user
    ↓
 4. Backend: Register SDC on Blockchain
-   └─→ Calls: contract.registerSDC()
-   └─→ Stores: transaction hash
-   └─→ Updates: isRegisteredOnBlockchain = true
+   → Calls: contract.registerSDC()
+   → Stores: transaction hash
+   → Updates: isRegisteredOnBlockchain = true
    ↓
 5. User Submits Review
-   ├─→ Frontend receives review data
-   ├─→ Backend validates SDC
-   ├─→ Generates IPFS hash
+   → Frontend receives review data
+   → Backend validates SDC
+   → Generates IPFS hash
    ↓
 6. Backend: Submit Review to Blockchain
-   └─→ Calls: contract.submitReview()
-   └─→ Stores: blockchainTxHash
-   └─→ Updates: verified = true
+   → Calls: contract.submitReview()
+   → Stores: blockchainTxHash
+   → Updates: verified = true
    ↓
 7. Review Display
-   ├─→ Shows blockchain hash
-   ├─→ Shows IPFS hash
-   ├─→ Link to blockchain explorer
-   └─→ Shows verified badge
+   → Shows blockchain hash
+   → Shows IPFS hash
+   → Link to blockchain explorer
+   → Shows verified badge
 ```
 
 ---
 
-## 🌐 Network Configuration
+##  Network Configuration
 
 ### Local Development
 ```
@@ -399,7 +399,7 @@ Ethereum Bridge: https://bridge.polygon.technology/
 
 ---
 
-## 📚 Important Files Summary
+##  Important Files Summary
 
 | File | Size | Purpose |
 |------|------|---------|
@@ -415,7 +415,7 @@ Ethereum Bridge: https://bridge.polygon.technology/
 
 ---
 
-## 🔍 Verification
+##  Verification
 
 ### Check Deployment Status
 
@@ -430,10 +430,10 @@ npx hardhat run scripts/deploy.js --network localhost
 cd review-backend && node server.js
 
 # Expected output:
-# ✅ Connected to MongoDB
-# ✅ Blockchain connection initialized
-# 🚀 Server running on http://localhost:5000
-# 🔗 Blockchain Contract: 0x5FbDB2315678afccb333F8a9ced29BaC559aff81
+#  Connected to MongoDB
+#  Blockchain connection initialized
+#  Server running on http://localhost:5000
+#  Blockchain Contract: 0x5FbDB2315678afccb333F8a9ced29BaC559aff81
 ```
 
 ### Verify on Blockchain Explorer
@@ -451,7 +451,7 @@ Search for:
 
 ---
 
-## 🎯 Key Advantages
+##  Key Advantages
 
 1. **Immutability** - Reviews cannot be deleted or edited
 2. **Transparency** - All reviews publicly verifiable
@@ -464,7 +464,7 @@ Search for:
 
 ---
 
-## 📞 Configuration Checklist
+##  Configuration Checklist
 
 - [ ] Smart contract deployed
 - [ ] Contract address saved in .env
@@ -479,12 +479,12 @@ Search for:
 
 ---
 
-## 🚨 Common Issues
+##  Common Issues
 
 ### Blockchain Connection Failed
 ```
 Error: Could not connect to blockchain
-Solution: 
+Solution:
 1. Check RPC_URL is correct
 2. Ensure Hardhat node is running (npx hardhat node)
 3. Verify network configuration
@@ -512,6 +512,6 @@ Solution:
 
 ---
 
-**Last Updated:** December 26, 2025  
-**Status:** Production Ready  
+**Last Updated:** December 26, 2025
+**Status:** Production Ready
 **Version:** 1.0

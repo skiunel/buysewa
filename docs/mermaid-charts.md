@@ -1,6 +1,6 @@
 # Mermaid Charts - BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -22,7 +22,7 @@ graph TB
         A --> A4
         A --> A5
     end
-    
+
     subgraph "Application Layer"
         B[Express.js Backend<br/>Port 5000]
         B1[Auth Routes]
@@ -38,7 +38,7 @@ graph TB
         B --> B5
         B --> B6
     end
-    
+
     subgraph "Data Layer"
         C[(MongoDB<br/>Database)]
         C1[Users]
@@ -52,7 +52,7 @@ graph TB
         C --> C4
         C --> C5
     end
-    
+
     subgraph "Blockchain Layer"
         D[Ethereum Network]
         D1[ReviewAuth<br/>Smart Contract]
@@ -60,11 +60,11 @@ graph TB
         D --> D1
         D --> D2
     end
-    
+
     subgraph "External Services"
         E[eSewa<br/>Payment Gateway]
     end
-    
+
     A -->|HTTP/HTTPS| B
     B -->|Mongoose| C
     B -->|Ethers.js| D
@@ -86,7 +86,7 @@ erDiagram
     ORDER ||--o{ ORDER_ITEM : contains
     ORDER ||--o{ SDC : generates
     SDC ||--|| REVIEW : verifies
-    
+
     USER {
         ObjectId _id PK
         string name
@@ -96,7 +96,7 @@ erDiagram
         string walletAddress
         date createdAt
     }
-    
+
     PRODUCT {
         ObjectId _id PK
         string name
@@ -109,7 +109,7 @@ erDiagram
         string status
         date createdAt
     }
-    
+
     ORDER {
         ObjectId _id PK
         string orderNumber UK
@@ -121,14 +121,14 @@ erDiagram
         array sdcCodes
         date createdAt
     }
-    
+
     ORDER_ITEM {
         ObjectId productId FK
         string name
         number price
         number quantity
     }
-    
+
     REVIEW {
         ObjectId _id PK
         ObjectId productId FK
@@ -142,7 +142,7 @@ erDiagram
         boolean verified
         date createdAt
     }
-    
+
     SDC {
         ObjectId _id PK
         string sdcCode UK
@@ -171,7 +171,7 @@ graph TB
         B6[Submit Review]
         B7[View Reviews]
     end
-    
+
     subgraph "Seller"
         S1[Create Product]
         S2[Manage Products]
@@ -179,7 +179,7 @@ graph TB
         S4[Update Order Status]
         S5[View Sales Analytics]
     end
-    
+
     subgraph "Admin"
         A1[Approve Products]
         A2[Manage Orders]
@@ -187,13 +187,13 @@ graph TB
         A4[Manage Users]
         A5[View Analytics]
     end
-    
+
     subgraph "System"
         SY1[Generate SDC]
         SY2[Register SDC on Blockchain]
         SY3[Process Payment]
     end
-    
+
     B1 --> B2
     B2 --> B3
     B3 --> B4
@@ -203,13 +203,13 @@ graph TB
     SY1 --> SY2
     SY2 --> B6
     B6 --> B7
-    
+
     S1 --> A1
     S2 --> S3
     S3 --> S4
     S4 --> SY1
     S5
-    
+
     A1
     A2 --> A3
     A3 --> A4
@@ -226,7 +226,7 @@ sequenceDiagram
     participant F as Frontend
     participant B as Backend API
     participant D as Database
-    
+
     U->>F: Enter registration details
     F->>F: Validate form data
     F->>B: POST /api/auth/register
@@ -253,7 +253,7 @@ sequenceDiagram
     participant B as Backend API
     participant D as Database
     participant E as eSewa
-    
+
     U->>F: Click Checkout
     F->>F: Validate shipping address
     F->>B: POST /api/orders
@@ -286,7 +286,7 @@ sequenceDiagram
     participant BC as Blockchain
     participant IPFS as IPFS
     participant U as Buyer
-    
+
     A->>B: Update order status to "delivered"
     B->>B: Generate SDC codes
     B->>B: Hash SDC (SHA-256)
@@ -295,12 +295,12 @@ sequenceDiagram
     BC-->>B: Transaction hash
     B->>D: Store transaction hash
     B-->>A: Order updated, SDC generated
-    
+
     U->>B: Enter SDC code
     B->>BC: Verify SDC on blockchain
     BC-->>B: SDC valid, not used
     B-->>U: SDC verified
-    
+
     U->>B: Submit review (rating, comment, images)
     B->>IPFS: Store review content
     IPFS-->>B: IPFS hash
@@ -326,7 +326,7 @@ graph LR
         A6[BuyerDashboard]
         A7[SellerDashboard]
         A8[AdminDashboard]
-        
+
         A --> A1
         A --> A2
         A --> A3
@@ -336,21 +336,21 @@ graph LR
         A --> A7
         A --> A8
     end
-    
+
     subgraph "Context Providers"
         C1[AuthContext]
         C2[CartContext]
         C3[OrderContext]
-        
+
         A --> C1
         A --> C2
         A --> C3
     end
-    
+
     subgraph "Services"
         S1[api.ts]
         S2[blockchain.ts]
-        
+
         A1 --> S1
         A2 --> S1
         A3 --> S1
@@ -361,7 +361,7 @@ graph LR
         A7 --> S1
         A8 --> S1
     end
-    
+
     subgraph "Backend Routes"
         R1[authRoutes]
         R2[productRoutes]
@@ -369,7 +369,7 @@ graph LR
         R4[reviewRoutes]
         R5[sdcRoutes]
         R6[esewaRoutes]
-        
+
         S1 --> R1
         S1 --> R2
         S1 --> R3
@@ -377,14 +377,14 @@ graph LR
         S1 --> R5
         S1 --> R6
     end
-    
+
     subgraph "Database Models"
         M1[User Model]
         M2[Product Model]
         M3[Order Model]
         M4[Review Model]
         M5[SDC Model]
-        
+
         R1 --> M1
         R2 --> M2
         R3 --> M3
@@ -445,29 +445,29 @@ flowchart TD
     A[User Visits Site] --> B{Logged In?}
     B -->|No| C[Show Login/Register]
     B -->|Yes| D[Show Dashboard]
-    
+
     C --> E{Action?}
     E -->|Login| F[Enter Credentials]
     E -->|Register| G[Fill Registration Form]
-    
+
     F --> H[POST /api/auth/login]
     G --> I[POST /api/auth/register]
-    
+
     H --> J{Valid<br/>Credentials?}
     I --> K{Valid<br/>Data?}
-    
+
     J -->|Yes| L[Generate JWT Token]
     J -->|No| M[Show Error]
     K -->|Yes| L
     K -->|No| N[Show Validation Error]
-    
+
     L --> O[Store Token in localStorage]
     O --> P[Set Auth Context]
     P --> D
-    
+
     M --> C
     N --> C
-    
+
     D --> Q{Token<br/>Valid?}
     Q -->|Yes| R[Access Protected Routes]
     Q -->|No| S[Redirect to Login]
@@ -483,40 +483,40 @@ graph TB
     subgraph "Internet"
         U[Users]
     end
-    
+
     subgraph "Load Balancer"
         LB[Nginx<br/>Load Balancer]
     end
-    
+
     subgraph "Frontend Servers"
         F1[Frontend Server 1<br/>React Build]
         F2[Frontend Server 2<br/>React Build]
     end
-    
+
     subgraph "API Gateway"
         AG[Express API Gateway]
     end
-    
+
     subgraph "Backend Servers"
         B1[Backend Server 1<br/>Node.js + PM2]
         B2[Backend Server 2<br/>Node.js + PM2]
     end
-    
+
     subgraph "Database Cluster"
         DB1[(MongoDB<br/>Primary)]
         DB2[(MongoDB<br/>Secondary)]
         DB1 -.->|Replication| DB2
     end
-    
+
     subgraph "Blockchain Network"
         BC[Ethereum Network<br/>ReviewAuth Contract]
         IPFS[IPFS Network]
     end
-    
+
     subgraph "External Services"
         ES[eSewa<br/>Payment Gateway]
     end
-    
+
     U -->|HTTPS| LB
     LB --> F1
     LB --> F2
@@ -545,22 +545,22 @@ sequenceDiagram
     participant BC as Blockchain
     participant IPFS as IPFS
     participant MM as MetaMask
-    
+
     U->>F: Enter SDC Code
     F->>B: POST /api/sdc/verify/:code
     B->>BC: verifySDC(hashedSDC)
     BC-->>B: SDC valid, not used
     B-->>F: SDC verified, product info
-    
+
     U->>F: Enter review details<br/>(rating, comment, images)
     U->>MM: Connect Wallet
     MM-->>U: Wallet connected
-    
+
     U->>F: Click Submit Review
     F->>B: POST /api/reviews
     B->>IPFS: Store review content
     IPFS-->>B: IPFS hash (QmXxx...)
-    
+
     B->>F: Request blockchain submission
     F->>MM: Request transaction signature
     MM-->>F: User approves transaction
@@ -569,7 +569,7 @@ sequenceDiagram
     BC->>BC: Mark SDC as used
     BC->>BC: Create review record
     BC-->>F: Transaction hash
-    
+
     F->>B: Send transaction hash
     B->>B: Store review in database
     B->>B: Mark SDC as used
@@ -589,16 +589,16 @@ stateDiagram-v2
     Delivered --> SDC_Generated: System Generates SDC
     SDC_Generated --> SDC_Registered: SDC Registered on Blockchain
     SDC_Registered --> [*]: Order Complete
-    
+
     Processing --> Cancelled: Order Cancelled
     Shipped --> Cancelled: Order Cancelled
     Cancelled --> [*]
-    
+
     note right of SDC_Generated
         SDC codes generated
         for each product
     end note
-    
+
     note right of SDC_Registered
         SDC hash registered
         on blockchain
@@ -615,25 +615,25 @@ flowchart TD
     B --> C{eSewa<br/>Callback}
     C -->|Success| D[POST /api/payments/esewa/verify]
     C -->|Failure| E[POST /api/payments/esewa/verify]
-    
+
     D --> F[Extract Callback Data]
     E --> F
-    
+
     F --> G[Verify HMAC Signature]
     G --> H{Signature<br/>Valid?}
-    
+
     H -->|Yes| I{Payment<br/>Status?}
     H -->|No| J[Mark Payment as Failed]
-    
+
     I -->|Success| K[Update Order Payment Status<br/>to 'completed']
     I -->|Failure| L[Update Order Payment Status<br/>to 'failed']
-    
+
     K --> M[Update Order Status<br/>to 'processing']
     M --> N[Redirect to Success Page]
-    
+
     L --> O[Redirect to Failure Page]
     J --> O
-    
+
     N --> P[User Sees Order Confirmation]
     O --> Q[User Can Retry Payment]
 ```
@@ -652,7 +652,7 @@ graph TB
         B5[Submit Reviews]
         B6[View Reviews]
     end
-    
+
     subgraph "Seller Permissions"
         S1[Create Products]
         S2[Edit Own Products]
@@ -661,7 +661,7 @@ graph TB
         S5[Update Order Status]
         S6[View Sales Analytics]
     end
-    
+
     subgraph "Admin Permissions"
         A1[All Buyer Permissions]
         A2[All Seller Permissions]
@@ -672,14 +672,14 @@ graph TB
         A7[View Platform Analytics]
         A8[Moderate Reviews]
     end
-    
+
     A1 --> B1
     A1 --> B2
     A1 --> B3
     A1 --> B4
     A1 --> B5
     A1 --> B6
-    
+
     A2 --> S1
     A2 --> S2
     A2 --> S3
@@ -729,22 +729,22 @@ sequenceDiagram
     participant ROUTE as Route Handler
     participant DB as Database
     participant BC as Blockchain
-    
+
     C->>LB: HTTP Request
     LB->>API: Forward Request
     API->>AUTH: Check Authentication
     AUTH->>AUTH: Validate JWT Token
-    
+
     alt Token Valid
         AUTH->>ROUTE: Proceed to Route
         ROUTE->>DB: Query Database
         DB-->>ROUTE: Return Data
-        
+
         alt Blockchain Operation
             ROUTE->>BC: Blockchain Call
             BC-->>ROUTE: Transaction Hash
         end
-        
+
         ROUTE-->>API: Response Data
         API-->>LB: HTTP Response
         LB-->>C: Return to Client
@@ -778,7 +778,7 @@ flowchart TD
     N -->|Server Error| P[Log Error]
     P --> Q[Return 500 Internal Server Error]
     N -->|Validation Error| R[Return 400 with Details]
-    
+
     D --> S[Client Receives Error]
     G --> S
     J --> S
@@ -804,7 +804,7 @@ classDiagram
         +getProductReviewIds(uint256) uint256[]
         +getUserReviewIds(address) uint256[]
     }
-    
+
     class SDC {
         +bytes32 hashedCode
         +address userAddress
@@ -813,7 +813,7 @@ classDiagram
         +bool isUsed
         +uint256 registeredAt
     }
-    
+
     class Review {
         +uint256 reviewId
         +uint256 productId
@@ -824,7 +824,7 @@ classDiagram
         +uint256 timestamp
         +bool verified
     }
-    
+
     ReviewAuth --> SDC : manages
     ReviewAuth --> Review : manages
     SDC --> Review : verifies
@@ -897,7 +897,7 @@ graph TB
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial Mermaid Charts Collection
 

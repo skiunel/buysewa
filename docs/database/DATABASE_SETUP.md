@@ -1,7 +1,7 @@
 # Database Setup Guide for BUYSEWA E-commerce Platform
 
 ## Option 1: MongoDB Atlas (Cloud) - Current Configuration
-**Status**: ⚠️ Requires internet connection and network access
+**Status**:  Requires internet connection and network access
 
 ### Prerequisites:
 1. MongoDB Atlas account (already created: buysewa cluster)
@@ -23,7 +23,7 @@ MONGODB_URI=mongodb+srv://samirg9860_db_user:uy29dgECpCQMDwT1@buysewa.mongodb.ne
 ---
 
 ## Option 2: Local MongoDB (Recommended for Development)
-**Status**: ✅ No internet required, better for testing
+**Status**:  No internet required, better for testing
 
 ### Installation (Ubuntu/Debian):
 ```bash
@@ -56,7 +56,7 @@ npm run init:db
 ---
 
 ## Option 3: Docker MongoDB (Easiest Setup)
-**Status**: ✅ Isolated, no system-level installation needed
+**Status**:  Isolated, no system-level installation needed
 
 ### Start MongoDB container:
 ```bash
@@ -97,11 +97,11 @@ npm run init:db
 ```
 
 ### What gets created:
-- ✅ 4 test users (admin, seller, 2 buyers)
-- ✅ 5 sample products with details
-- ✅ 2 SDCs (Seller Delivery Centers)
-- ✅ 3 sample orders with complete details
-- ✅ 2 sample reviews with blockchain hashes
+-  4 test users (admin, seller, 2 buyers)
+-  5 sample products with details
+-  2 SDCs (Seller Delivery Centers)
+-  3 sample orders with complete details
+-  2 sample reviews with blockchain hashes
 
 ### Test Credentials:
 ```
@@ -122,11 +122,11 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log('✅ MongoDB Connected!');
+    console.log(' MongoDB Connected!');
     process.exit(0);
   })
   .catch(err => {
-    console.error('❌ Connection failed:', err.message);
+    console.error(' Connection failed:', err.message);
     process.exit(1);
   });
 "

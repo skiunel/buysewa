@@ -1,7 +1,7 @@
 # Deployment Guide
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -546,7 +546,7 @@ sudo systemctl reload nginx
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial Deployment Guide
 

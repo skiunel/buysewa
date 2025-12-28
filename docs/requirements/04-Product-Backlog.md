@@ -1,15 +1,15 @@
 # Product Backlog
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
-**Date:** 2024  
+**Version:** 1.0
+**Date:** 2024
 **Sprint:** Current
 
 ---
 
 ## Backlog Items
 
-### 🔴 Critical Priority (Must Have)
+###  Critical Priority (Must Have)
 
 #### PBI-001: User Authentication System
 - **Description:** Complete user registration and login functionality
@@ -19,7 +19,7 @@
   - Session persists across page refreshes
   - Protected routes require authentication
 - **Story Points:** 5
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-002: Product Catalog and Browsing
 - **Description:** Display products with filtering and search
@@ -29,7 +29,7 @@
   - Search by product name
   - Product detail pages with images and specifications
 - **Story Points:** 8
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-003: Shopping Cart Functionality
 - **Description:** Add, update, and remove items from cart
@@ -40,7 +40,7 @@
   - Remove items
   - Cart persists in localStorage
 - **Story Points:** 5
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-004: Checkout and Order Creation
 - **Description:** Complete checkout process with order creation
@@ -50,7 +50,7 @@
   - Order creation with unique order number
   - Order stored in database
 - **Story Points:** 8
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-005: eSewa Payment Integration
 - **Description:** Integrate eSewa payment gateway
@@ -61,7 +61,7 @@
   - Payment verification
   - Order status update after payment
 - **Story Points:** 13
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-006: SDC Generation System
 - **Description:** Generate Secure Digital Codes after order delivery
@@ -71,7 +71,7 @@
   - SDC registered on blockchain
   - SDC displayed in buyer dashboard
 - **Story Points:** 8
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-007: Blockchain Review Submission
 - **Description:** Submit verified reviews using SDC codes
@@ -82,7 +82,7 @@
   - Blockchain transaction hash stored
   - Review displayed with "Verified" badge
 - **Story Points:** 13
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-008: Admin Dashboard
 - **Description:** Admin interface for platform management
@@ -93,7 +93,7 @@
   - Payment verification
   - Analytics dashboard
 - **Story Points:** 13
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-009: Seller Dashboard
 - **Description:** Seller interface for product and order management
@@ -103,7 +103,7 @@
   - Sales analytics
   - Product status tracking
 - **Story Points:** 10
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-010: Buyer Dashboard
 - **Description:** Buyer interface for orders and reviews
@@ -113,11 +113,11 @@
   - Wishlist management
   - Profile settings
 - **Story Points:** 8
-- **Status:** ✅ Done
+- **Status:**  Done
 
 ---
 
-### 🟡 High Priority (Should Have)
+###  High Priority (Should Have)
 
 #### PBI-011: Product Review Display
 - **Description:** Display verified reviews on product pages
@@ -127,7 +127,7 @@
   - Reviews sorted by date
   - Rating, comment, images displayed
 - **Story Points:** 5
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-012: Order Status Tracking
 - **Description:** Real-time order status updates
@@ -136,7 +136,7 @@
   - Status update notifications
   - Order tracking timeline
 - **Story Points:** 5
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-013: Payment Failure Handling
 - **Description:** Handle failed payments gracefully
@@ -146,7 +146,7 @@
   - User can retry payment
   - Error messages displayed
 - **Story Points:** 3
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-014: Responsive Design
 - **Description:** Mobile-friendly interface
@@ -155,7 +155,7 @@
   - Touch-friendly buttons
   - Mobile navigation menu
 - **Story Points:** 8
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-015: Input Validation
 - **Description:** Client and server-side validation
@@ -165,11 +165,11 @@
   - Clear error messages
   - Validation for all user inputs
 - **Story Points:** 5
-- **Status:** ✅ Done
+- **Status:**  Done
 
 ---
 
-### 🟢 Medium Priority (Nice to Have)
+###  Medium Priority (Nice to Have)
 
 #### PBI-016: Customer Support Chatbot
 - **Description:** AI-powered customer support
@@ -179,7 +179,7 @@
   - Chat history
   - Common questions answered
 - **Story Points:** 5
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-017: Wishlist Functionality
 - **Description:** Save favorite products
@@ -188,7 +188,7 @@
   - Wishlist page
   - Wishlist persists
 - **Story Points:** 3
-- **Status:** ✅ Done
+- **Status:**  Done
 
 #### PBI-018: Product Search Enhancement
 - **Description:** Advanced search with filters
@@ -198,7 +198,7 @@
   - Sort by price, rating, date
   - Search suggestions
 - **Story Points:** 5
-- **Status:** ⏳ In Progress
+- **Status:**  In Progress
 
 #### PBI-019: Email Notifications
 - **Description:** Send email notifications for orders
@@ -207,7 +207,7 @@
   - Order status update emails
   - Payment confirmation emails
 - **Story Points:** 8
-- **Status:** ⏳ Pending
+- **Status:**  Pending
 
 #### PBI-020: Product Recommendations
 - **Description:** Show recommended products
@@ -216,11 +216,11 @@
   - Based on purchase history
   - "You may also like" section
 - **Story Points:** 8
-- **Status:** ⏳ Pending
+- **Status:**  Pending
 
 ---
 
-### 🔵 Low Priority (Future)
+###  Low Priority (Future)
 
 #### PBI-021: Social Media Integration
 - **Description:** Share products on social media
@@ -228,7 +228,7 @@
   - Share buttons on product pages
   - Social login (Google, Facebook)
 - **Story Points:** 5
-- **Status:** ⏳ Future
+- **Status:**  Future
 
 #### PBI-022: Multi-language Support
 - **Description:** Support multiple languages
@@ -237,7 +237,7 @@
   - Language switcher
   - Translated content
 - **Story Points:** 13
-- **Status:** ⏳ Future
+- **Status:**  Future
 
 #### PBI-023: Advanced Analytics
 - **Description:** Enhanced analytics dashboard
@@ -246,7 +246,7 @@
   - Customer behavior analysis
   - Product performance metrics
 - **Story Points:** 13
-- **Status:** ⏳ Future
+- **Status:**  Future
 
 #### PBI-024: Inventory Management
 - **Description:** Advanced inventory tracking
@@ -255,7 +255,7 @@
   - Automatic reordering
   - Inventory reports
 - **Story Points:** 8
-- **Status:** ⏳ Future
+- **Status:**  Future
 
 #### PBI-025: Review Moderation
 - **Description:** Admin review moderation tools
@@ -264,49 +264,49 @@
   - Review approval workflow
   - Review deletion
 - **Story Points:** 5
-- **Status:** ⏳ Future
+- **Status:**  Future
 
 ---
 
 ## Sprint Planning
 
 ### Sprint 1 (Completed)
-- ✅ PBI-001: User Authentication System
-- ✅ PBI-002: Product Catalog and Browsing
-- ✅ PBI-003: Shopping Cart Functionality
-- ✅ PBI-004: Checkout and Order Creation
+-  PBI-001: User Authentication System
+-  PBI-002: Product Catalog and Browsing
+-  PBI-003: Shopping Cart Functionality
+-  PBI-004: Checkout and Order Creation
 
 **Total Points:** 26
 
 ### Sprint 2 (Completed)
-- ✅ PBI-005: eSewa Payment Integration
-- ✅ PBI-006: SDC Generation System
-- ✅ PBI-007: Blockchain Review Submission
-- ✅ PBI-011: Product Review Display
+-  PBI-005: eSewa Payment Integration
+-  PBI-006: SDC Generation System
+-  PBI-007: Blockchain Review Submission
+-  PBI-011: Product Review Display
 
 **Total Points:** 39
 
 ### Sprint 3 (Completed)
-- ✅ PBI-008: Admin Dashboard
-- ✅ PBI-009: Seller Dashboard
-- ✅ PBI-010: Buyer Dashboard
-- ✅ PBI-012: Order Status Tracking
+-  PBI-008: Admin Dashboard
+-  PBI-009: Seller Dashboard
+-  PBI-010: Buyer Dashboard
+-  PBI-012: Order Status Tracking
 
 **Total Points:** 36
 
 ### Sprint 4 (Current)
-- ✅ PBI-013: Payment Failure Handling
-- ✅ PBI-014: Responsive Design
-- ✅ PBI-015: Input Validation
-- ✅ PBI-016: Customer Support Chatbot
-- ✅ PBI-017: Wishlist Functionality
+-  PBI-013: Payment Failure Handling
+-  PBI-014: Responsive Design
+-  PBI-015: Input Validation
+-  PBI-016: Customer Support Chatbot
+-  PBI-017: Wishlist Functionality
 
 **Total Points:** 24
 
 ### Sprint 5 (Planned)
-- ⏳ PBI-018: Product Search Enhancement
-- ⏳ PBI-019: Email Notifications
-- ⏳ PBI-020: Product Recommendations
+-  PBI-018: Product Search Enhancement
+-  PBI-019: Email Notifications
+-  PBI-020: Product Recommendations
 
 **Total Points:** 21
 
@@ -316,14 +316,14 @@
 
 | Priority | Count | Points | Status |
 |----------|-------|--------|--------|
-| Critical | 10 | 81 | ✅ Done |
-| High | 5 | 24 | ✅ Done |
-| Medium | 5 | 29 | ⏳ Partial |
-| Low | 5 | 44 | ⏳ Future |
+| Critical | 10 | 81 |  Done |
+| High | 5 | 24 |  Done |
+| Medium | 5 | 29 |  Partial |
+| Low | 5 | 44 |  Future |
 | **Total** | **25** | **178** | |
 
-**Completed:** 15 items (105 points)  
-**In Progress:** 1 item (5 points)  
+**Completed:** 15 items (105 points)
+**In Progress:** 1 item (5 points)
 **Pending:** 9 items (68 points)
 
 ---
@@ -331,18 +331,18 @@
 ## Definition of Done
 
 A backlog item is considered "Done" when:
-- ✅ Code is written and reviewed
-- ✅ Unit tests pass
-- ✅ Integration tests pass
-- ✅ Documentation updated
-- ✅ Deployed to staging environment
-- ✅ Acceptance criteria met
-- ✅ No critical bugs
+-  Code is written and reviewed
+-  Unit tests pass
+-  Integration tests pass
+-  Documentation updated
+-  Deployed to staging environment
+-  Acceptance criteria met
+-  No critical bugs
 
 ---
 
-**Document Status:** Active  
-**Last Updated:** 2024  
+**Document Status:** Active
+**Last Updated:** 2024
 **Version History:**
 - v1.0 (2024) - Initial Product Backlog
 

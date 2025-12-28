@@ -1,7 +1,7 @@
 # Use Cases
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -9,44 +9,44 @@
 ## Use Case Diagram Overview
 
 ```
-┌─────────────┐
-│   Buyer     │
-└──────┬──────┘
-       │
-       ├─ Browse Products
-       ├─ Add to Cart
-       ├─ Checkout
-       ├─ Pay with eSewa
-       ├─ View Orders
-       ├─ Submit Review (with SDC)
-       └─ View Reviews
 
-┌─────────────┐
-│   Seller    │
-└──────┬──────┘
-       │
-       ├─ Create Product
-       ├─ Manage Products
-       ├─ View Orders
-       └─ View Sales Analytics
+   Buyer     
 
-┌─────────────┐
-│    Admin    │
-└──────┬──────┘
-       │
-       ├─ Approve Products
-       ├─ Manage Orders
-       ├─ Verify Payments
-       ├─ Manage Users
-       └─ View Analytics
+       
+        Browse Products
+        Add to Cart
+        Checkout
+        Pay with eSewa
+        View Orders
+        Submit Review (with SDC)
+        View Reviews
+
+
+   Seller    
+
+       
+        Create Product
+        Manage Products
+        View Orders
+        View Sales Analytics
+
+
+    Admin    
+
+       
+        Approve Products
+        Manage Orders
+        Verify Payments
+        Manage Users
+        View Analytics
 ```
 
 ---
 
 ## Use Case 1: User Registration
 
-**Actor:** New User  
-**Preconditions:** User is not logged in  
+**Actor:** New User
+**Preconditions:** User is not logged in
 **Postconditions:** User account created, user logged in
 
 ### Main Flow:
@@ -69,8 +69,8 @@
 
 ## Use Case 2: User Login
 
-**Actor:** Registered User  
-**Preconditions:** User has an account  
+**Actor:** Registered User
+**Preconditions:** User has an account
 **Postconditions:** User is authenticated, session created
 
 ### Main Flow:
@@ -90,8 +90,8 @@
 
 ## Use Case 3: Browse Products
 
-**Actor:** Buyer  
-**Preconditions:** User is on homepage or product listing page  
+**Actor:** Buyer
+**Preconditions:** User is on homepage or product listing page
 **Postconditions:** Products displayed
 
 ### Main Flow:
@@ -111,8 +111,8 @@
 
 ## Use Case 4: Add Product to Cart
 
-**Actor:** Buyer  
-**Preconditions:** User is viewing a product, product is in stock  
+**Actor:** Buyer
+**Preconditions:** User is viewing a product, product is in stock
 **Postconditions:** Product added to cart
 
 ### Main Flow:
@@ -131,8 +131,8 @@
 
 ## Use Case 5: Checkout Process
 
-**Actor:** Buyer  
-**Preconditions:** User has items in cart, user is logged in  
+**Actor:** Buyer
+**Preconditions:** User has items in cart, user is logged in
 **Postconditions:** Order created, payment initiated
 
 ### Main Flow:
@@ -155,8 +155,8 @@
 
 ## Use Case 6: eSewa Payment
 
-**Actor:** Buyer  
-**Preconditions:** Order created, user redirected to eSewa  
+**Actor:** Buyer
+**Preconditions:** Order created, user redirected to eSewa
 **Postconditions:** Payment completed, order confirmed
 
 ### Main Flow:
@@ -178,8 +178,8 @@
 
 ## Use Case 7: SDC Generation
 
-**Actor:** System (Admin updates order status)  
-**Preconditions:** Order status changed to "delivered"  
+**Actor:** System (Admin updates order status)
+**Preconditions:** Order status changed to "delivered"
 **Postconditions:** SDC code generated and registered
 
 ### Main Flow:
@@ -199,8 +199,8 @@
 
 ## Use Case 8: Submit Verified Review
 
-**Actor:** Buyer  
-**Preconditions:** Buyer has received SDC code, order is delivered  
+**Actor:** Buyer
+**Preconditions:** Buyer has received SDC code, order is delivered
 **Postconditions:** Review submitted to blockchain
 
 ### Main Flow:
@@ -232,8 +232,8 @@
 
 ## Use Case 9: Create Product (Seller)
 
-**Actor:** Seller  
-**Preconditions:** Seller is logged in  
+**Actor:** Seller
+**Preconditions:** Seller is logged in
 **Postconditions:** Product created (pending approval)
 
 ### Main Flow:
@@ -256,8 +256,8 @@
 
 ## Use Case 10: Approve Product (Admin)
 
-**Actor:** Admin  
-**Preconditions:** Product is pending approval  
+**Actor:** Admin
+**Preconditions:** Product is pending approval
 **Postconditions:** Product status updated to "active"
 
 ### Main Flow:
@@ -276,8 +276,8 @@
 
 ## Use Case 11: Update Order Status
 
-**Actor:** Admin/Seller  
-**Preconditions:** Order exists  
+**Actor:** Admin/Seller
+**Preconditions:** Order exists
 **Postconditions:** Order status updated
 
 ### Main Flow:
@@ -296,8 +296,8 @@
 
 ## Use Case 12: View Order History
 
-**Actor:** Buyer  
-**Preconditions:** Buyer is logged in  
+**Actor:** Buyer
+**Preconditions:** Buyer is logged in
 **Postconditions:** Order history displayed
 
 ### Main Flow:
@@ -316,8 +316,8 @@
 
 ## Use Case 13: View Verified Reviews
 
-**Actor:** Buyer  
-**Preconditions:** User is viewing a product  
+**Actor:** Buyer
+**Preconditions:** User is viewing a product
 **Postconditions:** Verified reviews displayed
 
 ### Main Flow:
@@ -336,8 +336,8 @@
 
 ## Use Case 14: Payment Verification (Admin)
 
-**Actor:** Admin  
-**Preconditions:** Payment callback received  
+**Actor:** Admin
+**Preconditions:** Payment callback received
 **Postconditions:** Payment verified, order confirmed
 
 ### Main Flow:
@@ -378,7 +378,7 @@
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial Use Cases
 

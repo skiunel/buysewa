@@ -1,6 +1,6 @@
 # Blockchain Payment System - Quick Start
 
-## 🚀 30-Minute Setup
+##  30-Minute Setup
 
 ### 1. Update `.env` Configuration
 
@@ -62,7 +62,7 @@ curl -X POST http://localhost:5000/api/blockchain/validate-sdc-format \
   }'
 ```
 
-## 📋 Complete Flow
+##  Complete Flow
 
 ### 1. Order Placed
 ```
@@ -90,7 +90,7 @@ Body: { sdcCode, productId, ipfsHash, rating }
 Response: { transactionHash, blockNumber }
 ```
 
-## 🔑 API Endpoints
+##  API Endpoints
 
 ### Generate SDC
 ```bash
@@ -127,7 +127,7 @@ POST /api/blockchain/validate-sdc-format
 POST /api/blockchain/batch-generate-sdc
 ```
 
-## 📦 SDC Code Format
+##  SDC Code Format
 
 **Format**: `BUYSEWA-XXXXXXXX-XXXXXXXX`
 
@@ -142,16 +142,16 @@ const SDCService = require('./utils/sdcService');
 const sdcCode = SDCService.generateSDCCode();
 ```
 
-## 🔒 Security Features
+##  Security Features
 
-✅ Cryptographically secure random generation
-✅ Bcryptjs hashing (10 salt rounds)
-✅ One-time use verification
-✅ Blockchain immutability
-✅ User ownership verification
-✅ Input validation & sanitization
+ Cryptographically secure random generation
+ Bcryptjs hashing (10 salt rounds)
+ One-time use verification
+ Blockchain immutability
+ User ownership verification
+ Input validation & sanitization
 
-## 📊 What Gets Stored
+##  What Gets Stored
 
 ### Database (MongoDB)
 ```javascript
@@ -180,7 +180,7 @@ struct SDC {
 }
 ```
 
-## 🚨 Troubleshooting
+##  Troubleshooting
 
 ### Backend won't start
 ```bash
@@ -227,18 +227,18 @@ REVIEW_AUTH_CONTRACT_ADDRESS=0x...
 npm start
 ```
 
-## 📈 Next Steps
+##  Next Steps
 
-1. ✅ Deploy blockchain contract
-2. ✅ Configure environment variables
-3. ✅ Test SDC generation
-4. ✅ Test blockchain registration
-5. ⏳ Integrate with payment routes
-6. ⏳ Connect to frontend
-7. ⏳ Test end-to-end flow
-8. ⏳ Production deployment
+1.  Deploy blockchain contract
+2.  Configure environment variables
+3.  Test SDC generation
+4.  Test blockchain registration
+5.  Integrate with payment routes
+6.  Connect to frontend
+7.  Test end-to-end flow
+8.  Production deployment
 
-## 💡 Tips
+##  Tips
 
 - Use local Hardhat for development (no gas costs)
 - Switch to Mumbai testnet for staging (free testnet tokens)
@@ -246,7 +246,7 @@ npm start
 - Monitor gas prices: [GasTracker](https://www.gasnow.org/)
 - Keep private keys secure and rotate regularly
 
-## 📞 Support
+##  Support
 
 If issues arise:
 1. Check `.env` configuration

@@ -1,8 +1,8 @@
 # Software Requirements Specification (SRS)
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
-**Date:** 2024  
+**Version:** 1.0
+**Date:** 2024
 **Status:** Approved
 
 ---
@@ -367,8 +367,8 @@ BUYSEWA is a standalone web application built with:
 
 ---
 
-**Document Status:** Approved  
-**Next Review Date:** TBD  
+**Document Status:** Approved
+**Next Review Date:** TBD
 **Version History:**
 - v1.0 (2024) - Initial SRS
 

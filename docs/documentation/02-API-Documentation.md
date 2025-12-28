@@ -1,9 +1,9 @@
 # API Documentation
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
-**Date:** 2024  
-**Base URL:** `http://localhost:5000/api`  
+**Version:** 1.0
+**Date:** 2024
+**Base URL:** `http://localhost:5000/api`
 **Production URL:** `https://api.yourdomain.com/api`
 
 ---
@@ -575,7 +575,7 @@ docs/postman/BUYSEWA-API.postman_collection.json
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial API Documentation
 

@@ -1,7 +1,7 @@
 # Technical Documentation
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -36,15 +36,15 @@ BUYSEWA is a full-stack e-commerce platform with blockchain-based review verific
 ### Architecture Layers
 
 ```
-┌─────────────────────────────────────┐
-│   Presentation Layer (React)        │
-├─────────────────────────────────────┤
-│   Application Layer (Express API)    │
-├─────────────────────────────────────┤
-│   Data Layer (MongoDB)              │
-├─────────────────────────────────────┤
-│   Blockchain Layer (Ethereum/IPFS)  │
-└─────────────────────────────────────┘
+
+   Presentation Layer (React)        
+
+   Application Layer (Express API)    
+
+   Data Layer (MongoDB)              
+
+   Blockchain Layer (Ethereum/IPFS)  
+
 ```
 
 ---
@@ -90,33 +90,33 @@ BUYSEWA is a full-stack e-commerce platform with blockchain-based review verific
 
 ```
 buysewa-platform/
-├── src/                          # Frontend source
-│   ├── components/               # React components
-│   │   ├── ui/                  # UI components
-│   │   ├── Homepage.tsx
-│   │   ├── ProductListing.tsx
-│   │   ├── CheckoutPage.tsx
-│   │   └── ...
-│   ├── contexts/                # React contexts
-│   │   ├── AuthContext.tsx
-│   │   ├── CartContext.tsx
-│   │   └── OrderContext.tsx
-│   ├── services/                # API services
-│   │   ├── api.ts
-│   │   └── blockchain.ts
-│   ├── utils/                   # Utilities
-│   └── main.tsx                 # Entry point
-├── review-backend/              # Backend source
-│   ├── models/                  # MongoDB models
-│   ├── routes/                  # API routes
-│   ├── middleware/              # Express middleware
-│   ├── utils/                   # Backend utilities
-│   └── server.js               # Server entry
-├── contracts/                   # Smart contracts
-│   └── ReviewAuth.sol
-├── scripts/                     # Deployment scripts
-│   └── deploy.js
-└── docs/                        # Documentation
+ src/                          # Frontend source
+    components/               # React components
+       ui/                  # UI components
+       Homepage.tsx
+       ProductListing.tsx
+       CheckoutPage.tsx
+       ...
+    contexts/                # React contexts
+       AuthContext.tsx
+       CartContext.tsx
+       OrderContext.tsx
+    services/                # API services
+       api.ts
+       blockchain.ts
+    utils/                   # Utilities
+    main.tsx                 # Entry point
+ review-backend/              # Backend source
+    models/                  # MongoDB models
+    routes/                  # API routes
+    middleware/              # Express middleware
+    utils/                   # Backend utilities
+    server.js               # Server entry
+ contracts/                   # Smart contracts
+    ReviewAuth.sol
+ scripts/                     # Deployment scripts
+    deploy.js
+ docs/                        # Documentation
 ```
 
 ---
@@ -181,7 +181,7 @@ Validates JWT tokens for protected routes.
 const auth = async (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) return res.status(401).json({ success: false, message: 'No token' });
-  
+
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
@@ -444,7 +444,7 @@ const signature = crypto.createHmac('sha256', secretKey).update(message).digest(
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial Technical Documentation
 

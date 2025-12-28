@@ -81,17 +81,17 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/buysewa',
   useUnifiedTopology: true
 })
 .then(() => {
-  console.log('✅ Connected to MongoDB');
+  console.log(' Connected to MongoDB');
   
   // Start server
   app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
-    console.log(`📝 API Health: http://localhost:${PORT}/api/health`);
-    console.log(`🔗 Blockchain Contract: ${process.env.REVIEW_AUTH_CONTRACT_ADDRESS || 'Not configured'}`);
+    console.log(` Server running on http://localhost:${PORT}`);
+    console.log(` API Health: http://localhost:${PORT}/api/health`);
+    console.log(` Blockchain Contract: ${process.env.REVIEW_AUTH_CONTRACT_ADDRESS || 'Not configured'}`);
   });
 })
 .catch((error) => {
-  console.error('❌ MongoDB connection error:', error);
+  console.error(' MongoDB connection error:', error);
   process.exit(1);
 });
 

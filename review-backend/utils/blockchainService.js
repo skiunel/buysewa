@@ -75,7 +75,7 @@ class BlockchainPaymentService {
       // Connect to smart contract if address is configured
       if (this.contractAddress && this.contractAddress !== '0x1234567890123456789012345678901234567890') {
         if (!this.signer) {
-          console.warn('⚠️  No private key configured. Contract calls will be read-only.');
+          console.warn('  No private key configured. Contract calls will be read-only.');
         }
         
         this.contract = new ethers.Contract(
@@ -86,13 +86,13 @@ class BlockchainPaymentService {
       }
 
       this.initialized = true;
-      console.log('✅ Blockchain service initialized');
+      console.log(' Blockchain service initialized');
       console.log(`   RPC URL: ${this.rpcUrl}`);
       console.log(`   Contract: ${this.contractAddress || 'Not configured'}`);
       
       return true;
     } catch (error) {
-      console.error('❌ Blockchain initialization error:', error.message);
+      console.error(' Blockchain initialization error:', error.message);
       this.initialized = false;
       return false;
     }

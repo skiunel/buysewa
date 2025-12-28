@@ -1,7 +1,7 @@
 # Database Schema
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -9,55 +9,55 @@
 ## Entity Relationship Diagram
 
 ```
-┌──────────────┐         ┌──────────────┐         ┌──────────────┐
-│     User     │         │   Product   │         │    Order     │
-├──────────────┤         ├──────────────┤         ├──────────────┤
-│ _id (PK)     │         │ _id (PK)     │         │ _id (PK)     │
-│ name         │         │ name         │         │ orderNumber  │
-│ email (UNIQUE)│         │ description  │         │ userId (FK)  │
-│ password     │         │ price        │         │ items[]      │
-│ role         │         │ category     │         │ subtotal     │
-│ walletAddress│         │ images[]     │         │ total        │
-│ createdAt    │         │ stockCount   │         │ status       │
-│ updatedAt    │         │ seller (FK)  │         │ paymentStatus│
-└──────────────┘         │ status       │         │ sdcCodes[]   │
-      │                  │ createdAt    │         │ createdAt    │
-      │                  │ updatedAt    │         │ updatedAt    │
-      │                  └──────────────┘         └──────────────┘
-      │                         │                         │
-      │                         │                         │
-      │                         │                         │
-      │                  ┌──────────────┐                │
-      │                  │    Review    │                │
-      │                  ├──────────────┤                │
-      │                  │ _id (PK)     │                │
-      │                  │ productId(FK)│                │
-      │                  │ userId (FK)  │                │
-      │                  │ sdcId (FK)  │                │
-      │                  │ rating       │                │
-      │                  │ comment      │                │
-      │                  │ ipfsHash     │                │
-      │                  │ blockchainTx │                │
-      │                  │ verified     │                │
-      │                  │ createdAt    │                │
-      │                  └──────────────┘                │
-      │                         │                         │
-      │                         │                         │
-      │                  ┌──────────────┐                │
-      │                  │     SDC      │                │
-      │                  ├──────────────┤                │
-      │                  │ _id (PK)     │                │
-      │                  │ sdcCode(UNIQ)│                │
-      │                  │ hashedSDC    │                │
-      │                  │ userId (FK)  │                │
-      │                  │ orderId (FK) │                │
-      │                  │ productId(FK)│                │
-      │                  │ isUsed       │                │
-      │                  │ blockchainTx │                │
-      │                  │ registeredAt │                │
-      │                  └──────────────┘                │
-      │                                                  │
-      └──────────────────────────────────────────────────┘
+                  
+     User                 Product                Order     
+                  
+ _id (PK)               _id (PK)               _id (PK)     
+ name                   name                   orderNumber  
+ email (UNIQUE)          description            userId (FK)  
+ password               price                  items[]      
+ role                   category               subtotal     
+ walletAddress          images[]               total        
+ createdAt              stockCount             status       
+ updatedAt              seller (FK)            paymentStatus
+          status                 sdcCodes[]   
+                         createdAt              createdAt    
+                         updatedAt              updatedAt    
+                                 
+                                                        
+                                                        
+                                                        
+                                        
+                            Review                    
+                                        
+                         _id (PK)                     
+                         productId(FK)                
+                         userId (FK)                  
+                         sdcId (FK)                  
+                         rating                       
+                         comment                      
+                         ipfsHash                     
+                         blockchainTx                 
+                         verified                     
+                         createdAt                    
+                                        
+                                                        
+                                                        
+                                        
+                             SDC                      
+                                        
+                         _id (PK)                     
+                         sdcCode(UNIQ)                
+                         hashedSDC                    
+                         userId (FK)                  
+                         orderId (FK)                 
+                         productId(FK)                
+                         isUsed                       
+                         blockchainTx                 
+                         registeredAt                 
+                                        
+                                                        
+      
 ```
 
 ---
@@ -363,7 +363,7 @@
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial Database Schema
 

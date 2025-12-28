@@ -1,7 +1,7 @@
 # Test Cases
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -23,8 +23,8 @@ Each test case includes:
 ## Authentication Test Cases
 
 ### TC-AUTH-001: Successful User Registration
-**Priority:** High  
-**Module:** Authentication  
+**Priority:** High
+**Module:** Authentication
 **Preconditions:** User is not logged in, email not registered
 
 **Test Steps:**
@@ -43,14 +43,14 @@ Each test case includes:
 - User redirected to homepage
 - Success message displayed
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-AUTH-002: Registration with Invalid Email Format
-**Priority:** High  
-**Module:** Authentication  
+**Priority:** High
+**Module:** Authentication
 **Preconditions:** User is not logged in
 
 **Test Steps:**
@@ -65,14 +65,14 @@ Each test case includes:
 - Account not created
 - User remains on registration page
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-AUTH-003: Registration with Short Password
-**Priority:** High  
-**Module:** Authentication  
+**Priority:** High
+**Module:** Authentication
 **Preconditions:** User is not logged in
 
 **Test Steps:**
@@ -86,14 +86,14 @@ Each test case includes:
 - Error message: "Password must be at least 4 characters"
 - Account not created
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-AUTH-004: Registration with Duplicate Email
-**Priority:** High  
-**Module:** Authentication  
+**Priority:** High
+**Module:** Authentication
 **Preconditions:** User with email "existing@example.com" exists
 
 **Test Steps:**
@@ -107,14 +107,14 @@ Each test case includes:
 - Error message: "Email already registered"
 - Account not created
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-AUTH-005: Successful User Login
-**Priority:** High  
-**Module:** Authentication  
+**Priority:** High
+**Module:** Authentication
 **Preconditions:** User account exists
 
 **Test Steps:**
@@ -129,14 +129,14 @@ Each test case includes:
 - User redirected to dashboard (based on role)
 - Session persists on page refresh
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-AUTH-006: Login with Invalid Credentials
-**Priority:** High  
-**Module:** Authentication  
+**Priority:** High
+**Module:** Authentication
 **Preconditions:** User account exists
 
 **Test Steps:**
@@ -150,14 +150,14 @@ Each test case includes:
 - User remains on login page
 - No token stored
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-AUTH-007: User Logout
-**Priority:** Medium  
-**Module:** Authentication  
+**Priority:** Medium
+**Module:** Authentication
 **Preconditions:** User is logged in
 
 **Test Steps:**
@@ -170,7 +170,7 @@ Each test case includes:
 - User redirected to homepage
 - Protected routes inaccessible
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
@@ -178,8 +178,8 @@ Each test case includes:
 ## Product Management Test Cases
 
 ### TC-PROD-001: Browse All Products
-**Priority:** High  
-**Module:** Product Management  
+**Priority:** High
+**Module:** Product Management
 **Preconditions:** Products exist in database
 
 **Test Steps:**
@@ -191,14 +191,14 @@ Each test case includes:
 - Each product shows: image, name, price, rating
 - Products are paginated (if many)
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-PROD-002: Filter Products by Category
-**Priority:** Medium  
-**Module:** Product Management  
+**Priority:** Medium
+**Module:** Product Management
 **Preconditions:** Products in multiple categories exist
 
 **Test Steps:**
@@ -211,14 +211,14 @@ Each test case includes:
 - Product count updates
 - Other categories hidden
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-PROD-003: Search Products by Name
-**Priority:** Medium  
-**Module:** Product Management  
+**Priority:** Medium
+**Module:** Product Management
 **Preconditions:** Products exist
 
 **Test Steps:**
@@ -231,14 +231,14 @@ Each test case includes:
 - Search is case-insensitive
 - If no results, "No products found" message shown
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-PROD-004: Filter Products by Price Range
-**Priority:** Medium  
-**Module:** Product Management  
+**Priority:** Medium
+**Module:** Product Management
 **Preconditions:** Products with various prices exist
 
 **Test Steps:**
@@ -251,14 +251,14 @@ Each test case includes:
 - Only products within price range displayed
 - Price filter works correctly
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-PROD-005: View Product Details
-**Priority:** High  
-**Module:** Product Management  
+**Priority:** High
+**Module:** Product Management
 **Preconditions:** Product exists
 
 **Test Steps:**
@@ -272,14 +272,14 @@ Each test case includes:
 - Reviews displayed (if any)
 - "Add to Cart" button visible
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-PROD-006: Create Product (Seller)
-**Priority:** High  
-**Module:** Product Management  
+**Priority:** High
+**Module:** Product Management
 **Preconditions:** Seller is logged in
 
 **Test Steps:**
@@ -300,14 +300,14 @@ Each test case includes:
 - Product appears in seller's product list
 - Admin notified (if notification system exists)
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-PROD-007: Update Product (Seller)
-**Priority:** Medium  
-**Module:** Product Management  
+**Priority:** Medium
+**Module:** Product Management
 **Preconditions:** Seller has created a product
 
 **Test Steps:**
@@ -323,7 +323,7 @@ Each test case includes:
 - Changes reflected immediately
 - Updated timestamp changed
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
@@ -331,8 +331,8 @@ Each test case includes:
 ## Shopping Cart Test Cases
 
 ### TC-CART-001: Add Product to Cart
-**Priority:** High  
-**Module:** Shopping Cart  
+**Priority:** High
+**Module:** Shopping Cart
 **Preconditions:** User is logged in, product exists and in stock
 
 **Test Steps:**
@@ -347,14 +347,14 @@ Each test case includes:
 - Product visible in cart with correct quantity
 - Success message displayed (optional)
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-CART-002: Add Multiple Products to Cart
-**Priority:** High  
-**Module:** Shopping Cart  
+**Priority:** High
+**Module:** Shopping Cart
 **Preconditions:** User is logged in, multiple products exist
 
 **Test Steps:**
@@ -369,14 +369,14 @@ Each test case includes:
 - Each product shows correct quantity (1)
 - Subtotal calculated correctly
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-CART-003: Update Cart Quantity
-**Priority:** Medium  
-**Module:** Shopping Cart  
+**Priority:** Medium
+**Module:** Shopping Cart
 **Preconditions:** Product in cart
 
 **Test Steps:**
@@ -391,14 +391,14 @@ Each test case includes:
 - Total updated
 - Cart persists on page refresh
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-CART-004: Remove Item from Cart
-**Priority:** Medium  
-**Module:** Shopping Cart  
+**Priority:** Medium
+**Module:** Shopping Cart
 **Preconditions:** Multiple items in cart
 
 **Test Steps:**
@@ -413,14 +413,14 @@ Each test case includes:
 - Subtotal and total recalculated
 - Cart persists on page refresh
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-CART-005: Cart Persistence
-**Priority:** Medium  
-**Module:** Shopping Cart  
+**Priority:** Medium
+**Module:** Shopping Cart
 **Preconditions:** Items in cart
 
 **Test Steps:**
@@ -433,7 +433,7 @@ Each test case includes:
 - Quantities preserved
 - Totals correct
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
@@ -441,8 +441,8 @@ Each test case includes:
 ## Checkout Test Cases
 
 ### TC-CHECKOUT-001: Checkout with Valid Address
-**Priority:** High  
-**Module:** Checkout  
+**Priority:** High
+**Module:** Checkout
 **Preconditions:** Items in cart, user logged in
 
 **Test Steps:**
@@ -465,14 +465,14 @@ Each test case includes:
 - Order stored in database
 - Redirected to payment gateway
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-CHECKOUT-002: Checkout with Empty Cart
-**Priority:** High  
-**Module:** Checkout  
+**Priority:** High
+**Module:** Checkout
 **Preconditions:** Cart is empty, user logged in
 
 **Test Steps:**
@@ -484,14 +484,14 @@ Each test case includes:
 - Redirected to cart page or product listing
 - Cannot proceed to checkout
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-CHECKOUT-003: Checkout Address Validation
-**Priority:** High  
-**Module:** Checkout  
+**Priority:** High
+**Module:** Checkout
 **Preconditions:** Items in cart
 
 **Test Steps:**
@@ -504,7 +504,7 @@ Each test case includes:
 - Form cannot be submitted
 - Required fields highlighted
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
@@ -512,8 +512,8 @@ Each test case includes:
 ## Payment Test Cases
 
 ### TC-PAY-001: eSewa Payment Initiation
-**Priority:** High  
-**Module:** Payment  
+**Priority:** High
+**Module:** Payment
 **Preconditions:** Order created
 
 **Test Steps:**
@@ -527,14 +527,14 @@ Each test case includes:
 - HMAC signature included
 - Redirected to eSewa payment page (or form submitted)
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-PAY-002: Payment Success Flow
-**Priority:** High  
-**Module:** Payment  
+**Priority:** High
+**Module:** Payment
 **Preconditions:** Order created, payment initiated
 
 **Test Steps:**
@@ -550,14 +550,14 @@ Each test case includes:
 - User sees success page
 - Order visible in dashboard
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-PAY-003: Payment Failure Flow
-**Priority:** High  
-**Module:** Payment  
+**Priority:** High
+**Module:** Payment
 **Preconditions:** Order created, payment initiated
 
 **Test Steps:**
@@ -571,7 +571,7 @@ Each test case includes:
 - Order remains in database
 - User can retry payment
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
@@ -579,8 +579,8 @@ Each test case includes:
 ## Order Management Test Cases
 
 ### TC-ORDER-001: View Order History
-**Priority:** Medium  
-**Module:** Order Management  
+**Priority:** Medium
+**Module:** Order Management
 **Preconditions:** User has placed orders
 
 **Test Steps:**
@@ -594,14 +594,14 @@ Each test case includes:
 - Orders sorted by date (newest first)
 - Can click to view order details
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-ORDER-002: View Order Details
-**Priority:** Medium  
-**Module:** Order Management  
+**Priority:** Medium
+**Module:** Order Management
 **Preconditions:** Order exists
 
 **Test Steps:**
@@ -616,14 +616,14 @@ Each test case includes:
 - Order status shown
 - SDC codes shown (if delivered)
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-ORDER-003: Update Order Status (Admin)
-**Priority:** High  
-**Module:** Order Management  
+**Priority:** High
+**Module:** Order Management
 **Preconditions:** Order exists, admin logged in
 
 **Test Steps:**
@@ -639,7 +639,7 @@ Each test case includes:
 - SDC codes displayed in order details
 - Buyer notified (if notification system exists)
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
@@ -647,8 +647,8 @@ Each test case includes:
 ## Blockchain Review Test Cases
 
 ### TC-REVIEW-001: SDC Generation
-**Priority:** High  
-**Module:** Blockchain Review  
+**Priority:** High
+**Module:** Blockchain Review
 **Preconditions:** Order status changed to "delivered"
 
 **Test Steps:**
@@ -664,14 +664,14 @@ Each test case includes:
 - SDC codes registered on blockchain
 - Blockchain transaction hash stored
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-REVIEW-002: SDC Verification
-**Priority:** High  
-**Module:** Blockchain Review  
+**Priority:** High
+**Module:** Blockchain Review
 **Preconditions:** SDC code exists and registered
 
 **Test Steps:**
@@ -686,14 +686,14 @@ Each test case includes:
 - SDC status: "valid" and "not used"
 - Can proceed to submit review
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-REVIEW-003: Submit Verified Review
-**Priority:** High  
-**Module:** Blockchain Review  
+**Priority:** High
+**Module:** Blockchain Review
 **Preconditions:** Valid SDC code, MetaMask wallet connected
 
 **Test Steps:**
@@ -713,14 +713,14 @@ Each test case includes:
 - SDC marked as "used"
 - Review displayed on product page with "Verified" badge
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-REVIEW-004: Duplicate SDC Usage Prevention
-**Priority:** High  
-**Module:** Blockchain Review  
+**Priority:** High
+**Module:** Blockchain Review
 **Preconditions:** SDC code already used
 
 **Test Steps:**
@@ -732,14 +732,14 @@ Each test case includes:
 - Cannot submit review
 - SDC status: "used"
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-REVIEW-005: View Verified Reviews
-**Priority:** Medium  
-**Module:** Blockchain Review  
+**Priority:** Medium
+**Module:** Blockchain Review
 **Preconditions:** Verified reviews exist for a product
 
 **Test Steps:**
@@ -754,7 +754,7 @@ Each test case includes:
 - Reviews show rating, comment, images, date
 - Reviews sorted by date (newest first)
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
@@ -762,8 +762,8 @@ Each test case includes:
 ## Admin Dashboard Test Cases
 
 ### TC-ADMIN-001: Approve Product
-**Priority:** High  
-**Module:** Admin Dashboard  
+**Priority:** High
+**Module:** Admin Dashboard
 **Preconditions:** Pending product exists, admin logged in
 
 **Test Steps:**
@@ -778,14 +778,14 @@ Each test case includes:
 - Product visible to buyers
 - Seller notified (if notification system exists)
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-ADMIN-002: Reject Product
-**Priority:** High  
-**Module:** Admin Dashboard  
+**Priority:** High
+**Module:** Admin Dashboard
 **Preconditions:** Pending product exists, admin logged in
 
 **Test Steps:**
@@ -799,14 +799,14 @@ Each test case includes:
 - Product not visible to buyers
 - Seller notified
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
 
 ### TC-ADMIN-003: View Platform Analytics
-**Priority:** Medium  
-**Module:** Admin Dashboard  
+**Priority:** Medium
+**Module:** Admin Dashboard
 **Preconditions:** Admin logged in, data exists
 
 **Test Steps:**
@@ -820,7 +820,7 @@ Each test case includes:
 - Category distribution visible
 - User growth statistics shown
 
-**Actual Result:** _To be filled_  
+**Actual Result:** _To be filled_
 **Status:** _To be filled_
 
 ---
@@ -841,7 +841,7 @@ Each test case includes:
 
 ---
 
-**Document Status:** Draft  
+**Document Status:** Draft
 **Version History:**
 - v1.0 (2024) - Initial Test Cases
 

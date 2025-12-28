@@ -1,7 +1,7 @@
 # Test Scripts
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
+**Version:** 1.0
 **Date:** 2024
 
 ---
@@ -28,9 +28,9 @@ describe('Authentication API', () => {
       password: 'test1234',
       role: 'buyer'
     };
-    
+
     const response = await authAPI.register(userData);
-    
+
     expect(response.success).toBe(true);
     expect(response.token).toBeDefined();
     expect(response.user.email).toBe(userData.email);
@@ -43,13 +43,13 @@ describe('Authentication API', () => {
       password: 'test1234',
       role: 'buyer'
     };
-    
+
     await expect(authAPI.register(userData)).rejects.toThrow();
   });
 
   test('should login with valid credentials', async () => {
     const response = await authAPI.login('test@example.com', 'test1234');
-    
+
     expect(response.success).toBe(true);
     expect(response.token).toBeDefined();
   });
@@ -73,14 +73,14 @@ const { productAPI } = require('../../src/services/api');
 describe('Product API', () => {
   test('should fetch all products', async () => {
     const response = await productAPI.getAll();
-    
+
     expect(response.success).toBe(true);
     expect(Array.isArray(response.data)).toBe(true);
   });
 
   test('should filter products by category', async () => {
     const response = await productAPI.getAll({ category: 'Electronics' });
-    
+
     expect(response.success).toBe(true);
     response.data.forEach(product => {
       expect(product.category).toBe('Electronics');
@@ -89,7 +89,7 @@ describe('Product API', () => {
 
   test('should search products by name', async () => {
     const response = await productAPI.getAll({ search: 'Samsung' });
-    
+
     expect(response.success).toBe(true);
     response.data.forEach(product => {
       expect(product.name.toLowerCase()).toContain('samsung');
@@ -99,7 +99,7 @@ describe('Product API', () => {
   test('should get product by ID', async () => {
     const productId = '507f1f77bcf86cd799439011';
     const response = await productAPI.getById(productId);
-    
+
     expect(response.success).toBe(true);
     expect(response.data._id).toBe(productId);
   });
@@ -129,7 +129,7 @@ describe('Order Creation Flow', () => {
         email: 'test@example.com',
         password: 'test1234'
       });
-    
+
     authToken = loginResponse.body.token;
     userId = loginResponse.body.user._id;
   });
@@ -215,7 +215,7 @@ describe('SDC Generation and Verification', () => {
 
   test('should verify SDC code', async () => {
     const sdcCode = 'SDC-ABC123XYZ';
-    
+
     const response = await request(app)
       .get(`/api/sdc/verify/${sdcCode}`)
       .set('Authorization', `Bearer ${authToken}`)
@@ -228,7 +228,7 @@ describe('SDC Generation and Verification', () => {
 
   test('should fail verification for invalid SDC', async () => {
     const invalidSDC = 'INVALID-SDC';
-    
+
     const response = await request(app)
       .get(`/api/sdc/verify/${invalidSDC}`)
       .set('Authorization', `Bearer ${authToken}`)
@@ -263,7 +263,7 @@ test.describe('Complete Purchase Flow', () => {
     await page.click('text=Products');
     await page.click('.product-card:first-child');
     await page.click('button:has-text("Add to Cart")');
-    
+
     // 3. Go to cart and checkout
     await page.click('a[href*="cart"]');
     await expect(page.locator('.cart-item')).toBeVisible();
@@ -312,7 +312,7 @@ test.describe('Review Submission Flow', () => {
 
     // Find delivered order and get SDC code
     const sdcCode = await page.textContent('.sdc-code:first-child');
-    
+
     // Navigate to review submission
     await page.click('button:has-text("Submit Review")');
 
@@ -479,18 +479,18 @@ scenarios:
 describe('Security Tests', () => {
   test('should prevent SQL injection in search', async () => {
     const maliciousInput = "'; DROP TABLE users; --";
-    
+
     const response = await request(app)
       .get(`/api/products?search=${encodeURIComponent(maliciousInput)}`)
       .expect(200);
-    
+
     // Should not crash or expose data
     expect(response.body.success).toBe(true);
   });
 
   test('should prevent XSS in product description', async () => {
     const xssPayload = '<script>alert("XSS")</script>';
-    
+
     const response = await request(app)
       .post('/api/products')
       .set('Authorization', `Bearer ${authToken}`)
@@ -500,7 +500,7 @@ describe('Security Tests', () => {
         price: 9999,
         category: 'Test'
       });
-    
+
     // Should sanitize input
     expect(response.body.data.description).not.toContain('<script>');
   });
@@ -578,7 +578,7 @@ module.exports = { setupTestData };
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial Test Scripts
 

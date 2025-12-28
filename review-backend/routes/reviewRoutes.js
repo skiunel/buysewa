@@ -23,7 +23,7 @@ const initBlockchain = () => {
     const rpcUrl = process.env.BLOCKCHAIN_RPC_URL || 'http://localhost:8545';
 
     if (!contractAddress) {
-      console.warn('⚠️  Blockchain contract address not configured');
+      console.warn('  Blockchain contract address not configured');
       return;
     }
 
@@ -43,7 +43,7 @@ const initBlockchain = () => {
       contract = new ethers.Contract(contractAddress, contractABI, wallet || provider);
     }
   } catch (error) {
-    console.error('❌ Blockchain initialization error:', error.message);
+    console.error(' Blockchain initialization error:', error.message);
   }
 };
 

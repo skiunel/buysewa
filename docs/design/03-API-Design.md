@@ -1,8 +1,8 @@
 # API Design Documentation
 ## BUYSEWA E-commerce Platform
 
-**Version:** 1.0  
-**Date:** 2024  
+**Version:** 1.0
+**Date:** 2024
 **Base URL:** `http://localhost:5000/api`
 
 ---
@@ -722,7 +722,7 @@ Endpoints that return lists support pagination:
 
 ---
 
-**Document Status:** Approved  
+**Document Status:** Approved
 **Version History:**
 - v1.0 (2024) - Initial API Design
 
