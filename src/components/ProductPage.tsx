@@ -6,6 +6,7 @@ import { Badge } from "./ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { ImageWithFallback } from "./common/ImageWithFallback";
+import { QuickBuyEsewa } from "./QuickBuyEsewa";
 import { products } from "../data/products";
 import { useCart } from "../contexts/CartContext";
 
@@ -217,6 +218,17 @@ export function ProductPage({ onNavigate, productId }: ProductPageProps) {
               <Button size="lg" variant="outline">
                 <Share2 className="h-5 w-5" />
               </Button>
+            </div>
+
+            <div className="pt-4">
+              <QuickBuyEsewa
+                product={{
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
+                  image: product.image
+                }}
+              />
             </div>
 
             <div className="grid grid-cols-3 gap-4 pt-6 border-t">
