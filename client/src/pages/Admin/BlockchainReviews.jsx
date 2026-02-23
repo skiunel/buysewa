@@ -5,7 +5,7 @@ import {
   AlertIcon, Icon, Tooltip, useToast, useColorModeValue, Tabs, TabList,
   TabPanels, Tab, TabPanel,
 } from '@chakra-ui/react';
-import { FaEthereum, FaSearch, FaLink, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
+import { FaEthereum, FaSearch, FaLink } from 'react-icons/fa';
 import axios from 'axios';
 import AdminNavigation from '../../components/AdminNavigation/index.jsx';
 

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import {
   Box, Container, Heading, Table, Thead, Tbody, Tr, Th, Td,
   Badge, Button, Text, Spinner, Center, HStack, Icon, useToast,
-  VStack, useColorModeValue, Card, CardBody, Tag, TagLabel, TagLeftIcon,
-  Alert, AlertIcon, SimpleGrid, Stat, StatLabel, StatNumber,
+  useColorModeValue, Card, CardBody, Tag, TagLabel, TagLeftIcon,
+  SimpleGrid, Stat, StatLabel, StatNumber,
 } from '@chakra-ui/react';
 import { FaEthereum, FaStar, FaTrash, FaEye, FaEyeSlash } from 'react-icons/fa';
 import axios from 'axios';
@@ -31,7 +31,7 @@ function ReviewManagement() {
     }
   };
 
-  useEffect(() => { fetchReviews(); }, []);
+  useEffect(() => { fetchReviews(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleDelete = async (review) => {
     try {

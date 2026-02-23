@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { fetchProductList, fetchOrders } from '../../api/index.js';
 import AdminNavigation from '../../components/AdminNavigation/index.jsx';

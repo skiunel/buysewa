@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import {
   Box, Container, Heading, VStack, FormControl, FormLabel, Input,
-  Textarea, Button, Text, Spinner, Center, useToast, HStack,
+  Textarea, Button, Spinner, Center, useToast, HStack,
   useColorModeValue, Card, CardBody,
 } from '@chakra-ui/react';
 import { fetchProduct, updateProduct, postProduct } from '../../api/index.js';

@@ -4,10 +4,10 @@ import { useQuery } from 'react-query';
 import {
   Box, Container, Heading, Text, Image, Button, VStack, HStack, Divider,
   Spinner, Center, Badge, FormControl, FormLabel, Textarea, Select,
-  Alert, AlertIcon, useToast, Flex, SimpleGrid, Icon, Tag, TagLabel,
+  useToast, Flex, SimpleGrid, Icon, Tag, TagLabel,
   useColorModeValue, Card, CardBody,
 } from '@chakra-ui/react';
-import { FaStar, FaShoppingCart, FaEthereum, FaCheckCircle } from 'react-icons/fa';
+import { FaShoppingCart, FaEthereum, FaCheckCircle } from 'react-icons/fa';
 import { fetchProduct, fetchReviews, submitReview, submitWeb3Review } from '../../api/index.js';
 import { useBasket } from '../../contexts/BasketContext.jsx';
 import { useAuth } from '../../contexts/AuthContext.jsx';
@@ -16,14 +16,14 @@ import StarRating from '../../components/StarRating/index.jsx';
 function ProductDetail() {
   const { product_id } = useParams();
   const { addToBasket } = useBasket();
-  const { loggedIn, user } = useAuth();
+  const { loggedIn } = useAuth();
   const toast = useToast();
   const cardBg = useColorModeValue('white', 'gray.700');
 
   const [rating, setRating] = useState(5);
   const [comment, setComment] = useState('');
   const [submitting, setSubmitting] = useState(false);
-  const [useBlockchain, setUseBlockchain] = useState(true);
+  const [useBlockchain] = useState(true);
 
   const { data: product, isLoading: productLoading } = useQuery(['product', product_id], () => fetchProduct(product_id));
   const { data: reviews, isLoading: reviewsLoading, refetch: refetchReviews } = useQuery(

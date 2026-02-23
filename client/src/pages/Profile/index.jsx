@@ -1,8 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import {
   Container, VStack, Heading, Text, Avatar, Box, Card, CardBody,
-  Divider, Badge, Table, Thead, Tbody, Tr, Th, Td, Spinner, Center,
+  Badge, Table, Thead, Tbody, Tr, Th, Td, Spinner, Center,
   HStack, useColorModeValue, Alert, AlertIcon,
 } from '@chakra-ui/react';
 import { useQuery } from 'react-query';
@@ -11,7 +10,6 @@ import { fetchUserOrders, fetchUserDeliveries } from '../../api/index.js';
 
 function Profile() {
   const { user, loggedIn } = useAuth();
-  const navigate = useNavigate();
   const cardBg = useColorModeValue('white', 'gray.700');
 
   const { data: orders, isLoading: ordersLoading } = useQuery('userOrders', fetchUserOrders, { enabled: loggedIn });

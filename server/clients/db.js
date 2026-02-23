@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
 
 const connectDB = async () => {
+  const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/buysewa_reviews';
+
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/buysewa_reviews', {
+    await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -13,6 +15,6 @@ const connectDB = async () => {
   }
 };
 
-connectDB();
+await connectDB();
 
 export default mongoose;

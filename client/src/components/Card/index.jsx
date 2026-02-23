@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Box, Image, Text, Button, Flex, Badge, HStack, VStack, Icon,
-  useColorModeValue, useToast, AspectRatio, Center, Spinner, Tag, TagLabel, TagLeftIcon,
+  Box, Image, Text, Button, Flex, HStack, Icon,
+  useColorModeValue, useToast, AspectRatio, Center, Tag, TagLabel, TagLeftIcon,
 } from '@chakra-ui/react';
 import { FaShoppingCart, FaStar, FaBox, FaTruck } from 'react-icons/fa';
 import { useBasket } from '../../contexts/BasketContext.jsx';

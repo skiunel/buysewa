@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import {
   Box, Flex, Text, Button, IconButton, Stack, Badge,
   Avatar, Menu, MenuButton, MenuList, MenuItem, MenuDivider,
-  useColorModeValue, useDisclosure, HStack,
+  useColorModeValue, HStack,
 } from '@chakra-ui/react';
 import { FaShoppingCart, FaUser, FaSignOutAlt, FaCog, FaHome } from 'react-icons/fa';
 import { useAuth } from '../../contexts/AuthContext.jsx';
