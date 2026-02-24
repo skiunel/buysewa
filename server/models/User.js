@@ -18,7 +18,16 @@ const UserSchema = new Schema({
   role: {
     type: String,
     default: 'user',
-    enum: ['user', 'admin'],
+    enum: ['user', 'admin', 'superadmin'],
+  },
+  store: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'store',
+    default: null,
+  },
+  name: {
+    type: String,
+    default: '',
   },
 });
 

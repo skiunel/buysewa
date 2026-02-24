@@ -17,6 +17,15 @@ const OrderSchema = new Schema({
       ref: 'product',
     },
   ],
+  store: {
+    type: Schema.Types.ObjectId,
+    ref: 'store',
+    default: null,
+  },
+  totalAmount: {
+    type: Number,
+    default: 0,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

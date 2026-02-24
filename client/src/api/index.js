@@ -135,4 +135,61 @@ export const submitWeb3Review = async (product_id, reviewData) => {
   return data;
 };
 
+// Analytics
+export const fetchAnalyticsSummary = async () => {
+  const { data } = await api.get('/analytics/summary');
+  return data;
+};
+
+export const fetchSalesOverTime = async (days = 30) => {
+  const { data } = await api.get(`/analytics/sales-over-time?days=${days}`);
+  return data;
+};
+
+export const fetchRevenueByCategory = async () => {
+  const { data } = await api.get('/analytics/revenue-by-category');
+  return data;
+};
+
+export const fetchOrderStatus = async () => {
+  const { data } = await api.get('/analytics/order-status');
+  return data;
+};
+
+export const fetchTopProducts = async (limit = 10) => {
+  const { data } = await api.get(`/analytics/top-products?limit=${limit}`);
+  return data;
+};
+
+// Stores
+export const fetchStores = async () => {
+  const { data } = await api.get('/store');
+  return data;
+};
+
+export const fetchMyStore = async () => {
+  const { data } = await api.get('/store/my-store');
+  return data;
+};
+
+export const createStore = async (input) => {
+  const { data } = await api.post('/store', input);
+  return data;
+};
+
+export const updateStore = async ({ store_id, input }) => {
+  const { data } = await api.put(`/store/${store_id}`, input);
+  return data;
+};
+
+export const deleteStore = async (store_id) => {
+  const { data } = await api.delete(`/store/${store_id}`);
+  return data;
+};
+
+export const assignStoreAdmin = async ({ store_id, email }) => {
+  const { data } = await api.post(`/store/${store_id}/assign-admin`, { email });
+  return data;
+};
+
 export default api;

@@ -12,62 +12,94 @@ import AdminProducts from './pages/Admin/AdminProducts.jsx';
 import AdminProductDetail from './pages/Admin/AdminProductDetail.jsx';
 import BlockchainReviews from './pages/Admin/BlockchainReviews.jsx';
 import ReviewManagement from './pages/Admin/ReviewManagement.jsx';
+import SalesAnalytics from './pages/Admin/SalesAnalytics.jsx';
+import StoreManagement from './pages/Admin/StoreManagement.jsx';
+import StoreFront from './pages/StoreFront/index.jsx';
 
 function App() {
   return (
     <>
-      <Navbar />
       <Routes>
-        {/* Public Routes */}
-        <Route path="/" element={<Products />} />
-        <Route path="/product/:product_id" element={<ProductDetail />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/basket" element={<Basket />} />
+        {/* StoreFront - no Navbar, fully custom per-domain */}
+        <Route path="/store/:domain" element={<StoreFront />} />
 
-        {/* Protected User Routes */}
-        <Route path="/profile" element={<ProductedProfile />} />
+        {/* Routes with Navbar */}
+        <Route
+          path="*"
+          element={
+            <>
+              <Navbar />
+              <Routes>
+                {/* Public Routes */}
+                <Route path="/" element={<Products />} />
+                <Route path="/product/:product_id" element={<ProductDetail />} />
+                <Route path="/signin" element={<Signin />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/basket" element={<Basket />} />
 
-        {/* Protected Admin Routes */}
-        <Route path="/admin" element={<ProductedAdmin />} />
-        <Route
-          path="/admin/orders"
-          element={
-            <ProductedAdmin>
-              <Orders />
-            </ProductedAdmin>
-          }
-        />
-        <Route
-          path="/admin/products"
-          element={
-            <ProductedAdmin>
-              <AdminProducts />
-            </ProductedAdmin>
-          }
-        />
-        <Route
-          path="/admin/products/:product_id"
-          element={
-            <ProductedAdmin>
-              <AdminProductDetail />
-            </ProductedAdmin>
-          }
-        />
-        <Route
-          path="/admin/reviews"
-          element={
-            <ProductedAdmin>
-              <ReviewManagement />
-            </ProductedAdmin>
-          }
-        />
-        <Route
-          path="/admin/blockchain"
-          element={
-            <ProductedAdmin>
-              <BlockchainReviews />
-            </ProductedAdmin>
+                {/* Protected User Routes */}
+                <Route path="/profile" element={<ProductedProfile />} />
+
+                {/* Protected Admin Routes */}
+                <Route path="/admin" element={<ProductedAdmin />} />
+                <Route
+                  path="/admin/orders"
+                  element={
+                    <ProductedAdmin>
+                      <Orders />
+                    </ProductedAdmin>
+                  }
+                />
+                <Route
+                  path="/admin/products"
+                  element={
+                    <ProductedAdmin>
+                      <AdminProducts />
+                    </ProductedAdmin>
+                  }
+                />
+                <Route
+                  path="/admin/products/:product_id"
+                  element={
+                    <ProductedAdmin>
+                      <AdminProductDetail />
+                    </ProductedAdmin>
+                  }
+                />
+                <Route
+                  path="/admin/reviews"
+                  element={
+                    <ProductedAdmin>
+                      <ReviewManagement />
+                    </ProductedAdmin>
+                  }
+                />
+                <Route
+                  path="/admin/blockchain"
+                  element={
+                    <ProductedAdmin>
+                      <BlockchainReviews />
+                    </ProductedAdmin>
+                  }
+                />
+                <Route
+                  path="/admin/analytics"
+                  element={
+                    <ProductedAdmin>
+                      <SalesAnalytics />
+                    </ProductedAdmin>
+                  }
+                />
+                <Route
+                  path="/admin/stores"
+                  element={
+                    <ProductedAdmin>
+                      <StoreManagement />
+                    </ProductedAdmin>
+                  }
+                />
+              </Routes>
+            </>
           }
         />
       </Routes>

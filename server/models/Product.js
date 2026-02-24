@@ -38,6 +38,11 @@ const ProductSchema = new Schema({
     type: Number,
     default: 0,
   },
+  store: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'store',
+    default: null,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

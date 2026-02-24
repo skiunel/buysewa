@@ -28,6 +28,7 @@ const Register = async (req, res, next) => {
     const accessToken = await signAccessToken({
       user_id: user._id,
       role: user.role,
+      store: user.store,
     });
     const refreshToken = await signRefreshToken(user._id);
 
@@ -46,7 +47,7 @@ const Login = async (req, res, next) => {
   }
 
   try {
-    const user = await User.findOne({ email: input.email });
+    const user = await User.findOne({ email: input.email }).populate('store');
 
     if (!user) {
       throw Boom.notFound('The email address was not found.');
@@ -60,6 +61,7 @@ const Login = async (req, res, next) => {
     const accessToken = await signAccessToken({
       user_id: user._id,
       role: user.role,
+      store: user.store?._id || user.store,
     });
     const refreshToken = await signRefreshToken(user._id);
     const userData = user.toObject();
@@ -104,7 +106,7 @@ const Logout = async (req, res, next) => {
 const Me = async (req, res, next) => {
   const { user_id } = req.payload;
   try {
-    const user = await User.findById(user_id).select('-password -__v');
+    const user = await User.findById(user_id).select('-password -__v').populate('store');
     res.json(user);
   } catch (e) {
     next(e);

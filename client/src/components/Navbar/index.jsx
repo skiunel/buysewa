@@ -44,7 +44,7 @@ function Navbar() {
         {/* Nav links */}
         <HStack spacing={4} display={{ base: 'none', md: 'flex' }}>
           <Link to="/"><Button variant="ghost" leftIcon={<FaHome />}>Home</Button></Link>
-          {loggedIn && user?.role === 'admin' && (
+          {loggedIn && (user?.role === 'admin' || user?.role === 'superadmin') && (
             <Link to="/admin"><Button variant="ghost" leftIcon={<FaCog />}>Admin</Button></Link>
           )}
         </HStack>
@@ -69,7 +69,7 @@ function Navbar() {
                 </MenuButton>
                 <MenuList>
                   <Link to="/profile"><MenuItem icon={<FaUser />}>Profile & Orders</MenuItem></Link>
-                  {user?.role === 'admin' && (
+                  {(user?.role === 'admin' || user?.role === 'superadmin') && (
                     <Link to="/admin"><MenuItem icon={<FaCog />}>Admin Dashboard</MenuItem></Link>
                   )}
                   <MenuDivider />

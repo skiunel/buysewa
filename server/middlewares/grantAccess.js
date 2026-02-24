@@ -5,8 +5,8 @@ const grantAccess = (action, resource) => {
     try {
       const { role } = req.payload;
 
-      // Admin has full access to all resources
-      if (role === 'admin') {
+      // Admin and superadmin have full access to all resources
+      if (role === 'admin' || role === 'superadmin') {
         return next();
       }
 
