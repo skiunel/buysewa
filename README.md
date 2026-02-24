@@ -1,224 +1,336 @@
-# BUYSEWA E-Commerce Platform
+# BuySewa — Blockchain-Based Review Authentication System
 
-A complete e-commerce platform with blockchain-based secure digital codes (SDC), smart contracts for review authentication, and secure payment processing.
+**CS6P05NI Final Year Project**
+**Author:** Nayan Raj Sah | London Met ID: 22067077 | College ID: NP01NT4A220034
 
-## Quick Navigation
+---
 
-### Getting Started
-- **[Quick Start Guide](docs/setup/QUICK_START.md)** - Get up and running in 30 minutes
-- **[Setup Instructions](docs/setup/SETUP_GUIDE.md)** - Detailed installation and configuration
-- **[Service Startup](docs/setup/START_SERVICES.sh)** - Script to launch all services
+## Overview
 
-### Core Documentation
-- **[Project Summary](docs/PROJECT_SUMMARY.md)** - Overview of the entire system
-- **[Complete System Guide](docs/COMPLETE_SYSTEM.md)** - Comprehensive system documentation
-- **[Production Readiness](docs/PRODUCTION_READY.md)** - Checklist and requirements for production
+BuySewa is a full-stack e-commerce platform that authenticates product reviews using the Ethereum blockchain and IPFS. Only verified buyers (users who received delivery) can submit reviews. Each review is stored immutably on IPFS and its hash is recorded on-chain via a Solidity smart contract, ensuring transparency and tamper-resistance.
 
-### Payment Gateway Integration
-- **[eSewa Quick Start](docs/ESEWA_QUICK_START.md)** - Quick overview and setup guide
-- **[eSewa Quick Pay Guide](docs/ESEWA_QUICK_PAY_GUIDE.md)** - Complete API reference and integration
-- **[eSewa Implementation Details](docs/ESEWA_IMPLEMENTATION_DETAILS.md)** - Technical architecture and flow
-- **[eSewa Setup Guide](docs/ESEWA_INTEGRATION_SETUP.md)** - Production deployment instructions
-- **[eSewa Summary](docs/ESEWA_SUMMARY.md)** - Implementation summary and quick reference
+### Key Features
 
-### Blockchain Integration
-- **[Blockchain Payment Setup](docs/blockchain/BLOCKCHAIN_PAYMENT_SETUP.md)** - Complete integration guide
-- **[Blockchain Quick Start](docs/blockchain/BLOCKCHAIN_QUICK_START.md)** - Quick reference for blockchain features
-- **[Implementation Summary](docs/blockchain/BLOCKCHAIN_IMPLEMENTATION_SUMMARY.md)** - Technical overview
-- **[Blockchain Setup](docs/blockchain/BLOCKCHAIN_SETUP.md)** - Detailed blockchain configuration
-- **[Complete Guide](docs/blockchain/BLOCKCHAIN_COMPLETE_GUIDE.md)** - Full blockchain reference
+- **Blockchain-stored reviews** — Ethereum smart contract records reviewer verification and IPFS content hashes
+- **IPFS content storage** — Review text stored on the InterPlanetary File System for decentralisation
+- **Standard Delivery Code (SDC)** — Unique one-time code (format: `SDC-XXXXXXXX`) generated upon delivery; required to unlock review submission
+- **Role-based access control** — Admin and user roles with protected routes
+- **JWT authentication** — Access tokens (10d) + refresh tokens (180d) stored in Redis
+- **Hybrid Web2/Web3 architecture** — MongoDB for metadata, IPFS + Ethereum for immutable review data
 
-### Database & Backend
-- **[Database Setup](docs/database/DATABASE_SETUP.md)** - MongoDB configuration and initialization
-- **[Backend Documentation](docs/README_BACKEND.md)** - Express.js API documentation
-- **[eSewa Integration (Legacy)](docs/ESEWA_INTEGRATION_FIX.md)** - Legacy payment gateway setup
+---
 
-### Deployment
-- **[Deployment Guide](docs/deployment/01-Deployment-Guide.md)** - Production deployment instructions
-- **[Release Notes](docs/deployment/02-Release-Notes.md)** - Version information and changes
-- **[CI/CD Configuration](docs/deployment/03-CICD-Config.md)** - Automated deployment setup
-- **[GitHub Setup](docs/deployment/GITHUB_SETUP.md)** - Repository configuration
-- **[Deployment Status](docs/deployment/DEPLOYMENT_STATUS.md)** - Current deployment status
-- **[GitHub Deployment](docs/deployment/GITHUB_DEPLOYMENT_COMPLETE.md)** - GitHub-specific deployment
+## Technology Stack
 
-### System Design
-- **[Architecture](docs/design/01-Architecture-Diagram.md)** - System architecture overview
-- **[Database Schema](docs/design/02-Database-Schema.md)** - Database structure
-- **[API Design](docs/design/03-API-Design.md)** - RESTful API specifications
+| Layer | Technology |
+|---|---|
+| Smart Contract | Solidity 0.8.19, Truffle |
+| Local Blockchain | Ganache (GUI / CLI) |
+| IPFS Node | go-ipfs / IPFS Desktop |
+| Backend | Node.js 18+, Express.js, ESM modules |
+| Database | MongoDB 6+ |
+| Cache / Token Store | Redis 7+ (in-memory fallback if unavailable) |
+| Frontend | React 18, Chakra UI 2, React Query, React Router v6 |
+| Blockchain Client | Web3.js 1.x |
 
-### Documentation
-- **[Technical Documentation](docs/documentation/01-Technical-Documentation.md)** - In-depth technical details
-- **[API Documentation](docs/documentation/02-API-Documentation.md)** - API endpoint reference
-- **[User Manual](docs/documentation/03-User-Manual.md)** - End-user guide
-
-### Requirements & Testing
-- **[Software Requirements](docs/requirements/01-SRS.md)** - Software requirements specification
-- **[User Stories](docs/requirements/02-User-Stories.md)** - Feature descriptions
-- **[Use Cases](docs/requirements/03-Use-Cases.md)** - System interactions
-- **[Product Backlog](docs/requirements/04-Product-Backlog.md)** - Feature list and priorities
-- **[Acceptance Criteria](docs/requirements/05-Acceptance-Criteria.md)** - Definition of done
-- **[Test Plan](docs/testing/01-Test-Plan.md)** - Testing strategy
-- **[Test Cases](docs/testing/02-Test-Cases.md)** - Detailed test scenarios
-- **[Test Scripts](docs/testing/03-Test-Scripts.md)** - Automated test execution
-
-### Reference
-- **[System Diagrams](docs/diagrams/)** - UML and architecture diagrams
-- **[Next Steps](docs/NEXT_STEPS.md)** - Future enhancements
-- **[Git Push Checklist](docs/deployment/GIT_PUSH_CHECKLIST.md)** - Pre-commit verification
-
-## Key Features
-
-### eSewa Quick Pay (NEW)
-- **One-Click Product Purchase** - Buy directly from product pages without adding to cart
-- **Instant Checkout** - Quick purchase dialog with automatic amount calculations
-- **Secure Payments** - HMAC-SHA256 signature verification for payment authenticity
-- **Smart Calculations** - Automatic 10% tax and free delivery for orders over NPR 10,000
-- **Order Integration** - Orders created automatically before payment
-- **Success/Failure Handling** - Proper redirect flows after payment completion
-
-### E-Commerce Features
-- Secure Digital Code (SDC) generation with blockchain verification
-- Smart contract-based review authentication
-- Role-based access control (Admin, Seller, Buyer)
-- Multiple payment methods (eSewa Quick Pay, eSewa Cart, Blockchain, Demo)
-- MongoDB database with Mongoose ORM
-- JWT authentication
-- Rate limiting and input validation
-- Comprehensive API documentation
-- Production-ready security measures
-
-## Tech Stack
-
-**Backend:**
-- Node.js with Express.js
-- MongoDB with Mongoose
-- Ethers.js v6.7.1 (Blockchain)
-- Bcryptjs (Password hashing)
-- JWT (Authentication)
-
-**Smart Contracts:**
-- Solidity (ReviewAuth contract)
-- Hardhat (Local testing)
-
-**Frontend:**
-- React with TypeScript
-- Vite (Build tool)
-
-**Networks:**
-- Hardhat (Local: localhost:8545)
-- Mumbai Testnet
-- Polygon Mainnet
-- Ethereum Network
-
-## Installation
-
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-- MongoDB (local or Atlas)
-- Git
-
-### Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/skiunel/buysewa
-   cd buysewa
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment**
-   ```bash
-   cp .env.example .env
-   ```
-
-4. **Initialize database**
-   ```bash
-   cd review-backend && npm run init:db
-   ```
-
-5. **Start services**
-   ```bash
-   ./START_SERVICES.sh
-   ```
-
-See [Setup Guide](docs/setup/SETUP_GUIDE.md) for detailed instructions.
-
-## API Endpoints Summary
-
-### Blockchain Payment (7 endpoints)
-- POST /api/blockchain/generate-sdc
-- POST /api/blockchain/register-sdc
-- POST /api/blockchain/verify-sdc
-- POST /api/blockchain/submit-review
-- POST /api/blockchain/validate-sdc-format
-- POST /api/blockchain/batch-generate-sdc
-- GET /api/blockchain/network-info
-
-### Authentication
-- POST /api/auth/register
-- POST /api/auth/login
-- GET /api/auth/me
-
-### Products & Orders
-- GET /api/products
-- POST /api/products (Seller only)
-- POST /api/orders
-- GET /api/orders
-
-### Reviews
-- GET /api/reviews/:productId
-- POST /api/reviews
-
-See [API Documentation](docs/documentation/02-API-Documentation.md) for complete details.
-
-## Security Features
-
-- Bcryptjs password hashing (10 rounds)
-- JWT token-based authentication
-- Input validation and sanitization
-- Rate limiting (100 requests per 15 minutes)
-- CORS configuration
-- Secure blockchain integration
-- One-time use SDC enforcement
-- Owner-only smart contract operations
+---
 
 ## Project Structure
 
 ```
-BUYSEWA E-Commerce Platform/
- review-backend/          # Express.js backend
- contracts/               # Smart contracts
- docs/                    # Complete documentation
- src/                     # Frontend (React/TypeScript)
- scripts/                 # Deployment scripts
- hardhat.config.js        # Hardhat configuration
+buysewa/
+├── contracts/                  # Solidity smart contracts
+│   └── ReviewContract.sol
+├── migrations/                 # Truffle migration scripts
+│   ├── 1_initial_migration.js
+│   └── 2_deploy_review_contract.js
+├── truffle-config.js           # Truffle / Ganache config
+│
+├── server/                     # Node.js / Express backend
+│   ├── app.js                  # Express entry point
+│   ├── package.json
+│   ├── .env.example
+│   ├── build/contracts/        # Generated by Truffle (after migration)
+│   ├── blockchain/
+│   │   ├── ipfs.js             # IPFS upload/download helpers
+│   │   ├── web3Review.js       # Web3 + contract interaction
+│   │   ├── web3AuthMiddleware.js
+│   │   └── web3ReviewController.js
+│   ├── clients/
+│   │   ├── db.js               # MongoDB connection
+│   │   └── redis.js            # Redis client with in-memory fallback
+│   ├── controllers/
+│   │   ├── auth/
+│   │   ├── delivery/
+│   │   ├── order/
+│   │   ├── product/
+│   │   └── review/
+│   ├── helpers/
+│   │   └── jwt.js
+│   ├── middlewares/
+│   │   └── grantAccess.js
+│   ├── models/
+│   │   ├── Delivery.js
+│   │   ├── Order.js
+│   │   ├── Product.js
+│   │   ├── Review.js
+│   │   └── User.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── delivery.js
+│   │   ├── index.js
+│   │   ├── order.js
+│   │   ├── product.js
+│   │   ├── review.js
+│   │   └── web3Review.js
+│   └── scripts/
+│       └── seed.js             # Seed admin user + sample products
+│
+└── client/                     # React.js frontend
+    ├── package.json
+    ├── .env.example
+    ├── public/
+    │   └── index.html
+    └── src/
+        ├── index.js            # React entry point
+        ├── App.jsx             # Route definitions
+        ├── api/
+        │   └── index.js        # Axios instance + API helpers
+        ├── contexts/
+        │   ├── AuthContext.jsx
+        │   └── BasketContext.jsx
+        ├── components/
+        │   ├── AdminNavigation/
+        │   ├── Card/
+        │   ├── Navbar/
+        │   └── StarRating/
+        └── pages/
+            ├── Admin/
+            │   ├── index.jsx           # Dashboard
+            │   ├── AdminProductDetail.jsx
+            │   ├── AdminProducts.jsx
+            │   ├── BlockchainReviews.jsx
+            │   ├── Orders.jsx
+            │   └── ReviewManagement.jsx
+            ├── Auth/
+            │   ├── Signin/
+            │   └── Signup/
+            ├── Basket/
+            ├── ProductDetail/
+            ├── Products/
+            ├── ProductedRoute/         # Auth-guarded route wrappers
+            └── Profile/
 ```
-
-## Documentation
-
-Complete documentation is organized in the [docs/](docs/) directory:
-
-- **[Setup & Installation](docs/setup/)** - Getting started guide
-- **[Blockchain Integration](docs/blockchain/)** - SDC and smart contracts
-- **[Database](docs/database/)** - MongoDB setup and schemas
-- **[Deployment](docs/deployment/)** - Production deployment
-- **[System Design](docs/design/)** - Architecture and API design
-- **[Requirements](docs/requirements/)** - Specifications and user stories
-- **[Testing](docs/testing/)** - Test plans and cases
-
-## Deployment
-
-Current Status: Production Ready
-
-For deployment instructions, see [Deployment Guide](docs/deployment/01-Deployment-Guide.md)
-
-Repository: https://github.com/skiunel/buysewa
 
 ---
 
-**Last Updated**: December 26, 2024
+## Prerequisites
+
+Install the following before starting:
+
+| Tool | Version | Notes |
+|---|---|---|
+| Node.js | 18+ | https://nodejs.org |
+| MongoDB | 6+ | https://www.mongodb.com/try/download/community |
+| Redis | 7+ | Optional — app falls back to in-memory if unavailable |
+| Ganache | 2.7+ | https://trufflesuite.com/ganache/ (GUI recommended) |
+| IPFS Desktop | Latest | https://docs.ipfs.tech/install/ipfs-desktop/ |
+| Truffle | 5.x | `npm install -g truffle` |
+
+---
+
+## Setup & Run
+
+### 1. Clone and install root tools
+
+```bash
+git clone <repo-url>
+cd buysewa
+npm install -g truffle   # if not already installed
+```
+
+### 2. Start infrastructure services
+
+```bash
+# Start MongoDB
+mongod --dbpath /data/db
+
+# Start Redis (optional)
+redis-server
+
+# Start IPFS daemon
+ipfs daemon
+
+# Open Ganache GUI -> New Workspace -> link truffle-config.js
+# (or use ganache-cli: npx ganache-cli -p 7545 --networkId 5777)
+```
+
+### 3. Deploy smart contract
+
+```bash
+# From project root
+truffle migrate --reset --network development
+```
+
+After migration, `server/build/contracts/ReviewContract.json` is created automatically
+(the `contracts_build_directory` in `truffle-config.js` points there).
+
+### 4. Backend setup
+
+```bash
+cd server
+cp .env.example .env
+# Edit .env — set MONGODB_URI, JWT_SECRET, JWT_REFRESH_SECRET, GANACHE_ACCOUNT etc.
+npm install
+node --experimental-vm-modules scripts/seed.js   # Creates admin + sample products
+npm start       # or: npm run dev (requires nodemon)
+```
+
+**Default admin credentials after seeding:**
+- Email: `admin@buysewa.app`
+- Password: `Admin@1234`
+
+### 5. Frontend setup
+
+```bash
+cd client
+cp .env.example .env
+# Verify REACT_APP_BASE_ENDPOINT=http://localhost:5000/api
+npm install
+npm start
+```
+
+App opens at **http://localhost:3000**.
+
+---
+
+## Environment Variables
+
+### `server/.env`
+
+| Variable | Default | Description |
+|---|---|---|
+| `PORT` | `5000` | Express server port |
+| `MONGODB_URI` | `mongodb://localhost:27017/buysewa_reviews` | MongoDB connection string |
+| `JWT_SECRET` | *(change this!)* | Access token signing secret |
+| `JWT_REFRESH_SECRET` | *(change this!)* | Refresh token signing secret |
+| `REDIS_URL` | `redis://localhost:6379` | Redis connection (optional) |
+| `FRONTEND_URL` | `http://localhost:3000` | CORS allowed origin |
+| `GANACHE_URL` | `http://127.0.0.1:7545` | Ganache RPC endpoint |
+| `GANACHE_ACCOUNT` | — | Deployer wallet address (from Ganache) |
+| `IPFS_HOST` | `127.0.0.1` | IPFS API host |
+| `IPFS_PORT` | `5001` | IPFS API port |
+
+### `client/.env`
+
+| Variable | Default | Description |
+|---|---|---|
+| `REACT_APP_BASE_ENDPOINT` | `http://localhost:5000/api` | Backend API base URL |
+
+---
+
+## API Reference
+
+### Auth (`/api/auth`)
+
+| Method | Path | Auth | Description |
+|---|---|---|---|
+| POST | `/register` | — | Register new user |
+| POST | `/login` | — | Login, returns access + refresh tokens |
+| POST | `/refresh_token` | — | Rotate tokens |
+| POST | `/logout` | Bearer | Invalidate refresh token |
+| GET | `/me` | Bearer | Get current user info |
+
+### Products (`/api/product`)
+
+| Method | Path | Auth | Description |
+|---|---|---|---|
+| GET | `/` | — | List all products |
+| GET | `/:product_id` | — | Get single product |
+| POST | `/` | Admin | Create product |
+| PUT | `/:product_id` | Admin | Update product |
+| DELETE | `/:product_id` | Admin | Delete product |
+
+### Orders (`/api/order`)
+
+| Method | Path | Auth | Description |
+|---|---|---|---|
+| POST | `/` | Bearer | Place order |
+| GET | `/` | Admin | List all orders |
+| GET | `/my-orders` | Bearer | My orders |
+| DELETE | `/:order_id` | Admin | Delete order |
+
+### Delivery (`/api/delivery`)
+
+| Method | Path | Auth | Description |
+|---|---|---|---|
+| POST | `/admin/deliver/:order_id` | Admin | Mark delivered + generate SDC |
+| POST | `/verifySDC` | Bearer | Verify delivery code |
+| GET | `/my-deliveries` | Bearer | Get my deliveries (includes SDC) |
+
+### Reviews — Standard (`/api/review`)
+
+| Method | Path | Auth | Description |
+|---|---|---|---|
+| POST | `/` | Bearer | Submit review (requires delivery) |
+| GET | `/product/:product_id` | — | Get reviews for product |
+| GET | `/all` | Admin | List all reviews |
+| PUT | `/:reviewId` | Admin | Update review visibility |
+| DELETE | `/:reviewId` | Admin | Delete (or hide if blockchain-stored) |
+
+### Reviews — Blockchain (`/api/web3-review`)
+
+| Method | Path | Auth | Description |
+|---|---|---|---|
+| POST | `/` | Bearer | Submit review to IPFS + Ethereum |
+| GET | `/product/:product_id` | — | Fetch blockchain-verified reviews |
+
+---
+
+## How the SDC Flow Works
+
+```
+1. Customer places order
+2. Admin marks order as "Delivered"
+   -> Server generates SDC (e.g. SDC-A3F9C102)
+   -> SDC stored in Delivery record
+3. Customer sees SDC in Profile -> Deliveries
+4. Customer goes to product page -> submits review
+   -> Backend verifies: Delivery with status "Delivered" exists for this user + product
+   -> Review submitted to IPFS (content) + Ethereum (IPFS hash)
+   -> MongoDB Review document saved with blockchain_stored: true
+5. Review appears on product page with "Blockchain Verified" badge
+```
+
+---
+
+## Smart Contract
+
+**`contracts/ReviewContract.sol`**
+
+| Function | Description |
+|---|---|
+| `verifyReviewer(address, productId)` | Called by backend to mark buyer as verified |
+| `submitReview(productId, ipfsHash)` | Stores IPFS hash on-chain (emits ReviewSubmitted) |
+| `getReviews(productId)` | Returns array of Review structs |
+| `isReviewerVerified(address, productId)` | Check if address is verified buyer |
+| `hasUserReviewed(address, productId)` | Check if address already reviewed |
+
+---
+
+## Common Issues
+
+| Problem | Solution |
+|---|---|
+| `Cannot find module 'build/contracts/ReviewContract.json'` | Run `truffle migrate --reset` first |
+| MongoDB connection error | Ensure `mongod` is running |
+| IPFS ECONNREFUSED | Start `ipfs daemon` |
+| Ganache network error | Open Ganache GUI or run `npx ganache-cli -p 7545` |
+| Redis ECONNREFUSED | Redis is optional — app uses in-memory fallback automatically |
+| CORS error | Check `FRONTEND_URL` in `server/.env` matches your React dev server port |
+
+---
+
+## License
+
+Academic project — CS6P05NI, London Metropolitan University / Islington College, 2024.
