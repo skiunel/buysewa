@@ -9,7 +9,13 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+      onerror="this.remove()"
     />
+    <style>
+      /* Fallback fonts if Google Fonts can't load */
+      body { font-family: 'Rajdhani', 'Segoe UI', Tahoma, sans-serif; background: #0a0a0f; color: #e8e8f0; }
+      #root { min-height: 100vh; }
+    </style>
   </head>
   <body>
     <div id="root"></div>
